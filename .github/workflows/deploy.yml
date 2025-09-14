@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: lngyneric/My-notebook-github
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: "${{ secrets.ACCESS_TOKEN }}"
           path: content
       - name: Clean up content directory
         run: |
@@ -50,7 +50,7 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: '${{ steps.deployment.outputs.page_url }}'
+      url: "${{ steps.deployment.outputs.page_url }}"
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
