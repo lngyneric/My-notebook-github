@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "lngyneric.github.io/My-notebook-github",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", "docs"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
