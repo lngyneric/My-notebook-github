@@ -1,3 +1,11 @@
+# 只同步文件，不同步子文件夹
+# 忽略所有目录
+*/
+
+# 但保留必要的配置文件夹（如果需要）
+# !.github/
+# !content/
+
 # Obsidian 配置文件（部分需要排除）
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
