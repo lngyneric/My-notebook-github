@@ -11,32 +11,31 @@
             "id": "67a731f24216f2f1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "QUICK_SETUP_GUIDE.md",
-                "mode": "source",
-                "source": false
+                "aFile": "content/Shock.md",
+                "bFile": "content/Shock.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "QUICK_SETUP_GUIDE"
+              "icon": "diff",
+              "title": "Diff: Shock"
             }
           },
           {
             "id": "c953a4a43d69c954",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "content/2025-09-16 Math.md",
-                "bFile": "content/2025-09-16 Math.md",
-                "aRef": ""
+                "file": "2025-09-16 Math.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: 2025-09-16 Math"
+              "icon": "lucide-file",
+              "title": "2025-09-16 Math"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -195,28 +194,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c953a4a43d69c954",
+  "active": "67a731f24216f2f1",
   "lastOpenFiles": [
-    "2025-09-16 Math.md",
-    "2025-09-16 Math.md.baiduyun.uploading.cfg",
     "Shock.md",
     "Shock.md.baiduyun.uploading.cfg",
     "README.md",
+    "GITHUB_PAGES_DEPLOYMENT.md",
+    "未命名 2.base.baiduyun.uploading.cfg",
+    "未命名.base",
+    "猎魔人套装全集（1-7）.md",
+    "未命名 1.base.baiduyun.uploading.cfg",
+    "第三方仓库和报关系统接口文件说明.md",
+    "QUICK_SETUP_GUIDE.md",
+    "2025-09-16 Math.md",
+    "未命名 2.base",
+    "未命名 1.base",
+    "2025-09-16 Math.md.baiduyun.uploading.cfg",
     "未命名.canvas.baiduyun.uploading.cfg",
     "Temp/未命名.base.baiduyun.uploading.cfg",
     "2025-09-16.md.baiduyun.uploading.cfg",
-    "QUICK_SETUP_GUIDE.md",
-    "第三方仓库和报关系统接口文件说明.md",
     "未命名.canvas",
-    "Temp/未命名.base",
-    "未命名.base",
     "Temp/2025-09-16-0916.md",
     "Temp/test-upload-file.md",
-    "Temp",
-    "2025-09-16-0916.md.baiduyun.uploading.cfg",
-    "猎魔人套装全集（1-7）.md",
     "CODE_OF_CONDUCT.md",
-    "Temp/未命名.md.baiduyun.uploading.cfg",
     "Temp/未命名.md",
     "Temp/upload_1 1.md",
     "Temp/upload_1.md",
@@ -232,7 +232,6 @@
     "node_modules/varint/README.md",
     "node_modules/unicorn-magic/readme.md",
     "node_modules/undici-types/README.md",
-    "node_modules/trough/readme.md",
     "public/static/og-image.png",
     "public/static/icon.png",
     "public/test-upload-file-og-image.webp",
