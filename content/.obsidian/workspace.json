@@ -8,34 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "446e3d208f8432a9",
+            "id": "67a731f24216f2f1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Temp/upload_1 1.md",
+                "file": "2025-09-16-0916.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "upload_1 1"
-            }
-          },
-          {
-            "id": "67a731f24216f2f1",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "未命名.base",
-                "viewName": "表格"
-              },
-              "icon": "lucide-table",
-              "title": "未命名"
+              "title": "2025-09-16-0916"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -197,11 +183,12 @@
   "active": "67a731f24216f2f1",
   "lastOpenFiles": [
     "猎魔人套装全集（1-7）.md",
-    "第三方仓库和报关系统接口文件说明.md",
     "未命名.base",
+    "CODE_OF_CONDUCT.md",
+    "第三方仓库和报关系统接口文件说明.md",
     "Temp/未命名.md.baiduyun.uploading.cfg",
     "2025-09-16.md.baiduyun.uploading.cfg",
-    "2025-09-16.md",
+    "2025-09-16-0916.md",
     "Temp/未命名.md",
     "Temp/upload_1 1.md",
     "Temp/upload_1.md",
@@ -230,7 +217,6 @@
     "node_modules/to-regex-range/README.md",
     "node_modules/strip-bom-string/README.md",
     "node_modules/strip-ansi/readme.md",
-    "node_modules/string.prototype.codepointat/README.md",
     "public/static/og-image.png",
     "public/static/icon.png",
     "public/test-upload-file-og-image.webp",
