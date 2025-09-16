@@ -1,15 +1,24 @@
-.DS_Store
-.gitignore
-node_modules
-public
-prof
-tsconfig.tsbuildinfo
-.obsidian
-.quartz-cache
-private/
-.replit
-replit.nix
+# 忽略所有文件和文件夹
+*
 
-/docs/
-/quartz/
-/content/Temp/
+# 但保留content文件夹及其所有内容
+!content/
+!content/**
+
+# 保留必要的git配置文件
+!.gitignore
+!.gitattributes
+
+# 保留GitHub相关配置
+!.github/
+!.github/**
+
+# 保留项目配置文件
+!package.json
+!package-lock.json
+!*.config.*
+!*.d.ts
+!tsconfig.json
+!LICENSE*
+!README*
+!Dockerfile

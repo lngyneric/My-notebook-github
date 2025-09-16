@@ -1,0 +1,248 @@
+{
+  "main": {
+    "id": "90ef8fb103314fec",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d4b8df0b691255b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "446e3d208f8432a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Temp/upload_1 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "upload_1 1"
+            }
+          },
+          {
+            "id": "67a731f24216f2f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "猎魔人套装全集（1-7）.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "猎魔人套装全集（1-7）"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1785b1d8d9df1a44",
+    "type": "split",
+    "children": [
+      {
+        "id": "36b13ee22c5c5dbc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bc9cb132e2fea6a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "bc073fbc5ca646df",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "acae94096b34b98d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "df480ed11d6c07b4",
+    "type": "split",
+    "children": [
+      {
+        "id": "162ea43a77b21cb7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "89f384243c7a7232",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "欢迎.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "欢迎 的反向链接列表"
+            }
+          },
+          {
+            "id": "6355237d5955e83d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "欢迎.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "欢迎 的出链列表"
+            }
+          },
+          {
+            "id": "51aa850556d4d40b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "dc835ce06c29ec42",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "public/static/og-image.png",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "og-image 的大纲"
+            }
+          },
+          {
+            "id": "f158ef6401068960",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:创建新数据库": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "67a731f24216f2f1",
+  "lastOpenFiles": [
+    "第三方仓库和报关系统接口文件说明.md",
+    "猎魔人套装全集（1-7）.md",
+    "未命名.base",
+    "Temp/未命名.md.baiduyun.uploading.cfg",
+    "2025-09-16.md.baiduyun.uploading.cfg",
+    "2025-09-16.md",
+    "Temp/未命名.md",
+    "Temp/upload_1 1.md",
+    "Temp/upload_1.md",
+    "Temp/upload.md",
+    "Temp/新笔记_1.md",
+    "Temp/新笔记.md",
+    "未命名.base.baiduyun.uploading.cfg",
+    "QUICK_SETUP_GUIDE.md",
+    "node_modules/gray-matter/lib/engines.js",
+    "node_modules/gray-matter/lib/engine.js",
+    "node_modules/gray-matter/lib/utils.js",
+    "node_modules/gray-matter/lib/to-file.js",
+    "node_modules/gray-matter/lib/stringify.js",
+    "node_modules/gray-matter/lib/parse.js",
+    "node_modules/globby/readme.md",
+    "node_modules/zwitch/readme.md",
+    "node_modules/yargs-parser/README.md",
+    "node_modules/yargs-parser/CHANGELOG.md",
+    "node_modules/xmldom-sre/readme.md",
+    "node_modules/wrap-ansi/readme.md",
+    "node_modules/varint/README.md",
+    "node_modules/unicorn-magic/readme.md",
+    "node_modules/undici-types/README.md",
+    "node_modules/trough/readme.md",
+    "node_modules/trim-lines/readme.md",
+    "node_modules/to-regex-range/README.md",
+    "node_modules/strip-bom-string/README.md",
+    "node_modules/strip-ansi/readme.md",
+    "node_modules/string.prototype.codepointat/README.md",
+    "node_modules/string-width/readme.md",
+    "public/static/og-image.png",
+    "public/static/icon.png",
+    "public/test-upload-file-og-image.webp",
+    "public/README-og-image.webp",
+    "public/QUICK_SETUP_GUIDE-og-image.webp",
+    "public/index-og-image.webp",
+    "public/GITHUB_PAGES_DEPLOYMENT-og-image.webp",
+    "public/CODE_OF_CONDUCT-og-image.webp",
+    "public/Temp/upload-og-image.webp",
+    "public/Temp/upload_1-og-image.webp",
+    "未命名.canvas"
+  ]
+}
