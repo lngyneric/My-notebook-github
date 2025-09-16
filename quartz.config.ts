@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "lngyneric.github.io/My-notebook-github",
+    baseUrl: "https://lngyneric.github.io/My-notebook-github",
     ignorePatterns: ["private", "templates", ".obsidian", "docs"],
     defaultDateType: "modified",
     theme: {
