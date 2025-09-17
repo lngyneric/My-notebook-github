@@ -27,12 +27,12 @@
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": "content/Abcjs music.md",
-                "bFile": "content/Abcjs music.md",
+                "aFile": "content/2025-09-16 Math.md",
+                "bFile": "content/2025-09-16 Math.md",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: Abcjs music"
+              "title": "Diff: 2025-09-16 Math"
             }
           },
           {
@@ -171,13 +171,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "public/static/og-image.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "og-image 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -195,7 +194,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 448.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,26 +210,29 @@
   },
   "active": "f8ccb9720174410c",
   "lastOpenFiles": [
+    "Clippings/WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！.md",
+    "Clippings/WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！.md.baiduyun.uploading.cfg",
     "Abcjs music.md",
-    "未命名 1.base",
+    "Clippings",
+    "猎魔人套装全集（1-7）.md",
+    "Untitled.md.baiduyun.uploading.cfg",
+    "第三方仓库和报关系统接口文件说明.md",
+    "Untitled.md",
+    "猎魔人套装全集（1-7）.md.baiduyun.uploading.cfg",
+    "未命名.base",
+    "未命名 2.base",
+    "未命名 2.base.baiduyun.uploading.cfg",
+    "未命名 1.canvas.baiduyun.uploading.cfg",
+    "未命名.base.baiduyun.uploading.cfg",
+    "2025-09-16 Math.md.baiduyun.uploading.cfg",
+    "未命名 1.canvas",
+    "2025-09-16 Math.md",
+    "Shock.md",
     "未命名.canvas",
     "CODE_OF_CONDUCT.md",
-    "未命名 2.base",
-    "Shock.md.baiduyun.uploading.cfg",
-    "Shock.md",
     "README.md",
     "GITHUB_PAGES_DEPLOYMENT.md",
-    "未命名 2.base.baiduyun.uploading.cfg",
-    "未命名.base",
-    "猎魔人套装全集（1-7）.md",
-    "未命名 1.base.baiduyun.uploading.cfg",
-    "第三方仓库和报关系统接口文件说明.md",
     "QUICK_SETUP_GUIDE.md",
-    "2025-09-16 Math.md",
-    "2025-09-16 Math.md.baiduyun.uploading.cfg",
-    "未命名.canvas.baiduyun.uploading.cfg",
-    "Temp/未命名.base.baiduyun.uploading.cfg",
-    "2025-09-16.md.baiduyun.uploading.cfg",
     "Temp/2025-09-16-0916.md",
     "Temp/test-upload-file.md",
     "Temp/未命名.md",
@@ -245,8 +247,6 @@
     "node_modules/yargs-parser/CHANGELOG.md",
     "node_modules/xmldom-sre/readme.md",
     "node_modules/wrap-ansi/readme.md",
-    "node_modules/varint/README.md",
-    "node_modules/unicorn-magic/readme.md",
     "public/static/og-image.png",
     "public/static/icon.png",
     "public/test-upload-file-og-image.webp",

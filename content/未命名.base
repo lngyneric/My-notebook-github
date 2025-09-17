@@ -1,3 +1,10 @@
 views:
   - type: table
     name: 表格
+  - type: cards
+    name: 视图
+    order:
+      - tags
+      - file.name
+      - file.ctime
+    imageFit: contain
