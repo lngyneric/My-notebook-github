@@ -1,15 +1,15 @@
 ---
-title: "WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！"
-source: "https://mp.weixin.qq.com/s/JmV_ETsR9OOkUzQWDhzetw"
+title: WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！
+source: https://mp.weixin.qq.com/s/JmV_ETsR9OOkUzQWDhzetw
 author:
   - "[[有趣的开源集市]]"
 published:
 created: 2025-09-17
 description:
 tags:
-  - "clippings"
+  - clippings
 ---
-![cover_image](https://mmbiz.qpic.cn/mmbiz_jpg/kgXibFxsv0e3PvXrU76ADBK4BOzRQZiaV36Qlic0FNKZicVJPONX3kicfrwOvWurHl7APrOrwicpOHctTcb9sKwiatJ0g/0?wx_fmt=jpeg)
+![[Image.jpg|cover_image]]
 
 原创 有趣的开源集市 [有趣的开源集市](https://mp.weixin.qq.com/s/) *2025年09月17日 08:08*
 
@@ -29,7 +29,7 @@ WhisperLiveKit 介绍
 
 ## 一款基于 OpenAI Whisper 模型的开源实时语音识别工具，能够将语音实时转录为文字，并支持说话人识别功能。该项目采用了客户端-服务端分离架构，通过本地化处理语音数据，确保用户隐私安全。WhisperLiveKit 融合了 SimulStreaming 与 WhisperStreaming 等前沿技术，实现了超低延迟的文字输出，适用于多种场景，如会议记录、远程教学、直播字幕等。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_jpg/kgXibFxsv0e3PvXrU76ADBK4BOzRQZiaV3dPEqTcFH8yp915j3hdxpHszWnd9S20JWnPwDmRWWDibAWkFa56CRSkg/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0)
+![[Image.webp|图片]]
 
 ****🏠 项目信息****
 
@@ -37,7 +37,7 @@ WhisperLiveKit 介绍
 #Github地址https://github.com/QuentinFuxa/WhisperLiveKit
 ```
 
-![图片](https://mmbiz.qpic.cn/mmbiz_jpg/kgXibFxsv0e3PvXrU76ADBK4BOzRQZiaV3IkIwQNkRMVv0g4JYicrHiaOwEFj94SLgGNVFQcTePibI13OsVFiaiaqkfYw/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1)
+![[Image 1.webp|图片]]
 
 🚀 ****功能特性****
 
@@ -61,7 +61,7 @@ WhisperLiveKit 介绍
 
 **🛠 系统架构**  
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/kgXibFxsv0e3PvXrU76ADBK4BOzRQZiaV3uicZxTAdrOWzQLvMVQFdWU048pUCcicYBEk7KCzy693SicudQO1Fic7rhw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2)
+![[Image 2.webp|图片]]
 
   
 
