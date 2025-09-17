@@ -25,14 +25,14 @@
             "id": "f8ccb9720174410c",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "content/2025-09-16 Math.md",
-                "bFile": "content/2025-09-16 Math.md",
-                "aRef": ""
+                "file": "Clippings/WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: 2025-09-16 Math"
+              "icon": "lucide-file",
+              "title": "WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！"
             }
           },
           {
@@ -171,12 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Clippings/WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！ 的大纲"
             }
           },
           {
@@ -210,13 +211,13 @@
   },
   "active": "f8ccb9720174410c",
   "lastOpenFiles": [
+    "第三方仓库和报关系统接口文件说明.md",
     "Clippings/WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！.md",
     "Clippings/WhisperLiveKit——开源AI语音识别工具，实时语音转写与说话人识别的利器！.md.baiduyun.uploading.cfg",
     "Abcjs music.md",
     "Clippings",
     "猎魔人套装全集（1-7）.md",
     "Untitled.md.baiduyun.uploading.cfg",
-    "第三方仓库和报关系统接口文件说明.md",
     "Untitled.md",
     "猎魔人套装全集（1-7）.md.baiduyun.uploading.cfg",
     "未命名.base",
