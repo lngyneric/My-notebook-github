@@ -1,9 +1,0 @@
-{
-	"nodes":[
-		{"id":"675715d05f8930d5","x":-412,"y":80,"width":400,"height":400,"type":"file","file":"第三方仓库和报关系统接口文件说明.md"},
-		{"id":"e1895109b8a5d5d4","x":0,"y":-540,"width":400,"height":400,"type":"file","file":"猎魔人套装全集（1-7）.md"}
-	],
-	"edges":[
-		{"id":"e51cd93f9e6bcda0","fromNode":"675715d05f8930d5","fromSide":"right","toNode":"e1895109b8a5d5d4","toSide":"bottom"}
-	]
-}
