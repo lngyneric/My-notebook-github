@@ -71,7 +71,6 @@ const config: QuartzConfig = {
       Plugin.HardLineBreaks(),
       Plugin.RoamFlavoredMarkdown(),
       Plugin.OxHugoFlavouredMarkdown(),
-      Plugin.AbcMusicTransformer(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Citations({
