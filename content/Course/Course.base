@@ -1,0 +1,7 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.folder.startsWith("Course")
+        - file.ext == "md"
