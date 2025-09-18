@@ -6,23 +6,29 @@
       <description>Last 10 notes on EL-Notepad</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>网页PDF导出保留元素</title>
-    <link>https://https://lngyneric.github.io/My-notebook-github/%E7%BD%91%E9%A1%B5PDF%E5%AF%BC%E5%87%BA%E4%BF%9D%E7%95%99%E5%85%83%E7%B4%A0</link>
-    <guid>https://https://lngyneric.github.io/My-notebook-github/%E7%BD%91%E9%A1%B5PDF%E5%AF%BC%E5%87%BA%E4%BF%9D%E7%95%99%E5%85%83%E7%B4%A0</guid>
-    <description><![CDATA[ 🤖 Assistant I’ll create an HTML file with PDF export functionality that preserves the webpage elements. ]]></description>
-    <pubDate>Wed, 17 Sep 2025 05:54:51 GMT</pubDate>
+    <title>ABC音乐记谱示例</title>
+    <link>https://https://lngyneric.github.io/My-notebook-github/examples/abc-music-examples</link>
+    <guid>https://https://lngyneric.github.io/My-notebook-github/examples/abc-music-examples</guid>
+    <description><![CDATA[ 展示各种ABC音乐记谱的使用方法和效果 ]]></description>
+    <pubDate>Thu, 18 Sep 2025 01:36:31 GMT</pubDate>
   </item><item>
     <title>Obsidian结构化思考流程</title>
     <link>https://https://lngyneric.github.io/My-notebook-github/Obsidian%E7%BB%93%E6%9E%84%E5%8C%96%E6%80%9D%E8%80%83%E6%B5%81%E7%A8%8B</link>
     <guid>https://https://lngyneric.github.io/My-notebook-github/Obsidian%E7%BB%93%E6%9E%84%E5%8C%96%E6%80%9D%E8%80%83%E6%B5%81%E7%A8%8B</guid>
     <description><![CDATA[ 🤖 Assistant 好的，这是您所要求的流程文档。 流程文档：使用Obsidian协助结构化思考 1. ]]></description>
-    <pubDate>Wed, 17 Sep 2025 05:54:28 GMT</pubDate>
+    <pubDate>Thu, 18 Sep 2025 01:19:44 GMT</pubDate>
   </item><item>
     <title>PDF Export</title>
     <link>https://https://lngyneric.github.io/My-notebook-github/PDF-Export</link>
     <guid>https://https://lngyneric.github.io/My-notebook-github/PDF-Export</guid>
     <description><![CDATA[  PDF Export body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; } #contentToPrint { border: 1px solid #ddd; padding: 20px; border-radius: 5px; background-color: #f9f9f9; } #exportBtn { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; curs... ]]></description>
-    <pubDate>Wed, 17 Sep 2025 03:33:08 GMT</pubDate>
+    <pubDate>Thu, 18 Sep 2025 01:19:44 GMT</pubDate>
+  </item><item>
+    <title>网页PDF导出保留元素</title>
+    <link>https://https://lngyneric.github.io/My-notebook-github/%E7%BD%91%E9%A1%B5PDF%E5%AF%BC%E5%87%BA%E4%BF%9D%E7%95%99%E5%85%83%E7%B4%A0</link>
+    <guid>https://https://lngyneric.github.io/My-notebook-github/%E7%BD%91%E9%A1%B5PDF%E5%AF%BC%E5%87%BA%E4%BF%9D%E7%95%99%E5%85%83%E7%B4%A0</guid>
+    <description><![CDATA[ 🤖 Assistant I’ll create an HTML file with PDF export functionality that preserves the webpage elements. ]]></description>
+    <pubDate>Thu, 18 Sep 2025 01:19:44 GMT</pubDate>
   </item><item>
     <title>Thread by @mishushakov</title>
     <link>https://https://lngyneric.github.io/My-notebook-github/Clippings/Thread-by-@mishushakov-1</link>
@@ -59,12 +65,6 @@
     <guid>https://https://lngyneric.github.io/My-notebook-github/Temp/Abcjs-music</guid>
     <description><![CDATA[ X:1 T:The Legacy Jig M:6/8 L:1/8 R:jig K:G GFG BAB | gfg gab | GFG BAB | d2A AFD | GFG BAB | gfg gab | age edB |1 dBA AFD :|2 dBA ABd |: efe edB | dBA ABd | efe edB | gdB ABd | efe edB | d2d def | gfe edB |1 dBA ABd :|2 dBA AFD |]. ]]></description>
     <pubDate>Tue, 16 Sep 2025 09:26:15 GMT</pubDate>
-  </item><item>
-    <title>Shock</title>
-    <link>https://https://lngyneric.github.io/My-notebook-github/Shock</link>
-    <guid>https://https://lngyneric.github.io/My-notebook-github/Shock</guid>
-    <description><![CDATA[ sequenceDiagram Alice-&gt;&gt;+John: Hello John, how are you? Alice-&gt;&gt;+John: John, can you hear me? John--&gt;&gt;-Alice: Hi Alice, I can hear you! John--&gt;&gt;-Alice: I feel great! Bibliography { “bibliography”: “raw.githubusercontent.com/timlrx/rehype-citation/main/test/references-data.bib... ]]></description>
-    <pubDate>Tue, 16 Sep 2025 09:13:01 GMT</pubDate>
   </item>
     </channel>
   </rss>

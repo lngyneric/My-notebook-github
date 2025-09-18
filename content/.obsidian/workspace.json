@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PDF Export.md",
+                "file": "examples/abc-music-examples.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PDF Export"
+              "title": "abc-music-examples"
             }
           }
         ]
@@ -182,9 +182,12 @@
   },
   "active": "67a731f24216f2f1",
   "lastOpenFiles": [
+    "examples/abc-music-examples.md.baiduyun.uploading.cfg",
+    "PDF Export.md",
+    "examples/abc-music-examples.md",
+    "examples",
     "pic_note0917.md",
     "upload.md",
-    "PDF Export.md",
     "upload_1.md",
     "upload_2.md.baiduyun.uploading.cfg",
     "upload_1.md.baiduyun.uploading.cfg",
@@ -214,10 +217,7 @@
     "网页PDF导出保留元素.md",
     "Temp/~$尿液基础培训（Ver4）--曹文静.pptx",
     "Temp/test-upload-file.md",
-    "网页PDF导出保留元素.md.baiduyun.uploading.cfg",
     "Temp/Abcjs music.md",
-    "Temp/猎魔人套装全集（1-7）.md",
-    "Temp/2025-09-16-0916.md",
     "未命名 1.canvas",
     "Clippings/附件/Image 2.webp",
     "Clippings/附件/Image 1.webp",
