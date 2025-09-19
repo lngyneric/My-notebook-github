@@ -72,7 +72,7 @@ const config: QuartzConfig = {
       Plugin.RoamFlavoredMarkdown(),
       Plugin.OxHugoFlavouredMarkdown(),
       Plugin.TableOfContents(),
-      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
+      Plugin.CrawlLinks({ markdownLinkResolution: "relative" }),
       Plugin.Citations({
         bibliographyFile: "./content/bibliography.bib",
         suppressBibliography: false,

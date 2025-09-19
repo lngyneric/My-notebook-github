@@ -13,15 +13,29 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/免疫基础培训20250915/免疫基础培训.md",
+                "file": "Temp/test-upload-file.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "免疫基础培训"
+              "title": "test-upload-file"
+            }
+          },
+          {
+            "id": "5bd189eff2cd50dd",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Course/Course.base",
+                "viewName": "表格"
+              },
+              "icon": "lucide-table",
+              "title": "Course"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -180,27 +194,38 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7db8bd77ff39f41f",
+  "active": "5bd189eff2cd50dd",
   "lastOpenFiles": [
+    "新晋管理层及大客户经理适用的加强培训（小灶培训）.md.baiduyun.uploading.cfg",
+    "Why Time Management Is Important for Kids.pdf",
+    "README.md",
+    "Shock.md",
+    "网页PDF导出保留元素.md",
+    "Course/免疫基础培训20250915/免疫基础培训.md",
+    "新晋管理层及大客户经理适用的加强培训（小灶培训）.md",
+    "新晋管理层培训.md.baiduyun.uploading.cfg",
+    "Temp/未命名.md",
+    "Temp/未命名.md.baiduyun.uploading.cfg",
+    "Temp/test-upload-file.md",
+    "Temp/Abcjs music.md",
+    "Temp/猎魔人套装全集（1-7）.md",
+    "Temp/未命名.base",
+    "Temp/~$尿液基础培训（Ver4）--曹文静.pptx",
+    "Temp/2025-09-16-0916.md",
+    "Temp/2025-09-16 Math.md",
+    "Clippings/附件/Image.jpg",
+    "Clippings/附件/Image 1.webp",
+    "Clippings/附件/Image 2.webp",
+    "Clippings/附件/Image.webp",
+    "Course/Course.base",
     "Course/免疫基础培训20250915/images/0ec6be620b0d56dd6183ee1ade0bbc5cc304343497f6b6e6919afd3f268c8ecf.jpg",
     "Course/MY-HISCL 免疫项目开单建议20250915/HISCL 免疫项目开单建议.md.baiduyun.uploading.cfg",
-    "网页PDF导出保留元素.md",
-    "Why Time Management Is Important for Kids.pdf",
-    "Course/免疫基础培训20250915/免疫基础培训.md",
-    "Course/Course.base",
     "Course/MY-HISCL 免疫项目开单建议20250915/HISCL 免疫项目开单建议.md",
     "Course/MY-HISCL 免疫项目开单建议20250915/未命名.base",
     "Course/尿液基础培训（Ver4）/images/未命名 1.base",
-    "Course/血液检验基础自学课件20250916/血液检验基础自学课件.md.baiduyun.uploading.cfg",
-    "Course/血液分析特殊项目、CRP、SAA开单建议-20250916/血液分析特殊项目开单建议.md.baiduyun.uploading.cfg",
-    "Course/尿液基础培训（Ver4）/尿液检验临床基础.md.baiduyun.uploading.cfg",
-    "Course/免疫基础培训20250915/免疫基础培训.md.baiduyun.uploading.cfg",
     "Course/血液分析特殊项目、CRP、SAA开单建议-20250916/血液分析特殊项目开单建议.md",
     "Course/尿液基础培训（Ver4）/尿液检验临床基础.md",
     "Course/血液检验基础自学课件20250916/血液检验基础自学课件.md",
-    "Course/尿液基础培训（Ver4）/images/未命名 2.base.baiduyun.uploading.cfg",
-    "Shock.md",
-    "README.md",
     "QUICK_SETUP_GUIDE.md",
     "PDF Export.md",
     "index.md",
@@ -211,23 +236,11 @@
     "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/images/fb4e96ccda7a7c142997c1b2f7e1d994c2d98f76bf462c6ea8cdb1f5a48685ec.jpg",
     "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/images/f348f562aead4b3b4884129e57507c99548e6e2b57859cdee00a6f36f32dc7aa.jpg",
     "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/images/f3d6729d27cc62791d5c35f060857485758152fb15007a0efb331635382c6406.jpg",
-    "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/images/ef3b98b52c28eef6f71406e7478d003e2919bc4d3a7fb18f665ead8d940a27b8.jpg",
-    "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/images/e80ec35feebd4dd1375f945ae0495d265556ec750b92e0367200135583e84678.jpg",
-    "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/images/e352a30da93fa2ff583f8d5cdd88e49a6d7897ffc1c83a0d6b711c73d5cfcba4.jpg",
-    "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/images/e39a44dc79186c66c032c9ba11b873a1050de843862f9c60bd22f500004983f5.jpg",
-    "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/images/d6ea5565fc707dab696d3192f40c33fa874f37546a5352514c4a24f3a267ecb3.jpg",
     "Course/血液分析特殊项目、CRP、SAA开单建议-20250916.pptx-5c5dcb69-39f1-4521-8a80-8ae6f724e3ab/full.md",
     "Course/尿液基础培训（Ver4）--曹文静.pptx-7b8ea945-1940-4ee4-b6f4-47a96030e7eb/full.md",
     "Course/MY-HISCL 免疫项目开单建议20250915(2).pptx-e041c386-1c1e-4019-a16b-18887a8b2c27/full.md",
     "Course/血液检验基础自学课件20250916.pptx-b7aaa111-614c-4a4d-8fa3-324fdfe64aaa/full.md",
     "CODE_OF_CONDUCT.md",
-    "Temp/Abcjs music.md",
-    "examples/abc-music-examples.md",
-    "pic_note0917.md",
-    "upload.md",
-    "upload_1.md",
-    "note439.md",
-    "note439_1.md",
     "未命名 1.canvas",
     "未命名.canvas"
   ]
