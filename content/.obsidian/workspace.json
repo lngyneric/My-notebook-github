@@ -49,31 +49,27 @@
             }
           },
           {
-            "id": "16370e3977a337f2",
+            "id": "caa5365c4c0d4511",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Shock_1.md",
-                "mode": "preview",
-                "source": false
+                "file": "Why Time Management Is Important for Kids.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Shock_1"
+              "icon": "lucide-file-text",
+              "title": "Why Time Management Is Important for Kids"
             }
           },
           {
-            "id": "e11347b7ca24b7be",
+            "id": "bb3bb5d1389759bc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "release-notes",
               "state": {
-                "file": "工具.md",
-                "mode": "source",
-                "source": false
+                "currentVersion": "1.9.14"
               },
-              "icon": "lucide-file",
-              "title": "工具"
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.9.14"
             }
           },
           {
@@ -252,15 +248,37 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f158ef6401068960",
+  "active": "bb3bb5d1389759bc",
   "lastOpenFiles": [
-    "工具.md.baiduyun.uploading.cfg",
-    "Shock_1.md",
-    "工具.md",
-    "新员工强化培训流程.md",
-    "新员工强化培训流程.md.baiduyun.uploading.cfg",
     "Shock.md",
-    "Course/入职管理与小灶培训流程整理.md",
+    "Shock_1.md",
+    "README.md",
+    "寒冬坚守：核心留任薪酬绩效化.md.baiduyun.uploading.cfg",
+    "QUICK_SETUP_GUIDE.md",
+    "Obsidian结构化思考流程.md",
+    "Quartz_v4.md",
+    "PDF_Export.md",
+    "PDF Export.md",
+    "Obsidian结构化思考流程_1.md",
+    "index.md",
+    "CODE_OF_CONDUCT.md",
+    "GitHub_Pages_é¨ç½²æå.md",
+    "GitHub_Pages_å¿«éè®¾ç½®æå.md",
+    "English_t2149_1.md",
+    "Citizen_Code_of_Conduct.md",
+    "GITHUB_PAGES_DEPLOYMENT.md",
+    "English_t2149.md",
+    "新晋管理层及大客户经理适用的加强培训（小灶培训）_1.md",
+    "新笔记有点可怕.md",
+    "网页PDF导出保留元素_1.md",
+    "图片PIC1551_1.md",
+    "网页PDF导出保留元素.md",
+    "图片PIC1551.md",
+    "图片上传1234.md",
+    "寒冬坚守：核心留任薪酬绩效化.md",
+    "工具.md",
+    "工具.md.baiduyun.uploading.cfg",
+    "新员工强化培训流程.md.baiduyun.uploading.cfg",
     "网页PDF导出保留元素_1.md.baiduyun.uploading.cfg",
     "新笔记有点可怕.md.baiduyun.uploading.cfg",
     "新晋管理层及大客户经理适用的加强培训（小灶培训）_1.md.baiduyun.uploading.cfg",
@@ -268,28 +286,6 @@
     "图片PIC1551_1.md.baiduyun.uploading.cfg",
     "图片PIC1551.md.baiduyun.uploading.cfg",
     "Welcome_to_My_Digital_Garden.md.baiduyun.uploading.cfg",
-    "Shock_1.md.baiduyun.uploading.cfg",
-    "Quartz_v4.md.baiduyun.uploading.cfg",
-    "Course/新培训全流程.md",
-    "新晋管理层及大客户经理适用的加强培训（小灶培训）_1.md",
-    "新晋管理层培训流程文档.md",
-    "新晋管理层及大客户经理适用的加强培训（小灶培训）.md",
-    "新笔记有点可怕.md",
-    "网页PDF导出保留元素_1.md",
-    "图片上传1234.md",
-    "图片PIC1551_1.md",
-    "图片PIC1551.md",
-    "Welcome_to_My_Digital_Garden.md",
-    "Quartz_v4.md",
-    "PDF_Export.md",
-    "Obsidian结构化思考流程_1.md",
-    "GitHub_Pages_é¨ç½²æå.md",
-    "GitHub_Pages_å¿«éè®¾ç½®æå.md",
-    "English_t2149_1.md",
-    "English_t2149.md",
-    "Citizen_Code_of_Conduct.md",
-    "Course/新培训流程分3段.md",
-    "README.md",
     "Clippings/附件/Image.jpg",
     "Clippings/附件/Image 1.webp",
     "Clippings/附件/Image 2.webp",
