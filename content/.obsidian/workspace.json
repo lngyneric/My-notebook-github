@@ -11,14 +11,10 @@
             "id": "7db8bd77ff39f41f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Temp/CODE_OF_CONDUCT.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "CODE_OF_CONDUCT"
+              "title": "新标签页"
             }
           }
         ]
@@ -196,7 +192,7 @@
       "obsidian-livesync:Show Customization sync": false
     }
   },
-  "active": "8bc9cb132e2fea6a",
+  "active": "f158ef6401068960",
   "lastOpenFiles": [
     "Temp/test-upload-file.md",
     "Temp/CODE_OF_CONDUCT.md",
