@@ -11,10 +11,14 @@
             "id": "7db8bd77ff39f41f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "知识图谱嵌入技术全解析：原理、调优与业务价值"
             }
           }
         ]
@@ -138,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Temp/test-upload-file.md",
+                "file": "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "test-upload-file 的大纲"
+              "title": "知识图谱嵌入技术全解析：原理、调优与业务价值 的大纲"
             }
           },
           {
@@ -192,8 +196,9 @@
       "obsidian-livesync:Show Customization sync": false
     }
   },
-  "active": "f158ef6401068960",
+  "active": "7db8bd77ff39f41f",
   "lastOpenFiles": [
+    "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
     "Temp/CODE_OF_CONDUCT.md",
     "Temp/test-upload-file.md",
     "Temp/未命名.md",
@@ -229,7 +234,6 @@
     "Course/新培训全流程.md",
     "Course/新培训流程分3段.md",
     "未命名 1.md",
-    "未命名.md",
     "新晋管理层及大客户经理适用的加强培训（小灶培训）.md",
     "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
     "新员工强化培训流程.md",
