@@ -142,13 +142,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "知识图谱嵌入技术全解析：原理、调优与业务价值 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -189,11 +188,7 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-livesync:P2P Replicator": false,
-      "obsidian-livesync:Show Log": false,
-      "obsidian-livesync:Replicate": false,
-      "obsidian-livesync:Show Customization sync": false
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "7db8bd77ff39f41f",
