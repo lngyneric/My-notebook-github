@@ -3,7 +3,7 @@ title: "WeKnora/README_CN.md at main · Tencent/WeKnora"
 source: "https://github.com/Tencent/WeKnora/blob/main/README_CN.md"
 author:
   - "[[lyingbug]]"
-published:
+published: 2025-09-17
 date: 2025-09-17
 created: 2025-09-17
 description:
