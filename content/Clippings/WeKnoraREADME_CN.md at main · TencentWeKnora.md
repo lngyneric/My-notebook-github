@@ -4,6 +4,7 @@ source: "https://github.com/Tencent/WeKnora/blob/main/README_CN.md"
 author:
   - "[[lyingbug]]"
 published:
+date: 2025-09-17
 created: 2025-09-17
 description:
 tags:

@@ -25,31 +25,18 @@
             "id": "5bd189eff2cd50dd",
             "type": "leaf",
             "state": {
-              "type": "bases",
-              "state": {
-                "file": "Course/Course.base",
-                "viewName": "表格"
-              },
-              "icon": "lucide-table",
-              "title": "Course"
-            }
-          },
-          {
-            "id": "71cf183381d2fb0d",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/入职管理与小灶培训流程整理.md",
+                "file": "QUICK_SETUP_GUIDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "入职管理与小灶培训流程整理"
+              "title": "QUICK_SETUP_GUIDE"
             }
           },
           {
-            "id": "caa5365c4c0d4511",
+            "id": "4538e1a0dda2ca1d",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -59,121 +46,9 @@
               "icon": "lucide-file-text",
               "title": "Why Time Management Is Important for Kids"
             }
-          },
-          {
-            "id": "bb3bb5d1389759bc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Clippings/‍​‬‍​﻿﻿‍​​​﻿‬​​‍‍‍​⁠‌​​‍​‍​⁠‬‍​​​​‌​​‌‌​‍​​​⁠​​​​⁠2.5 精选：网站和企业专栏 - 飞书云文档.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "‍​‬‍​﻿﻿‍​​​﻿‬​​‍‍‍​⁠‌​​‍​‍​⁠‬‍​​​​‌​​‌‌​‍​​​⁠​​​​⁠2.5 精选：网站和企业专栏 - 飞书云文档"
-            }
-          },
-          {
-            "id": "1213c929c21d7dca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Clippings/好用不贵-AI平替方案.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "好用不贵-AI平替方案"
-            }
-          },
-          {
-            "id": "9d0cc152dd56cc94",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CODE_OF_CONDUCT.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "CODE_OF_CONDUCT"
-            }
-          },
-          {
-            "id": "7f8352a89b0b9d44",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "未命名.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "未命名"
-            }
-          },
-          {
-            "id": "376f0b7bb6e655e2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "未命名 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "未命名 1"
-            }
-          },
-          {
-            "id": "7cd1d0694eaf6160",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "知识图谱嵌入技术全解析：原理、调优与业务价值"
-            }
-          },
-          {
-            "id": "7c317e4b25e06c83",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Course/入职管理与小灶培训流程整理.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "入职管理与小灶培训流程整理"
-            }
-          },
-          {
-            "id": "0ecf070408842d49",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "content/Course/新培训流程分3段.md",
-                "bFile": "content/Course/新培训流程分3段.md",
-                "aRef": ""
-              },
-              "icon": "lucide-ghost",
-              "title": "split-diff-view"
-            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -309,8 +184,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -318,8 +193,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 448.5,
-    "collapsed": true
+    "width": 448.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -330,49 +204,47 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
-      "obsidian-git:Open Git source control": false,
-      "personal-assistant:Obsidian Assistant": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8bc9cb132e2fea6a",
+  "active": "4538e1a0dda2ca1d",
   "lastOpenFiles": [
     "知识图谱嵌入技术全解析：原理、调优与业务价值.md.baiduyun.uploading.cfg",
-    "未命名 1.md",
-    "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
-    "未命名.md",
-    "新晋管理层及大客户经理适用的加强培训（小灶培训）.md",
-    "新员工强化培训流程.md",
-    "GITHUB_PAGES_DEPLOYMENT.md",
-    "index.md",
-    "Obsidian结构化思考流程.md",
-    "Shock.md",
-    "Why Time Management Is Important for Kids.pdf",
+    "未命名.md.baiduyun.uploading.cfg",
+    "未命名 1.md.baiduyun.uploading.cfg",
     "商业研究多智能体.md",
     "网页PDF导出保留元素.md",
-    "未命名 1.md.baiduyun.uploading.cfg",
-    "未命名.md.baiduyun.uploading.cfg",
-    "CODE_OF_CONDUCT.md",
-    "Clippings/Qoder with OpenSpec CLI.md",
-    "商业研究多智能体.md.baiduyun.uploading.cfg",
-    "Clippings/好用不贵-AI平替方案.md.baiduyun.uploading.cfg",
-    "Clippings/好用不贵-AI平替方案.md",
-    "Clippings/Qoder with OpenSpec CLI.md.baiduyun.uploading.cfg",
-    "Clippings/未命名.md",
-    "Clippings/未命名.md.baiduyun.uploading.cfg",
-    "Clippings/IMA知识库入门.md",
-    "Course/入职管理与小灶培训流程整理.md",
-    "Course/新培训流程分3段.md.baiduyun.uploading.cfg",
+    "Course/Course.base",
+    "Course/新培训全流程.md",
     "Course/新培训流程分3段.md",
-    "QUICK_SETUP_GUIDE.md",
-    "Welcome_to_My_Digital_Garden.md",
-    "工具.md",
-    "Clippings/知识图谱技术汇总.md",
-    "寒冬坚守：核心留任薪酬绩效化.md",
+    "未命名 1.md",
+    "未命名.md",
+    "新晋管理层及大客户经理适用的加强培训（小灶培训）.md",
+    "新员工强化培训流程.md.baiduyun.uploading.cfg",
+    "工具.md.baiduyun.uploading.cfg",
+    "商业研究多智能体.md.baiduyun.uploading.cfg",
+    "Course/新培训流程分3段.md.baiduyun.uploading.cfg",
+    "Course/新培训全流程.md.baiduyun.uploading.cfg",
+    "Course/入职管理与小灶培训流程整理.md.baiduyun.uploading.cfg",
     "Clippings/知识图谱技术汇总.md.baiduyun.uploading.cfg",
-    "Clippings/IMA知识库入门.md.baiduyun.uploading.cfg",
+    "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
+    "新员工强化培训流程.md",
+    "工具.md",
+    "Course/入职管理与小灶培训流程整理.md",
+    "Clippings/知识图谱技术汇总.md",
+    "Clippings/好用不贵-AI平替方案.md",
     "Clippings/‍​‬‍​﻿﻿‍​​​﻿‬​​‍‍‍​⁠‌​​‍​‍​⁠‬‍​​​​‌​​‌‌​‍​​​⁠​​​​⁠2.5 精选：网站和企业专栏 - 飞书云文档.md",
-    "Shock_1.md",
+    "Clippings/Qoder with OpenSpec CLI.md",
+    "Clippings/IMA知识库入门.md",
+    "PDF Export.md",
+    "知识图谱嵌入技术.md",
+    "conflict-files-obsidian-git.md",
+    "大模型训练范式.md",
+    "QUICK_SETUP_GUIDE.md",
+    "README.md",
+    "Shock.md",
+    "Course/免疫基础培训20250915/免疫基础培训.md",
+    "Temp/未命名.md",
     "Clippings/附件/Image.jpg",
     "Clippings/附件/Image 1.webp",
     "Clippings/附件/Image 2.webp",
