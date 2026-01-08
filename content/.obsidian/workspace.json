@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
-                "followCursor": false,
+                "file": "AI-Math-Assistant Tool Calling.md",
+                "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验 的大纲"
+              "title": "AI-Math-Assistant Tool Calling 的大纲"
             }
           },
           {
@@ -218,26 +218,26 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "bc0f493c695d75c8",
+  "active": "f158ef6401068960",
   "lastOpenFiles": [
+    "Build Multi-Agent Chatbot with AG2 AutoGen for Healthcare.md",
+    "AI-Math-Assistant Tool Calling.md",
+    "AI_Resources.base",
+    "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
+    "多模态RAG与知识图谱构建技术全解析.md",
+    "多模态RAG与知识图谱构建技术全解析.canvas",
     "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
+    "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
     "pydanticai-101.md",
     "SKILL.md",
-    "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
     "Obsidian Bases.md",
     "JSON Canvas.md",
     "Agentic Graph-RAG Over Social-Network Knowledge Graphs.md",
     "Build Reasoning and Acting AI Agents with LangGraph.md",
     "Implement Workflow Patterns with LangGraph.md",
-    "AI-Math-Assistant Tool Calling.md",
-    "Build Multi-Agent Chatbot with AG2 AutoGen for Healthcare.md",
     "index.md",
-    "多模态RAG与知识图谱构建技术全解析.canvas",
-    "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
     "Dec AI信息共享.md",
-    "AI_Resources.base",
     "index.canvas",
-    "多模态RAG与知识图谱构建技术全解析.md",
     "assets/结构化_AI_掌控.pdf",
     "Github Key.md",
     "bibliography.bib",

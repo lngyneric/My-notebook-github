@@ -1,75 +1,73 @@
-<p style="text-align:center">
-    <a href="https://skills.network" target="_blank">
-    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/assets/logos/SN_web_lightmode.png" width="200" alt="Skills Network Logo"  />
-    </a>
-</p>
+---
+title: 构建基于 LangChain 工具调用的 AI 数学助手
+tags: [LangChain, AI, 教程]
+date: 2026-01-08
+---
+
+# 构建基于 LangChain 工具调用的 AI 数学助手
+
+> [!INFO] 预计所需时间：**45** 分钟
+
+在本实验中，你将学习如何使用 LangChain 构建一个简单的智能体（Agent），使 AI 能够执行特定任务。你将创建一个数学工具箱，允许 AI 智能体通过自然语言交互执行基本的算术运算。
+
+通过本实验，你将构建一个能够理解并解决诸如“25 加上 15，然后乘以 2”这类数学查询的智能体，它能将复杂的操作分解为简单的步骤。
+
+# 目录
+
+1. [[#Objectives|目标]]
+2. [[#Setup|设置]]
+3. [[#Installing required libraries|安装所需库]]
+4. [[#Loading the LLM: Choosing the right language model|加载 LLM：选择合适的语言模型]]
+5. [[#Function|函数]]
+   - 5.1 [[#Tool|工具]]
+   - 5.2 [[#initialize_agent|initialize_agent]]
+6. [[#Relationship between agent and LLM|智能体与 LLM 的关系]]
+7. [[#Key parameters of initialize_agent|initialize_agent 的关键参数]]
+8. [[#Orchestrating multiple tools with an agent: Mathematical toolkit|使用智能体编排多个工具：数学工具箱]]
+   - 8.1 [[#Subtraction tool|减法工具]]
+9. [[#Building the agent|构建智能体]]
+   - 9.1 [[#Exploring LangChain's built-in tools|探索 LangChain 的内置工具]]
+   - 9.2 [[#Popular built-in tools|常用的内置工具]]
+   - 9.3 [[#Example: Using the Wikipedia tool|示例：使用 Wikipedia 工具]]
+10. [[#Exercise: Create a power tool to calculate exponents|练习：创建一个计算指数的乘方工具]]
+    - 10.1 [[#Objective|目标]]
+    - 10.2 [[#Step 1: Create the power tool|步骤 1：创建乘方工具]]
+    - 10.3 [[#Step 2: Create an agent with the power tool|步骤 2：使用乘方工具创建智能体]]
+    - 10.4 [[#Step 3: Test the agent|步骤 3：测试智能体]]
+11. [[#Authors|作者]]
 
 
-# **Build an AI Math Assistant with LangChain Tool Calling**
+## 目标
 
-Estimated time needed: **45** minutes
+完成本实验后，你将能够：
 
-In this lab, you will learn how to build a simple agent with LangChain, enabling AI agents to perform specific tasks. You'll create a mathematical toolkit that allows an AI agent to perform basic arithmetic operations through natural language interaction. 
-
-Through this lab, you'll build an agent that can understand and solve mathematical queries like "add 25 and 15, then multiply by 2" by breaking down complex operations into simple steps.
-
-
-
-# Table of Contents
-
-1. [Objectives](#Objectives)
-2. [Setup](#Setup)
-3. [Installing required libraries](#Installing-required-libraries)
-4. [Loading the LLM: Choosing the right language model](#Loading-the-LLM:-Choosing-the-right-language-model)
-5. [Function](#Function)
-   - 5.1 [Tool](#Tool)
-   - 5.2 [initialize_agent](#initialize_agent)
-6. [Relationship between agent and LLM](#Relationship-between-agent-and-LLM)
-7. [Key parameters of initialize_agent](#Key-parameters-of-initialize_agent)
-8. [Orchestrating multiple tools with an agent: Mathematical toolkit](#Orchestrating-multiple-tools-with-an-agent:-Mathematical-toolkit)
-   - 8.1 [Subtraction tool](#Subtraction-tool)
-9. [Building the agent](#Building-the-agent)
-   - 9.1 [Exploring LangChain's built-in tools](#Exploring-LangChain's-built-in-tools)
-   - 9.2 [Popular built-in tools](#Popular-built-in-tools)
-   - 9.3 [Example: Using the Wikipedia tool](#Example:-Using-the-Wikipedia-tool)
-10. [Exercise: Create a power tool to calculate exponents](#Exercise:-Create-a-power-tool-to-calculate-exponents)
-    - 10.1 [Objective](#Objective)
-    - 10.2 [Step 1: Create the power tool](#Step-1:-Create-the-power-tool)
-    - 10.3 [Step 2: Create an agent with the power tool](#Step-2:-Create-an-agent-with-the-power-tool)
-    - 10.4 [Step 3: Test the agent](#Step-3:-Test-the-agent)
-11. [Authors](#authors)
-
-
-## Objectives
-
-After completing this lab, you will be able to:
-
-- Explain the concept of tools in LangChain
-- Create custom tools for specific tasks
-- Build an AI agent that can use multiple tools
-- Debug and improve tool functionality
-- Test tool implementations with various inputs
+- 解释 LangChain 中工具（Tools）的概念
+- 创建用于特定任务的自定义工具
+- 构建一个可以使用多个工具的 AI 智能体
+- 调试并改进工具的功能
+- 使用各种输入测试工具的实现
 
 
 ----
 
 
-## Setup
+## 设置
 
 
 
-For this lab, you will use the following libraries:
+在本实验中，你将使用以下库：
 
-- **`langchain`**: For creating AI agents and tools
-- **`langchain.chat_models`**: For accessing language models
-- **`langchain.agents`**: For creating and managing AI agents
+- **`langchain`**: 用于创建 AI 智能体和工具
+- **`langchain.chat_models`**: 用于访问语言模型
+- **`langchain.agents`**: 用于创建和管理 AI 智能体
 
 ---
 
 
-## Installing required libraries
+## 安装所需库
 
-The following required libraries are __not__ pre-installed in the Skills Network Labs environment. __You will need to run the following cell__ to install them:
+> [!WARNING] 警告
+> 以下所需的库**未**预安装在 Skills Network Labs 环境中。**你需要运行以下单元格**来安装它们：
 
 
 
@@ -82,7 +80,7 @@ The following required libraries are __not__ pre-installed in the Skills Network
 %pip install langchain-openai==0.3.16 | tail -n 1
 ```
 
-## Import the required libraries
+## 导入所需库
 
 
 
@@ -92,26 +90,26 @@ from langchain.agents import AgentType
 import re
 ```
 
-## Loading the LLM: Choosing the right language model
+## 加载 LLM：选择合适的语言模型
 
-In this example, IBM’s `ChatWatsonx`will be used to load a language model (LLM) for interacting with tools. IBM’s models, like Granite 3.2 and Granite 3.3, are highly versatile and excel at advanced reasoning tasks.
+在这个例子中，我们将使用 IBM 的 `ChatWatsonx` 来加载一个语言模型（LLM）以与工具进行交互。IBM 的模型（如 Granite 3.2 和 Granite 3.3）具有高度的多功能性，擅长高级推理任务。
 
-That said, other providers offer LLMs with different strengths:
+话虽如此，其他提供商也提供具有不同优势的 LLM：
 
-- **OpenAI (GPT-4/GPT-3.5)**: Best for versatility and advanced reasoning.
-- **Facebook (Meta, LLaMA)**: Open-access, highly customizable for specialized use cases.
-- **IBM watsonx Granite**: Ideal for enterprise applications with seamless integration.
-- **Anthropic (Claude)**: Focused on safety, reliability, and ethical AI.
-- **Cohere**: Affordable and efficient for lightweight, task-specific models.
+- **OpenAI (GPT-4/GPT-3.5)**: 最适合多功能性和高级推理。
+- **Facebook (Meta, LLaMA)**: 开放访问，高度可定制，适用于专门的用例。
+- **IBM watsonx Granite**: 极其适合企业应用，具有无缝集成能力。
+- **Anthropic (Claude)**: 专注于安全性、可靠性和合乎道德的 AI。
+- **Cohere**: 价格实惠且高效，适用于轻量级、特定任务的模型。
 
 ---
 
-For this project, you'll use `ChatWatsonx` because:
-- It offers a simple API for quick setup.
-- It supports advanced configurations like:
-  - **`temperature`**: Adjusting randomness of responses.
-  - **`max_tokens`**: Limiting the length of responses.
-- IBM’s models are widely regarded as state-of-the-art for general-purpose reasoning and conversation.
+对于本项目，你将使用 `ChatWatsonx`，因为：
+- 它提供了一个简单的 API 用于快速设置。
+- 它支持高级配置，如：
+  - **`temperature`**: 调整响应的随机性。
+  - **`max_tokens`**: 限制响应的长度。
+- IBM 的模型被广泛认为是通用推理和对话的最先进模型。
 
 
 
@@ -123,7 +121,7 @@ llm = ChatWatsonx(
 )
 ```
 
-Let's generate a simple response:
+让我们生成一个简单的响应：
 
 
 
@@ -132,16 +130,19 @@ response = llm.invoke("What is tool calling in langchain?")
 print("\nResponse Content: ", response.content)
 ```
 
-## API Disclaimer
-This lab uses LLMs provided by **IBM watsonx.ai** and **OpenAI**. This environment has been configured to allow LLM use without API keys so you can prompt them for **free (with limitations)**. With that in mind, if you wish to run this notebook **locally outside** of Skills Network's JupyterLab environment, you will have to **configure your own API keys**. Please note that using your own API keys means that you will incur personal charges. 
+## API 免责声明
+
+> [!IMPORTANT] 重要提示
+> 本实验使用 **IBM watsonx.ai** 和 **OpenAI** 提供的 LLM。此环境已配置为允许在没有 API 密钥的情况下使用 LLM，因此你可以**免费（有限制）**地提示它们。考虑到这一点，如果你希望在 Skills Network 的 JupyterLab 环境**之外本地运行**此笔记本，你必须**配置你自己的 API 密钥**。请注意，使用你自己的 API 密钥意味着你将承担个人费用。
 
 
-### Running Locally
+### 本地运行
 
-If you are running this lab locally, you will need to configure your own API keys. This lab uses `ChatOpenAI` and `ChatWatsonx` modules from `langchain`. Both configurations are shown below with instructions. **Replace all instances** of both modules with the completed modules below throughout the lab. **DO NOT** run the cell below if you aren't running locally, it will causes errors.
+如果你在本地运行此实验，你需要配置你自己的 API 密钥。本实验使用 `langchain` 中的 `ChatOpenAI` 和 `ChatWatsonx` 模块。下面显示了这两种配置及其说明。请在整个实验中用下面完整的模块**替换所有实例**。如果你不是在本地运行，**请勿**运行下面的单元格，这会导致错误。
 
-# IGNORE IF YOU ARE NOT RUNNING LOCALLY
+> [!CAUTION] 如果你不是在本地运行，请忽略此部分
 
+```python
 from langchain_openai import ChatOpenAI
 from langchain_ibm import ChatWatsonx
 
@@ -156,25 +157,25 @@ watsonx_llm = ChatWatsonx(
     project_id="your project id associated with the API key",
     api_key="your watsonx.ai api key here",
 )
+```
 
 
 
 
+## 函数
 
-## Function
+在 AI 中，**工具（Tool）**会调用一个基本的**函数（Function）**或能力，可以被调用来执行特定任务。把它想象成工具箱里的单个物品：就像锤子、螺丝刀或扳手一样，AI 工具箱里装满了旨在解决问题或完成工作的特定函数。
 
-In AI, a **tool** will call a basic **function** or capability that can be called on to perform a specific task. Think of it like a single item in a toolbox: just like a hammer, screwdriver, or wrench, an AI toolbox is full of specific functions designed to solve problems or get things done.
+在构建用于工具调用的工具时，有几个关键原则需要牢记：
 
-When building tools for tool calling, there are a few key principles to keep in mind:
+1. **明确的目的**：确保工具具有定义明确的工作。
+2. **标准化的输入**：工具应接受可预测的、结构化格式的输入，以便于使用。
+3. **一致的输出**：始终以易于处理或与其他系统集成的格式返回结果。
+4. **全面的文档**：你的工具应包含清晰、简单的文档，解释它做什么、如何使用它以及任何怪癖或限制。
 
-1. **Clear purpose**: Make sure the tool has a well-defined job.
-2. **Standardized input**: The tool should accept input in a predictable, structured format so it’s easy to use.
-3. **Consistent output**: Always return results in a format that’s easy to process or integrate with other systems.
-4. **Comprehensive documentation**: Your tool should include clear, simple documentation that explains what it does, how to use it, and any quirks or limitations.
+请记住，文档不仅是为了给其他开发人员看，也是为了让语言模型（LLM）理解工具的目的以及如何有效地使用它。
 
-Remember, documentation isn’t just for other developers—it’s also for the language model (LLM) to understand the tool’s purpose and how to use it effectively.
-
-For this example, you’ll start with a simple tool to add numbers. It’ll check off most of the basic requirements, but one key limitation is that it doesn’t handle **basic error cases**, like ignoring non-numeric input. Improving error handling will make the tool much more robust and ready for real-world use.
+在这个例子中，你将从一个简单的数字相加工具开始。它将满足大多数基本要求，但一个关键限制是它不处理**基本错误情况**，比如忽略非数字输入。改进错误处理将使工具更加健壮，并为实际使用做好准备。
 
 
 
@@ -206,8 +207,8 @@ def add_numbers(inputs:str) -> dict:
     return {"result": result}
 ```
 
-Directly testing a tool allows you to pinpoint where the problem lies—whether it’s in the tool’s logic, input parsing, or output formatting.
-Here, you'll input the string `1 2` and get the sum.
+直接测试工具可以让你查明问题所在——无论是工具的逻辑、输入解析还是输出格式。
+在这里，你将输入字符串 `1 2` 并获得总和。
 
 
 
@@ -216,13 +217,13 @@ add_numbers("1 2")
 ```
 
 
-## Tool
-The `Tool` class in LangChain serves as a structured wrapper that converts regular Python functions into agent-compatible tools. Each tool needs three key components:
-1. A name that identifies the tool
-2. The function that performs the actual operation
-3. A description that helps the agent understand when to use the tool
+## 工具
+LangChain 中的 `Tool` 类作为一个结构化包装器，将常规 Python 函数转换为兼容智能体的工具。每个工具都需要三个关键组件：
+1. 一个标识工具的名称
+2. 执行实际操作的函数
+3. 一个帮助智能体理解何时使用该工具的描述
 
-Testing section improvement:
+测试部分改进：
 
 
 
@@ -238,25 +239,24 @@ add_tool=Tool(
 print("tool object",add_tool)
 ```
 
-Let's see the parameters of the object:
+让我们看看对象的参数：
 
 - **`name`** (*str*):
-  - A unique identifier for the tool.
-
-  - **Example**: `"AddTool"`
+  - 工具的唯一标识符。
+  - **示例**: `"AddTool"`
 
 - **`.invoke`** (*Callable*):
-  - The function that the tool wraps.
-  - **Example**: `add_numbers`
+  - 工具包装的函数。
+  - **示例**: `add_numbers`
 
 - **`description`** (*str*):
-  - A concise explanation of what the tool does.
-  - **Example**: `"Adds a list of numbers and returns the result."`
+  - 关于工具功能的简明解释。
+  - **示例**: `"Adds a list of numbers and returns the result."`
 
 
 
 
-These attributes allow you to inspect the tool object
+这些属性允许你检查工具对象
 
 
 
@@ -275,7 +275,7 @@ print(add_tool.invoke)
 
 ```
 
-You can call the tool's function via the ```add_tool``` object:
+你可以通过 ```add_tool``` 对象调用工具的函数：
 
 
 
@@ -285,26 +285,26 @@ test_input = "10 20 30 a b"
 print(add_tool.invoke(test_input))  # Example
 ```
 
-Testing the tool object ensures:
+测试工具对象可以确保：
 
-1. **The tool is correctly set up**:
-   - Metadata (`name`, `description`, etc.) is properly defined and aligns with its purpose.
-   - The function and schema (if applicable) are correctly configured.
+1. **工具设置正确**：
+   - 元数据（`name`, `description` 等）已正确定义并与其用途一致。
+   - 函数和模式（如适用）已正确配置。
 
-2. **The wrapped function behaves as expected**:
-   - The function performs the intended task correctly.
-   - It handles edge cases and invalid inputs gracefully.
+2. **被包装的函数表现符合预期**：
+   - 函数正确执行预期的任务。
+   - 它优雅地处理边缘情况和无效输入。
 
-3. **The tool integrates smoothly with agents**:
-   - The tool's output aligns with what the agent expects.
-   - There are no compatibility issues when the agent calls the tool.
+3. **工具与智能体顺利集成**：
+   - 工具的输出与智能体的预期一致。
+   - 智能体调用工具时没有兼容性问题。
 
 
-### `@tool` operator
+### `@tool` 操作符
 
-Now you know how to create a tool with a `Tool` class (using Tool Interface), there's actually another way that you can create a tool using `@tool` decorator. The recommended way to create tools is using the `@tool` decorator. This decorator is designed to simplify the process of tool creation and should be used in most cases. After defining a function, you can decorate it with `@tool` to create a tool that implements the Tool Interface.
+现在你知道了如何使用 `Tool` 类（使用 Tool 接口）创建工具，实际上还有另一种方法，即使用 `@tool` 装饰器来创建工具。推荐的创建工具的方法是使用 `@tool` 装饰器。这个装饰器旨在简化工具创建过程，并且应该在大多数情况下使用。定义函数后，你可以用 `@tool` 装饰它，以创建一个实现 Tool 接口的工具。
 
-`@tool` opertor makes tools out of functions. See below:
+`@tool` 操作符将函数制作成工具。见下文：
 
 
 
@@ -334,7 +334,7 @@ def add_numbers(inputs:str) -> dict:
     return {"result": result}
 ```
 
-The above function will now act as a tool. You can inspect the tool's schema and other properties using:
+上面的函数现在将作为一个工具。你可以使用以下命令检查工具的模式和其他属性：
 
 
 
@@ -345,7 +345,7 @@ print("Args: \n", add_numbers.args)
 
 ```
 
-You can call the tool using the ```invoke``` method.
+你可以使用 ```invoke``` 方法调用该工具。
 
 
 
@@ -355,9 +355,9 @@ print(add_numbers.invoke(test_input))  # Example
 ```
 
 
-### Use @tool-StructuredTool
+### 使用 @tool-StructuredTool
 
-The @tool decorator creates a StructuredTool with schema information extracted from function signatures and docstrings as show here. This helps LLMs better understand what inputs the tool expects and how to use it properly. While both approaches work, @tool is generally preferred for modern LangChain applications, especially with LangGraph and function-calling models.
+`@tool` 装饰器创建了一个 `StructuredTool`，其中包含从函数签名和文档字符串中提取的模式信息，如下所示。这有助于 LLM 更好地理解工具期望的输入以及如何正确使用它。虽然两种方法都有效，但 `@tool` 通常是现代 LangChain 应用程序的首选，尤其是在使用 LangGraph 和函数调用模型时。
 
 
 
@@ -375,7 +375,7 @@ print(f"Has Schema: {hasattr(add_numbers, 'args_schema')}")
 print(f"Args Schema Info: {add_numbers.args}")
 ```
 
-In this example, the tool has two inputs: a string containing the numbers to add, and a second boolean input that determines whether to sum the absolute values of those numbers.
+在这个例子中，工具由两个输入：一个包含要相加的数字的字符串，以及第二个布尔输入，决定是否对这些数字的绝对值求和。
 
 
 
@@ -399,7 +399,7 @@ def add_numbers_with_options(numbers: List[float], absolute: bool = False) -> fl
     return sum(numbers)
 ```
 
-Let's compare the arguments for add_numbers_with_options and add_numbers. Both are structured tools. They both include the inputs field, which is a string input. However, add_numbers_with_options has an additional key-value pair: absolute, a boolean field with a default value of False. This means add_numbers_with_options supports optional behavior—taking the absolute value of the numbers—while add_numbers only handles basic numeric extraction and summation
+让我们比较一下 `add_numbers_with_options` 和 `add_numbers` 的参数。两者都是结构化工具。它们都包含 `inputs` 字段，这是一个字符串输入。然而，`add_numbers_with_options` 有一个额外的键值对：`absolute`，这是一个默认值为 `False` 的布尔字段。这意味着 `add_numbers_with_options` 支持可选行为——取数字的绝对值——而 `add_numbers` 仅处理基本的数字提取和求和。
 
 
 
@@ -408,7 +408,7 @@ print(f"Args Schema Info: {add_numbers_with_options.args}")
 print(f"Args Schema Info: {add_numbers.args}")
 ```
 
-You can call the tool using a dictionary as input, where each key corresponds to a parameter name and the value is the input for that parameter. For example, to control whether the numbers are summed normally or with absolute values, set the absolute flag to False or True: You get -6 and 6, respectively 
+你可以使用字典作为输入来调用工具，其中每个键对应一个参数名称，值是该参数的输入。例如，要控制是正常求和还是使用绝对值求和，请将 `absolute` 标志设置为 `False` 或 `True`：你将分别得到 -6 和 6。
 
 
 
@@ -417,14 +417,15 @@ print(add_numbers_with_options.invoke({"numbers":[-1.1,-2.1,-3.0],"absolute":Fal
 print(add_numbers_with_options.invoke({"numbers":[-1.1,-2.1,-3.0],"absolute":True}))
 ```
 
-## Improved tool return types with Python typing
+## 使用 Python 类型提示改进工具返回类型
 
-When creating tools, you must accurately specify their return values. This helps the agent understand and handle different possible outputs.
+创建工具时，必须准确指定其返回值。这有助于智能体理解和处理不同的可能输出。
 
 
 
-The function `sum_numbers_with_complex_output` returns a more flexible output format. It returns a dictionary containing a float value when numbers are successfully summed, or a descriptive error message as a string if no numbers are found or an issue occurs during processing.
+函数 `sum_numbers_with_complex_output` 返回更灵活的输出格式。当成功求和数字时，它返回包含浮点值的字典；如果未找到数字或处理过程中发生问题，则返回作为字符串的描述性错误消息。
 
+```python
 from typing import Dict, Union
 
 @tool
@@ -454,7 +455,9 @@ def sum_numbers_with_complex_output(inputs: str) -> Dict[str, Union[float, str]]
         return {"result": total}
     except Exception as e:
         return {"result": f"Error during summation: {str(e)}"}
-The function `sum_numbers_from_text` returns a straightforward output format. It extracts all integer values from the input string, sums them, and returns the total as a float. This function assumes that at least one valid number is present in the input and does not handle cases where no numbers are found or where an error might occur.
+```
+
+函数 `sum_numbers_from_text` 返回一个直接的输出格式。它从输入字符串中提取所有整数值，对它们求和，并以浮点数形式返回总数。此函数假设输入中至少存在一个有效数字，并且不处理未找到数字或可能发生错误的情况。
 
 
 
@@ -478,44 +481,44 @@ def sum_numbers_from_text(inputs: str) -> float:
 
 ### `initialize_agent`
 
-When you set up an agent, you're connecting tools and an LLM to work together seamlessly. The agent uses the LLM to understand what needs to be done and decides which tool to use based on the task. Here's a simple overview of the key parts:
+当你设置一个智能体时，你正在连接工具和 LLM 以便无缝协作。智能体使用 LLM 来理解需要做什么，并根据任务决定使用哪个工具。以下是关键部分的简单概述：
 
 
-#### **Relationship between agent and LLM**
-- The **agent** acts as the decision-maker, figuring out which tools to use and when.
-- The **LLM** is the reasoning engine. It:
-  - Interprets the user's input.
-  - Helps the agent make decisions.
-  - Generates a response based on the output of the tools.
+#### **智能体与 LLM 的关系**
+- **智能体（Agent）**充当决策者，弄清楚使用哪些工具以及何时使用。
+- **LLM** 是推理引擎。它：
+  - 解释用户的输入。
+  - 帮助智能体做决定。
+  - 根据工具的输出生成响应。
 
-Think of the agent as the manager assigning tasks and the LLM as the brain solving problems or delegating work.
+把智能体想象成分配任务的经理，把 LLM 想象成解决问题或委派工作的大脑。
 
 ---
 
-#### **Key parameters of `initialize_agent`**
+#### **`initialize_agent` 的关键参数**
 
-1. **`tools`**- see above 
+1. **`tools`** - 见上文
 
-2.  **`llm`** see above 
+2. **`llm`** - 见上文
 
 3. **`agent`**:
-   - Specifies the reasoning framework for the agent.
-   - `"zero-shot-react-description"` enables:
-     - **Zero-shot reasoning**: The agent can solve tasks it hasn't seen before by thinking through the problem step by step.
-     - **React framework**: A logical loop of:
-       - **Reason** → Think about the task.
-       - **Act** → Use a tool to perform an action.
-       - **Observe** → Check the tool's output.
-       - **Plan** → Decide what to do next.
+   - 指定智能体的推理框架。
+   - `"zero-shot-react-description"` 启用：
+     - **零样本推理（Zero-shot reasoning）**：智能体可以通过一步步思考问题来解决以前从未见过的任务。
+     - **React 框架**：一个逻辑循环：
+       - **Reason (推理)** → 思考任务。
+       - **Act (行动)** → 使用工具执行动作。
+       - **Observe (观察)** → 检查工具的输出。
+       - **Plan (计划)** → 决定下一步做什么。
 
 4. **`verbose`**:
-   - If `True`, it prints detailed logs of the agent’s thought process.
-   - Useful for debugging or understanding how the agent makes decisions.
+   - 如果为 `True`，它会打印智能体思维过程的详细日志。
+   - 对调试或理解智能体如何做决定很有用。
 
 
 
 
-You can now create an agent object using initialize_agent.
+你现在可以使用 `initialize_agent` 创建一个智能体对象。
 
 
 
@@ -525,12 +528,13 @@ from langchain.agents import initialize_agent
 agent = initialize_agent([add_tool], llm, agent="zero-shot-react-description", verbose=True, handle_parsing_errors=True)
 ```
 
-Now, you can run the agent by asking a question.
+现在，你可以通过提问来运行智能体。
 
 
-> When running an agent using .run() or .invoke(), you may occasionally encounter a situation where the code keeps executing indefinitely, even if the LLM has already produced a valid answer. This typically happens when the system encounters an OUTPUT_PARSING_ERROR — often due to formatting issues in the LLM's response.
+> [!NOTE] 注意
+> 当使用 `.run()` 或 `.invoke()` 运行智能体时，你可能会偶尔遇到代码无限期执行的情况，即使 LLM 已经产生了一个有效的答案。这通常发生在系统遇到 `OUTPUT_PARSING_ERROR` 时——通常是由于 LLM 响应中的格式问题。
 >
-> In such cases, the agent can get stuck in a loop and won’t terminate on its own. If you see this happening, simply click the stop button (■) in the top toolbar to interrupt execution.
+> 在这种情况下，智能体可能会陷入循环并且不会自行终止。如果你看到这种情况发生，只需点击顶部工具栏中的停止按钮 (■) 中断执行。
 
 
 
@@ -549,17 +553,17 @@ response
 agent.invoke({"input": "Add 10, 20, two and 30"})
 ```
 
-The agent was asked to add the numbers 10, 20, "two," and 30. The agent first noticed that one of the inputs was the word "two" instead of a number, so it converted "two" to its numeric form, which is 2. After preparing the list of numbers (10, 20, 2, and 30), the agent decided to use the `AddTool` to perform the addition. It passed the numbers to the tool, which calculated the sum and returned the result as 62. Finally, the agent provided the answer: **62**.
+智能体被要求将数字 10, 20, "two" 和 30 相加。智能体首先注意到其中一个输入是单词 "two" 而不是数字，因此它将 "two" 转换为数字形式，即 2。在准备好数字列表（10, 20, 2 和 30）后，智能体决定使用 `AddTool` 来执行加法。它将数字传递给工具，工具计算总和并返回结果 62。最后，智能体提供了答案：**62**。
 
 
-#### **Structured chat zero shot react-description**
+#### **结构化聊天零样本 React 描述 (Structured chat zero shot react-description)**
 
-When selecting an agent in LangChain, two factors matter: the agent type and the tool format, especially the tool’s return type. Agents like zero-shot-react-description expect tools to take and return plain strings, which works well with manually defined Tool(...) wrappers. 
+在 LangChain 中选择智能体时，两个因素很重要：智能体类型和工具格式，尤其是工具的返回类型。像 `zero-shot-react-description` 这样的智能体期望工具接收并返回纯字符串，这与手动定义的 `Tool(...)` 包装器配合良好。
 
-In contrast, structured agents like `structured-chat-zero-shot-react-description` or `openai-functions` are built to handle structured inputs and outputs via the @tool decorator. If a tool returns a dictionary but the agent expects a string, it can cause key errors or parsing failures. 
+相比之下，像 `structured-chat-zero-shot-react-description` 或 `openai-functions` 这样的结构化智能体是为通过 `@tool` 装饰器处理结构化输入和输出而构建的。如果工具返回一个字典但智能体期望一个字符串，可能会导致键错误或解析失败。
 
 
-In the agent example below, use `sum_numbers_from_text` as a tool and `structured-chat-zero-shot-react-description` as the agent type. For the LLM, you'll use `Granite`.
+在下面的智能体示例中，使用 `sum_numbers_from_text` 作为工具，使用 `structured-chat-zero-shot-react-description` 作为智能体类型。对于 LLM，你将使用 `Granite`。
 
 
 
@@ -569,9 +573,9 @@ response = agent_2.invoke({"input": "Add 10, 20 and 30"})
 print(response)
 ```
 
-Now, for the below agent, you will be using `sum_numbers_with_complex_output` as the tool. As for the LLM, you are going to use `gpt-4.1-nano` and the agent type `openai-functions`. 
+现在，对于下面的智能体，你将使用 `sum_numbers_with_complex_output` 作为工具。至于 LLM，你将使用 `gpt-4.1-nano` 和智能体类型 `openai-functions`。
 
-One thing to note here is Some LLMs, like `Granite`, cannot unpack dictionary outputs because they lack native support for structured output parsing. As a result, when you use `sum_numbers_with_complex_output` with the `structured-chat-zero-shot-react-description` agent type, the agent fails to interpret the returned dictionary and throws an input validation or parsing error.
+这里需要注意的一点是，某些 LLM（如 `Granite`）无法解包字典输出，因为它们缺乏对结构化输出解析的原生支持。结果是，当你将 `sum_numbers_with_complex_output` 与 `structured-chat-zero-shot-react-description` 智能体类型一起使用时，智能体无法解释返回的字典，并抛出输入验证或解析错误。
 
 
 
@@ -588,7 +592,7 @@ response = agent_3.invoke({"input": "Add 10, 20 and 30"})
 print(response)
 ```
 
-Now, let's move on to tools with multiple inputs. The agent below uses `Granite` as the LLM and `add_numbers_with_options` as the tool, which accepts multiple input parameters. However, if the tool returns a complex output—such as a dictionary like in `sum_numbers_with_complex_output`—you’ll need to switch to a model like GPT and use an agent type that supports both multi-input tools and structured outputs. Granite and similar models may not handle complex output parsing reliably, especially when used with agents like `structured-chat-zero-shot-react-description`.
+现在，让我们转向具有多个输入的工具。下面的智能体使用 `Granite` 作为 LLM，使用 `add_numbers_with_options` 作为工具，该工具接受多个输入参数。但是，如果工具返回复杂的输出——例如像 `sum_numbers_with_complex_output` 中的字典——你需要切换到像 GPT 这样的模型，并使用支持多输入工具和结构化输出的智能体类型。Granite 和类似模型可能无法可靠地处理复杂的输出解析，尤其是在与 `structured-chat-zero-shot-react-description` 等智能体一起使用时。
 
 
 
@@ -609,7 +613,7 @@ response = agent_2.invoke({
 print(response)
 ```
 
-Let's try with OpenAI to see if it runs with multiple inputs.
+让我们用 OpenAI 试试，看看它是否能处理多个输入。
 
 
 
@@ -632,47 +636,47 @@ print(response)
 
 ### **`create_react_agent`**
 
-As LangChain's `AgentExecutor` is being deprecated, create_react_agent from LangGraph provides a more flexible and powerful alternative for building AI agents. This function creates a graph-based agent that works with chat models and supports tool-calling functionality.
+随着 LangChain 的 `AgentExecutor` 被弃用，来自 LangGraph 的 `create_react_agent` 为构建 AI 智能体提供了一个更灵活、更强大的替代方案。此函数创建一个基于图的智能体，该智能体与聊天模型一起工作并支持工具调用功能。
 
 ---
 
-#### **Key parameters of `create_react_agent`**
+#### **`create_react_agent` 的关键参数**
 
 1. **`model`**
-    - The language model that powers the agent's reasoning.
-    - Must support tool calling for full functionality.
+    - 驱动智能体推理的语言模型。
+    - 必须支持工具调用才能实现全部功能。
 
-2.  **`tools`**
-    - A list of tools the agent can use to perform actions.
-    - Can be LangChain tools, Python functions with @tool decorator, or a ToolNode instance
-    - Each tool should have a name, description, and implementation
+2. **`tools`**
+    - 智能体可以用来执行动作的工具列表。
+    - 可以是 LangChain 工具、带有 @tool 装饰器的 Python 函数或 ToolNode 实例。
+    - 每个工具都应该有名称、描述和实现。
 
 3. **`prompt (optional)`**:
-   - Customizes the instructions given to the LLM
-   - Can be:
-        - A string (converted to a SystemMessage)
-        - A SystemMessage object
-        - A function that transforms the state
-        - A Runnable that processes the state
+    - 自定义给 LLM 的指令。
+    - 可以是：
+        - 字符串（转换为 SystemMessage）
+        - SystemMessage 对象
+        - 转换状态的函数
+        - 处理状态的 Runnable
 
-and other parameters. To see more parameters, see [docs](https://langchain-ai.github.io/langgraph/reference/prebuilt/).
+以及其他参数。要查看更多参数，请参阅 [文档](https://langchain-ai.github.io/langgraph/reference/prebuilt/)。
 
-#### How it works
+#### 它是如何工作的
 
-Unlike the legacy `AgentExecutor`, which used a fixed loop structure, `create_react_agent` creates a graph with these key nodes:
+与使用固定循环结构的旧版 `AgentExecutor` 不同，`create_react_agent` 创建一个具有这些关键节点的图：
 
-1. **Agent Node:** Calls the LLM with the message history
-2. **Tools Node:** Executes any tool calls from the LLM's response
-3. **Continue/End Nodes:** Manage the workflow based on whether tool calls are present
+1. **Agent Node (智能体节点)**：使用消息历史调用 LLM。
+2. **Tools Node (工具节点)**：执行 LLM 响应中的任何工具调用。
+3. **Continue/End Nodes (继续/结束节点)**：根据是否存在工具调用来管理工作流。
 
-The graph follows this process:
+该图遵循此过程：
 
-1. User message enters the graph
-2. LLM generates a response, potentially with tool calls
-3. If tool calls exist, they're executed and their results are added to the message history
-4. The updated messages are sent back to the LLM
-5. This loop continues until the LLM responds without tool calls
-6. The final state with all messages is returned
+1. 用户消息进入图。
+2. LLM 生成响应，可能带有工具调用。
+3. 如果存在工具调用，则执行它们，并将其结果添加到消息历史记录中。
+4. 更新后的消息被发送回 LLM。
+5. 此循环继续，直到 LLM 响应且没有工具调用。
+6. 返回包含所有消息的最终状态。
 
 
 
@@ -693,13 +697,13 @@ msgs = agent_exec.invoke({"messages": [("human", "Add the numbers -10, -20, -30"
 print(msgs["messages"][-1].content)
 ```
 
-## Orchestrating multiple tools with an agent: Mathematical toolkit
-In real-world applications, a single tool is often insufficient to address the complexity and diversity of user requests. Tasks such as data analysis, performing calculations, or retrieving specific information require specialized capabilities that cannot be fulfilled by a single function. By equipping an agent with multiple tools, each tailored to a distinct purpose, you'll create a system that can dynamically select and utilize the appropriate tool based on the user’s query. This approach enhances the flexibility and scalability of the AI, allowing it to handle a broad spectrum of tasks with precision and efficiency. The orchestration of multiple tools ensures that the agent can seamlessly manage complex workflows, making it an essential framework for building robust and versatile AI systems.
+## 使用智能体编排多个工具：数学工具箱
+在实际应用中，单个工具往往不足以应对用户请求的复杂性和多样性。诸如数据分析、执行计算或检索特定信息等任务需要专门的能力，而这些能力无法由单个函数完成。通过为智能体配备多个工具，每个工具都针对不同的目的，你可以创建一个能够根据用户的查询动态选择并利用适当工具的系统。这种方法增强了 AI 的灵活性和可扩展性，使其能够精确高效地处理广泛的任务。多个工具的编排确保智能体可以无缝管理复杂的工作流，使其成为构建健壮且多功能 AI 系统的重要框架。
 
-To demonstrate this concept, let’s create additional tools, i.e, a mathematical toolkit. In addition to the addition tool, you will now create tools for subtraction, multiplication, and division. These tools will be integrated into an agent capable of handling various mathematical queries, showcasing how multiple tools can work together within a single AI system.
+为了演示这个概念，让我们创建额外的工具，即一个数学工具箱。除了加法工具外，你现在还将创建用于减法、乘法和除法的工具。这些工具将被集成到一个能够处理各种数学查询的智能体中，展示多个工具如何在单个 AI 系统中协同工作。
 
-### Subtraction tool
-The subtraction tool is designed to take a list of numbers and return the result of subtracting all subsequent numbers from the first number. This tool is particularly useful for handling queries involving differences, such as "What is 100 minus 20 and then minus 10?". 
+### 减法工具
+减法工具旨在获取一个数字列表，并返回从第一个数字中减去所有后续数字的结果。此工具特别适用于处理涉及差值的查询，例如“100 减去 20 再减去 10 是多少？”。
 
 
 
@@ -753,7 +757,7 @@ def subtract_numbers(inputs: str) -> dict:
     return {"result": result}
 ```
 
-You can inspect the tool's schema and other properties using:
+你可以使用以下命令检查工具的模式和其他属性：
 
 
 
@@ -763,7 +767,7 @@ print("Description: \n", subtract_numbers.description)
 print("Args: \n", subtract_numbers.args) 
 ```
 
-Let's use it directly by calling the function:
+让我们通过调用函数直接使用它：
 
 
 
@@ -773,7 +777,7 @@ test_input = "10 20 30 and four a b"
 print(subtract_numbers.invoke(test_input))  # Example
 ```
 
-Let's now build multiple tools, starting with `MultiplyTool` and `DivideTool`, by defining two functions: `multiply_numbers` and `divide_numbers`. These functions are simple - `multiply_numbers` takes a list of numbers in string format and returns their product, while `divide_numbers` takes the first number and divides it by each subsequent number in sequence. Instead of manually wrapping these functions in the Tool class, you'll use the `@tool` decorator to automatically convert them into LangChain tools, using their docstrings as descriptions. These decorated tools can then be added directly to the agent alongside other operations like addition or subtraction, allowing the agent to intelligently select the appropriate operation based on the user's query, making it versatile for handling various math problems.
+现在让我们构建多个工具，从 `MultiplyTool` 和 `DivideTool` 开始，通过定义两个函数：`multiply_numbers` 和 `divide_numbers`。这些函数很简单 - `multiply_numbers` 接受字符串格式的数字列表并返回它们的乘积，而 `divide_numbers` 接受第一个数字并将其依次除以每个后续数字。你不用手动将这些函数包装在 Tool 类中，而是使用 `@tool` 装饰器自动将它们转换为 LangChain 工具，使用它们的文档字符串作为描述。这些装饰过的工具可以直接添加到智能体中，与其他操作（如加法或减法）并列，允许智能体根据用户的查询智能地选择适当的操作，使其在处理各种数学问题时具有多功能性。
 
 
 
@@ -857,7 +861,7 @@ def divide_numbers(inputs: str) -> dict:
     return {"result": result}
 ```
 
-When testing these mathematical tools directly, notice that using raw string inputs like "2, 3, and four" or "100, 5, two" will fail. The tools are designed to work with numeric inputs only - they don't have the natural language understanding that comes with the LLM agent layer. To test properly, you need to use a numeric value:
+直接测试这些数学工具时，请注意使用原始字符串输入（如 "2, 3, and four" 或 "100, 5, two"）将会失败。这些工具旨在仅处理数字输入——它们不具备 LLM 智能体层所具有的自然语言理解能力。要正确测试，你需要使用数值：
 
 
 
@@ -880,11 +884,11 @@ print(f"Input: {divide_test_input}")
 print(f"Output: {divide_result}")
 ```
 
-## Building the agent
+## 构建智能体
 
-With the implementation of mathematical operators—addition, subtraction, multiplication, and division — you have established a simple yet functional mathematical toolkit. Unlike before, the agent must now not only select the appropriate tool and process the input but also determine the correct mathematical operation based on the user's query.
+随着数学运算符——加法、减法、乘法和除法——的实现，你已经建立了一个简单但功能齐全的数学工具箱。与之前不同的是，智能体现在不仅必须选择适当的工具并处理输入，还必须根据用户的查询确定正确的数学运算。
 
-Let's create the agent object. first, combine all tools into a single list:
+让我们创建智能体对象。首先，将所有工具合并到一个列表中：
 
 
 
@@ -893,7 +897,7 @@ tools = [add_numbers,subtract_numbers, multiply_numbers, divide_numbers]
 tools
 ```
 
-Like before, you will create the agent with the tools and the language model as input.
+像以前一样，你将使用工具和语言模型作为输入来创建智能体。
 
 
 
@@ -931,18 +935,18 @@ final_answer_2 = response_2["messages"][-2].content
 print(final_answer_2)
 ```
 
-When the agent tries to subtract 20 and 10 from 100, something unexpected happens. The tool called `SubtractTool` works differently than the agent expected. When you type in "100, 20, 10", instead of giving you 70 like you'd expect, it gives you -130. This happens because your special calculator first turns 100 into -100, then subtracts the other numbers.
+当智能体尝试从 100 中减去 20 和 10 时，发生了一些意想不到的事情。名为 `SubtractTool` 的工具的工作方式与智能体的预期不同。当你输入 "100, 20, 10" 时，它给出的不是你预期的 70，而是 -130。这是因为你的特殊计算器首先将 100 变成 -100，然后减去其他数字。
 
-```The Confusion``` 
+```The Confusion (困惑)``` 
 
-The agent expects the function to work like normal math 100 - 20 - 10 = 70). When the agent tries to fix this by breaking the problem into smaller steps, it still gets unexpected answers because the calculator keeps using its special rules.
+智能体期望函数像普通数学一样工作 (100 - 20 - 10 = 70)。当智能体试图通过将问题分解为更小的步骤来解决这个问题时，它仍然得到意想不到的答案，因为计算器一直使用其特殊的规则。
 
 
-```Getting Stuck```
+```Getting Stuck (陷入困境)```
 
- The agent keeps trying the same approach repeatedly, not realizing why it isn't working. Eventually, it runs out of time without solving the problem.
- 
- Before you fix the problem, let's test the other tools.
+智能体不断尝试相同的方法，却没有意识到为什么不起作用。最终，它耗尽了时间而没有解决问题。
+
+在你解决这个问题之前，让我们测试一下其他工具。
 
 
 
@@ -960,7 +964,7 @@ response = math_agent.invoke({
 print("Agent Response:", response["messages"][-1].content)
 ```
 
-Now lets change the `SubtractTool` so it subtracts the numbers directly (without negating the first number). This aligns the tool’s behavior with standard arithmetic and the agent’s expectations.
+现在让我们更改 `SubtractTool`，使其直接减去数字（而不否定第一个数字）。这使工具的行为与标准算术和智能体的预期保持一致。
 
 
 
@@ -969,7 +973,7 @@ Now lets change the `SubtractTool` so it subtracts the numbers directly (without
 def new_subtract_numbers(inputs: str) -> dict:
     """
     Extracts numbers from a string and performs subtraction sequentially, starting with the first number.
-
+    
     This function is designed to handle input in string format, where numbers may be separated by spaces, 
     commas, or other delimiters. It parses the input string, extracts numeric values, and calculates 
     the result by subtracting each subsequent number from the first. inputs[0]-inputs[1]-inputs[2]
@@ -1009,19 +1013,19 @@ def new_subtract_numbers(inputs: str) -> dict:
 ```
 
 
-## Note: Tool naming when demonstrating different approaches
+## 注意：演示不同方法时的工具命名
 
-In this lab, two different ways to create the same mathematical tool (addition) are intentionally shown:
+在本实验中，有意展示了两种创建相同数学工具（加法）的不同方法：
 
-1. Using the `Tool()` constructor approach (`add_tool`)
-2. Using the `@tool` decorator approach (`add_numbers`)
+1. 使用 `Tool()` 构造函数方法 (`add_tool`)
+2. 使用 `@tool` 装饰器方法 (`add_numbers`)
 
-This is to compare different LangChain tool creation methods for educational purposes. In a production application, you would typically choose one consistent approach rather than having duplicate tools for the same functionality.
+这是为了比较不同的 LangChain 工具创建方法以用于教学目的。在生产应用程序中，通常会选择一种一致的方法，而不是为相同的功能拥有重复的工具。
 
-When building real agents, duplicate tools with similar functions will confuse the LLM, as it won't know which one to choose. Always use unique tools with clearly differentiated purposes in production code.
+在构建真正的智能体时，具有相似功能的重复工具会混淆 LLM，因为它不知道该选择哪一个。在生产代码中，始终使用具有明确区分目的的唯一工具。
 
 
-Next, create a new agent, ensuring it incorporates the updated subtraction tool.
+接下来，创建一个新的智能体，确保它包含更新后的减法工具。
 
 
 
@@ -1037,7 +1041,7 @@ math_agent_new = create_react_agent(
 print("agent",math_agent_new)
 ```
 
-Now, you are going to create a Python dictionary to test multiple use cases for your agent. Testing your agent is important on its own because it helps ensure that it works correctly in different situations. Automating test cases makes this process easier and helps catch errors before they become a problem. A good test suite checks how the agent handles different inputs, including tricky cases like dividing by zero, working with large numbers, and handling decimals. You can also test how the agent deals with mixed operations, like combining addition and multiplication.
+现在，你将创建一个 Python 字典来测试智能体的多个用例。测试智能体本身就很重要，因为它有助于确保它在不同情况下正常工作。自动化测试用例使这个过程更容易，并有助于在错误成为问题之前捕获它们。一个好的测试套件会检查智能体如何处理不同的输入，包括像除以零这样的棘手情况、处理大数字以及处理小数。你还可以测试智能体如何处理混合运算，例如结合加法和乘法。
 
 
 
@@ -1068,7 +1072,7 @@ test_cases = [
 ]
 ```
 
-This code extracts the actual computation result from the agent's response structure. Unlike a direct tool invocation that returns a simple dictionary, LangGraph agents return a complex structure containing the entire conversation history as a list of messages. To find the computation result, you must locate the specific ToolMessage in this list (identified by its name matching one of the math tools), then parse its content, which contains the actual result as a JSON string. This approach is necessary because the result isn't accessible directly from the response object but is instead nested within the message history, requiring you to navigate through the messages to find and extract the relevant data for comparison with your expected values.
+此代码从智能体的响应结构中提取实际的计算结果。与返回简单字典的直接工具调用不同，LangGraph 智能体返回一个包含作为消息列表的整个对话历史记录的复杂结构。要找到计算结果，你必须在此列表中找到特定的 `ToolMessage`（通过其名称与数学工具之一匹配来标识），然后解析其内容，其中包含作为 JSON 字符串的实际结果。这种方法是必要的，因为结果不能直接从响应对象访问，而是嵌套在消息历史记录中，需要你浏览消息以查找并提取相关数据以便与预期值进行比较。
 
 
 
@@ -1110,44 +1114,44 @@ for index, test in enumerate(test_cases, start=1):
 print("\nCorrectly passed tests:", correct_tasks)
 ```
 
-The current functions would benefit from enhanced error handling and input validation. The add_numbers, subtract_numbers, multiply_numbers, and divide_numbers functions should be updated to handle decimal numbers using float conversion, validate inputs more strictly, and provide clear error messages for edge cases. For example, divide_numbers should explicitly check for division by zero, and all functions should gracefully handle non-numeric inputs like "two" or "hundred". The test cases should be expanded beyond basic operations to include edge cases like divided by zero, empty inputs, and mixed numeric/text inputs (e.g., "divide one hundred by 5"). Also consider adding tests for decimal numbers (e.g., "multiply 3.5 by 2") and sequential operations (e.g., "multiply 10 by 2 then add 5"). This comprehensive testing approach ensures the agent can handle a wide range of real-world mathematical queries.
+当前的函数将受益于增强的错误处理和输入验证。`add_numbers`、`subtract_numbers`、`multiply_numbers` 和 `divide_numbers` 函数应更新为使用浮点转换处理十进制数字，更严格地验证输入，并为边缘情况提供清晰的错误消息。例如，`divide_numbers` 应显式检查除以零，并且所有函数都应优雅地处理非数字输入，如 "two" 或 "hundred"。测试用例应扩展到基本运算之外，包括边缘情况，如除以零、空输入和混合数字/文本输入（例如，“divide one hundred by 5”）。还要考虑添加对小数（例如，“multiply 3.5 by 2”）和连续运算（例如，“multiply 10 by 2 then add 5”）的测试。这种全面的测试方法可确保智能体能够处理各种现实世界的数学查询。
 
 
-## **Exploring LangChain's built-in tools**
+## **探索 LangChain 的内置工具**
 
-While creating custom tools is powerful, LangChain provides a rich ecosystem of **pre-built tools** that solve common tasks out of the box. These tools abstract away complex implementation details (API calls, input parsing, error handling) and let you focus on building robust agents quickly.
+虽然创建自定义工具很强大，但 LangChain 提供了一个丰富的**预构建工具**生态系统，可以开箱即用地解决常见任务。这些工具抽象了复杂的实现细节（API 调用、输入解析、错误处理），让你能够专注于快速构建健壮的智能体。
 
 
 ---
 
-#### **Why use built-in tools?**
-- **Reliability**: Tested and maintained by the LangChain community.
-- **Time-saving**: No need to reinvent the wheel for common tasks.
-- **Integration**: Designed to work seamlessly with LangChain agents.
+#### **为什么要使用内置工具？**
+- **可靠性**：由 LangChain 社区测试和维护。
+- **节省时间**：无需为常见任务重新发明轮子。
+- **集成**：旨在与 LangChain 智能体无缝协作。
 
 ---
 
 
-#### **Popular built-in tools**
-Here are some widely used tools from `langchain_community.tools`:
+#### **常用的内置工具**
+以下是一些来自 `langchain_community.tools` 的广泛使用的工具：
 
-| Tool Name               | Description                                                                 |
-|-------------------------|-----------------------------------------------------------------------------|
-| `WikipediaQueryRun`     | Search Wikipedia for factual information.                                   |
-| `GoogleSearchRun`       | Perform web searches using Google’s API.                                    |
-| `PythonREPLTool`        | Execute Python code in a safe environment.                                  |
-| `OpenWeatherMapQueryRun`| Fetch real-time weather data.                                               |
-| `YouTubeSearchTool`     | Search for YouTube videos.                                                  |
+| 工具名称 | 描述 |
+|---|---|
+| `WikipediaQueryRun` | 搜索 Wikipedia 以获取事实信息。 |
+| `GoogleSearchRun` | 使用 Google API 执行网络搜索。 |
+| `PythonREPLTool` | 在安全环境中执行 Python 代码。 |
+| `OpenWeatherMapQueryRun`| 获取实时天气数据。 |
+| `YouTubeSearchTool` | 搜索 YouTube 视频。 |
 
 ---
 
 
 
-#### **Example: Using the Wikipedia tool**
-Let’s enhance the math agent with Wikipedia access to answer questions requiring factual context.
+#### **示例：使用 Wikipedia 工具**
+让我们通过访问 Wikipedia 来增强数学智能体，以回答需要事实背景的问题。
 
 
-Now, you'll start by creating a Wikipedia search tool using `@tool` operator. This tool will allow the agent to fetch factual information from Wikipedia when needed.
+现在，你将开始使用 `@tool` 操作符创建一个 Wikipedia 搜索工具。此工具将允许智能体在需要时从 Wikipedia 获取事实信息。
 
 
 
@@ -1174,11 +1178,11 @@ def search_wikipedia(query: str) -> str:
 search_wikipedia.invoke("What is tool calling?")
 ```
 
-Now, you will **create a list of available tools** (both custom math tools and a using wikipedia tool `search_wikipedia`) and then **initialize an agent** that can use these tools to solve problems. This agent will combine:  
-- Custom math tools (`add_numbers`, `new_subtract_numbers`, etc.) for arithmetic operations.  
-- A built-in tool (`wiki_tool`, e.g., for Wikipedia searches) for additional functionality.  
+现在，你将**创建一个可用工具列表**（包括自定义数学工具和使用 Wikipedia 工具 `search_wikipedia`），然后**初始化一个智能体**，该智能体可以使用这些工具来解决问题。此智能体将结合：
+- 自定义数学工具（`add_numbers`、`new_subtract_numbers` 等），用于算术运算。
+- 内置工具（`wiki_tool`，例如，用于 Wikipedia 搜索），用于附加功能。
 
-By combining these tools, the agent can handle **both mathematical calculations** (e.g., addition, subtraction) and **informational queries** (e.g., fetching facts from Wikipedia), depending on the user’s request.
+通过结合这些工具，智能体可以根据用户的请求处理**数学计算**（例如，加法、减法）和**信息查询**（例如，从 Wikipedia 获取事实）。
 
 
 
@@ -1194,9 +1198,9 @@ math_agent_updated = create_react_agent(
 )
 ```
 
-Now, you will **ask the agent a multi-step question** that requires:  
-1. **Online searching** (using `search_wikipedia` or another built-in tool) to fetch real-world data.  
-2. **Mathematical computation** (using `multiply_numbers`) to process the retrieved data.  
+现在，你将**问智能体一个多步骤问题**，这需要：
+1. **在线搜索**（使用 `search_wikipedia` 或其他内置工具）以获取现实世界的数据。
+2. **数学计算**（使用 `multiply_numbers`）来处理检索到的数据。
 
 
 
@@ -1219,28 +1223,28 @@ for i, msg in enumerate(response["messages"]):
         print(f"Tool calls: {msg.tool_calls}")
 ```
 
-**How it works**:
-1. The agent first uses `search_wikipedia` to find Canada's population.
-2. Extracts the numeric value from Wikipedia’s response.
-3. Uses `multiply_numbers` to calculate 75% of the population.
-4. Returns the final result with context.
+**它是如何工作的**：
+1. 智能体首先使用 `search_wikipedia` 查找加拿大的人口。
+2. 从 Wikipedia 的响应中提取数值。
+3. 使用 `multiply_numbers` 计算人口的 75%。
+4. 返回带有上下文的最终结果。
 
 
-For a full list of available tools, see the [LangChain Tools Documentation](https://python.langchain.com/docs/integrations/tools/).
+有关可用工具的完整列表，请参阅 [LangChain 工具文档](https://python.langchain.com/docs/integrations/tools/)。
 
 
-## **Exercise: Create a power tool to calculate exponents**
+## **练习：创建一个计算指数的乘方工具**
 
-#### **Objective**
-In this exercise, you will create a custom tool that calculates the power of a number (e.g., \( x^y \)). You will then integrate this tool into an agent and test its functionality.
+#### **目标**
+在本练习中，你将创建一个自定义工具来计算数字的乘方（例如，\( x^y \)）。然后，你将把这个工具集成到一个智能体中并测试其功能。
 
 ---
 
-#### **Step 1: Create the power tool**
+#### **步骤 1：创建乘方工具**
 
-1. **Define the Tool Function**:
-   - Create a Python function named `calculate_power` that takes a string as input. The string will contain two numbers: the base (\( x \)) and the exponent (\( y \)).
-   - The function should extract the numbers, calculate \( x^y \), and return the result as a dictionary with the key `"result"`.
+1. **定义工具函数**：
+   - 创建一个名为 `calculate_power` 的 Python 函数，该函数将字符串作为输入。该字符串将包含两个数字：底数（\( x \)）和指数（\( y \)）。
+   - 该函数应提取数字，计算 \( x^y \)，并将结果作为带有键 `"result"` 的字典返回。
 
 
 
@@ -1250,7 +1254,7 @@ In this exercise, you will create a custom tool that calculates the power of a n
 ```
 
 <details>
-    <summary>Click here for Solution</summary>
+    <summary>点击此处查看解决方案</summary>
 
 ```python
 def calculate_power(input_text: str) -> dict:
@@ -1293,9 +1297,9 @@ def calculate_power(input_text: str) -> dict:
 </details>
 
 
-2. **Create the tool object**:
-   - Use the `Tool` class from LangChain to create a tool object for the `calculate_power` function.
-   - Provide a name, description, and the function to the tool.
+2. **创建工具对象**：
+   - 使用 LangChain 中的 `Tool` 类为 `calculate_power` 函数创建一个工具对象。
+   - 为工具提供名称、描述和函数。
 
 
 
@@ -1305,7 +1309,7 @@ def calculate_power(input_text: str) -> dict:
 ```
 
 <details>
-    <summary>Click here for Solution</summary>
+    <summary>点击此处查看解决方案</summary>
 
 ```python
 power_tool = Tool(
@@ -1318,12 +1322,12 @@ power_tool = Tool(
 </details>
 
 
-#### **Step 2: Create an agent with the power tool**
+#### **步骤 2：使用乘方工具创建智能体**
 
-1. **Set up the agent**:
-   - Use the `initialize_agent` function from LangChain to create an agent.
-   - Include the `power_tool` in the list of tools provided to the agent.
-   - Specify the agent type (e.g., `zero-shot-react-description`).
+1. **设置智能体**：
+   - 使用 LangChain 中的 `initialize_agent` 函数创建一个智能体。
+   - 将 `power_tool` 包含在提供给智能体的工具列表中。
+   - 指定智能体类型（例如，`zero-shot-react-description`）。
 
 
 
@@ -1333,7 +1337,7 @@ power_tool = Tool(
 ```
 
 <details>
-    <summary>Click here for Solution</summary>
+    <summary>点击此处查看解决方案</summary>
 
 ```python
 # List of tools for the agent
@@ -1352,11 +1356,11 @@ agent = initialize_agent(
 </details>
 
 
-#### **Step 3: Test the agent**
+#### **步骤 3：测试智能体**
 
-1. **Test the Agent Using the `run` Function**:
-   - Use the `run` function of the agent to test its ability to calculate powers.
-   - Pass natural language queries to the agent and observe its responses.
+1. **使用 `run` 函数测试智能体**：
+   - 使用智能体的 `run` 函数测试其计算乘方的能力。
+   - 向智能体传递自然语言查询并观察其响应。
 
 
 
@@ -1366,7 +1370,7 @@ agent = initialize_agent(
 ```
 
 <details>
-    <summary>Click here for Solution</summary>
+    <summary>点击此处查看解决方案</summary>
 
 ```python
 agent.run("Calculate 5 to the power of 2.")
@@ -1375,7 +1379,7 @@ agent.run("Calculate 5 to the power of 2.")
 </details>
 
 
-## Authors
+## 作者
 
 
 [Joseph Santarcangelo](https://author.skills.network/instructors/joseph_santarcangelo)
@@ -1385,4 +1389,3 @@ agent.run("Calculate 5 to the power of 2.")
 
 
 Copyright © IBM Corporation. All rights reserved.
-
