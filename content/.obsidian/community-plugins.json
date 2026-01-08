@@ -3,5 +3,10 @@
   "personal-assistant",
   "obsidian-image-toolkit",
   "table-editor-obsidian",
-  "music-code-blocks"
+  "music-code-blocks",
+  "obsidian-enhancing-export",
+  "dataview",
+  "templater-obsidian",
+  "obsidian-reminder-plugin",
+  "obsidian-excalidraw-plugin"
 ]
