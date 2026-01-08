@@ -73,12 +73,12 @@ const config: QuartzConfig = {
       Plugin.OxHugoFlavouredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "relative" }),
-      Plugin.Citations({
-        bibliographyFile: "./content/bibliography.bib",
-        suppressBibliography: false,
-        linkCitations: false,
-        csl: "apa",
-      }),
+      // Plugin.Citations({
+      //   bibliographyFile: "./content/bibliography.bib",
+      //   suppressBibliography: false,
+      //   linkCitations: false,
+      //   csl: "apa",
+      // }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],

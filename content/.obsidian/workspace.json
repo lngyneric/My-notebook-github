@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SKILL.md",
+                "file": "Obsidian Bases.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SKILL"
+              "title": "Obsidian Bases"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SKILL.md",
+                "file": "Obsidian Bases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "SKILL 的反向链接列表"
+              "title": "Obsidian Bases 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SKILL.md",
+                "file": "Obsidian Bases.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "SKILL 的出链列表"
+              "title": "Obsidian Bases 的出链列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SKILL.md",
+                "file": "Obsidian Bases.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "SKILL 的大纲"
+              "title": "Obsidian Bases 的大纲"
             }
           },
           {
@@ -220,15 +220,15 @@
   },
   "active": "bc0f493c695d75c8",
   "lastOpenFiles": [
+    "AI_Resources.base",
+    "Dec AI信息共享.md",
+    "SKILL.md",
     "assets/结构化_AI_掌控.pdf",
     "index.md",
-    "SKILL.md",
     "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
     "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
     "Obsidian Bases.md",
     "Github Key.md",
-    "Dec AI信息共享.md",
-    "AI_Resources.base",
     "多模态RAG与知识图谱构建技术全解析.canvas",
     "多模态RAG与知识图谱构建技术全解析.md",
     "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
