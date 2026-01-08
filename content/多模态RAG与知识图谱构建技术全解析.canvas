@@ -1,0 +1,126 @@
+{
+	"nodes": [
+		{
+			"id": "group_rag",
+			"type": "group",
+			"label": "组合式多模态RAG技术",
+			"x": -40,
+			"y": -40,
+			"width": 540,
+			"height": 1080,
+			"color": "1"
+		},
+		{
+			"id": "rag_core",
+			"type": "text",
+			"text": "### 核心思想\n任意模态组合\n(文本/图像/音频/视频/代码/表格/KG/3D)\n54种组合方式",
+			"x": 0,
+			"y": 0,
+			"width": 460,
+			"height": 160
+		},
+		{
+			"id": "rag_step1",
+			"type": "text",
+			"text": "#### 1. 预检索 (Pre-retrieval)\n**知识库组织**：\n- 单模态嵌入\n- 成对存储 (图文)\n- 统一嵌入 (FLAVA)\n- 图构建 (实体关联)\n\n**查询优化**：扩展、转换、Dropout",
+			"x": 0,
+			"y": 200,
+			"width": 460,
+			"height": 220
+		},
+		{
+			"id": "rag_step2",
+			"type": "text",
+			"text": "#### 2. 检索 (Retrieval)\n**检索器**：\n- 稀疏 (BM25)\n- 密集 (CLIP, ColBERT)\n- 混合 (DPR+BM25)\n\n**策略**：分层检索、迭代检索",
+			"x": 0,
+			"y": 460,
+			"width": 460,
+			"height": 180
+		},
+		{
+			"id": "rag_step3",
+			"type": "text",
+			"text": "#### 3. 增强 (Augmentation)\n**上下文处理**：重排序、压缩\n**多模态融合**：\n- FiE (编码器内融合)\n- FiD (解码器内融合)",
+			"x": 0,
+			"y": 680,
+			"width": 460,
+			"height": 160
+		},
+		{
+			"id": "rag_step4",
+			"type": "text",
+			"text": "#### 4. 生成 (Generation)\n**生成器**：\n- 文本 (GPT-4o)\n- 图像 (Stable Diffusion)\n- 多模态 (Gemini Pro, GPT-4V)\n**增强**：提示工程、LoRA微调",
+			"x": 0,
+			"y": 880,
+			"width": 460,
+			"height": 180
+		},
+		{
+			"id": "group_kg",
+			"type": "group",
+			"label": "OntoMetric知识图谱构建框架",
+			"x": 580,
+			"y": -40,
+			"width": 540,
+			"height": 880,
+			"color": "4"
+		},
+		{
+			"id": "kg_core",
+			"type": "text",
+			"text": "### 核心思想\n“分割-抽取-验证”流水线\n解决幻觉、不一致、溯源缺失问题",
+			"x": 620,
+			"y": 0,
+			"width": 460,
+			"height": 140
+		},
+		{
+			"id": "kg_step1",
+			"type": "text",
+			"text": "#### 1. 结构感知分割\n- 利用目录(TOC)分割\n- 跨页表格合并\n- 保证语义完整性",
+			"x": 620,
+			"y": 200,
+			"width": 460,
+			"height": 160
+		},
+		{
+			"id": "kg_step2",
+			"type": "text",
+			"text": "#### 2. 本体引导抽取\n- 预定义实体与关系\n- 结构化JSON约束\n- ID解析与去重",
+			"x": 620,
+			"y": 420,
+			"width": 460,
+			"height": 160
+		},
+		{
+			"id": "kg_step3",
+			"type": "text",
+			"text": "#### 3. 两阶段验证\n- **语义验证** (LLM)：检查类型语义匹配\n- **Schema验证** (规则)：唯一性、关系约束、溯源",
+			"x": 620,
+			"y": 640,
+			"width": 460,
+			"height": 180
+		},
+		{
+			"id": "insight_common",
+			"type": "text",
+			"text": "### 共性启示\n1. **流程约束 > 模型依赖**：通过精细流程约束模型行为\n2. **模块化**：复杂任务拆解为可验证子步骤\n3. **数据+知识**：结构化知识引导 + 数据驱动",
+			"x": 310,
+			"y": 1100,
+			"width": 460,
+			"height": 180,
+			"color": "3"
+		}
+	],
+	"edges": [
+		{"id": "e1", "fromNode": "rag_core", "toNode": "rag_step1"},
+		{"id": "e2", "fromNode": "rag_step1", "toNode": "rag_step2"},
+		{"id": "e3", "fromNode": "rag_step2", "toNode": "rag_step3"},
+		{"id": "e4", "fromNode": "rag_step3", "toNode": "rag_step4"},
+		{"id": "e5", "fromNode": "kg_core", "toNode": "kg_step1"},
+		{"id": "e6", "fromNode": "kg_step1", "toNode": "kg_step2"},
+		{"id": "e7", "fromNode": "kg_step2", "toNode": "kg_step3"},
+		{"id": "e8", "fromNode": "rag_step4", "toNode": "insight_common", "label": "生成结果"},
+		{"id": "e9", "fromNode": "kg_step3", "toNode": "insight_common", "label": "构建结果"}
+	]
+}
