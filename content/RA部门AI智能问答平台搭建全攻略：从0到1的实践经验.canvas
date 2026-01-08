@@ -1,72 +1,18 @@
 {
-	"nodes": [
-		{
-			"id": "group_platform",
-			"type": "group",
-			"label": "RA部门AI智能问答平台搭建全攻略",
-			"x": -40,
-			"y": -40,
-			"width": 1080,
-			"height": 920,
-			"color": "1"
-		},
-		{
-			"id": "core_value",
-			"type": "text",
-			"text": "### 平台定位与核心价值\n**“注册智答星”**\n- **资料沉淀复用**：法规文档结构化\n- **业务效率提升**：自动化查询与输出\n- **合规风险降低**：标准化回答格式",
-			"x": 0,
-			"y": 0,
-			"width": 300,
-			"height": 240,
-			"color": "2"
-		},
-		{
-			"id": "key_experience",
-			"type": "text",
-			"text": "### 核心搭建经验\n\n**1. 提示词设计**\n- 核心原则：业务深度理解 + 动态优化\n- 场景举例：区分定量/定性评估\n- 格式约束：编码格式标准化\n\n**2. 数据处理**\n- 业务导向标签体系 (产品/指导原则/场景)\n- AI工作流引导 (关键词识别)\n\n**3. 批量维护**\n- 相似问答对生成\n- 人工校验排除歧义",
-			"x": 340,
-			"y": 0,
-			"width": 320,
-			"height": 440,
-			"color": "3"
-		},
-		{
-			"id": "limitations_upgrades",
-			"type": "text",
-			"text": "### 当前局限与升级方向\n\n**现存问题**\n- 提示词长度限制 (3000字)\n- 长期记忆缺失\n- 数据规模瓶颈 (幻觉)\n\n**优化路径**\n- 短期：细化业务领域拆分机器人\n- 中期：接入企业知识库/RAG\n- 长期：私有化部署大模型",
-			"x": 700,
-			"y": 0,
-			"width": 300,
-			"height": 380,
-			"color": "4"
-		},
-		{
-			"id": "collaboration",
-			"type": "text",
-			"text": "### 部门协作与推广\n**跨岗位协同**\n- 法规专家：业务逻辑\n- IT支持：数据与API\n- 终端用户：反馈优化\n\n**效果评估**\n- 效率：查询耗时 10m -> 2m\n- 准确率：65% -> 98%\n- 覆盖率：80% 高频场景",
-			"x": 0,
-			"y": 280,
-			"width": 300,
-			"height": 300,
-			"color": "5"
-		},
-		{
-			"id": "summary",
-			"type": "text",
-			"text": "### 总结\n**核心竞争力**：解决“注册专员每天问10次的重复问题”\n**关键**：业务驱动技术 (提示词+数据+迭代)\n**未来**：智能助理 (RAG + 私有化模型)",
-			"x": 340,
-			"y": 480,
-			"width": 660,
-			"height": 180,
-			"color": "6"
-		}
+	"nodes":[
+		{"id":"group_platform","type":"group","label":"RA部门AI智能问答平台搭建全攻略","x":-40,"y":-40,"width":1080,"height":920,"color":"1"},
+		{"id":"core_value","type":"text","text":"### 平台定位与核心价值\n**“注册智答星”**\n- **资料沉淀复用**：法规文档结构化\n- **业务效率提升**：自动化查询与输出\n- **合规风险降低**：标准化回答格式","x":0,"y":0,"width":300,"height":240,"color":"2"},
+		{"id":"key_experience","type":"text","text":"### 核心搭建经验\n\n**1. 提示词设计**\n- 核心原则：业务深度理解 + 动态优化\n- 场景举例：区分定量/定性评估\n- 格式约束：编码格式标准化\n\n**2. 数据处理**\n- 业务导向标签体系 (产品/指导原则/场景)\n- AI工作流引导 (关键词识别)\n\n**3. 批量维护**\n- 相似问答对生成\n- 人工校验排除歧义","x":340,"y":0,"width":320,"height":440,"color":"3"},
+		{"id":"limitations_upgrades","type":"text","text":"### 当前局限与升级方向\n\n**现存问题**\n- 提示词长度限制 (3000字)\n- 长期记忆缺失\n- 数据规模瓶颈 (幻觉)\n\n**优化路径**\n- 短期：细化业务领域拆分机器人\n- 中期：接入企业知识库/RAG\n- 长期：私有化部署大模型","x":700,"y":0,"width":300,"height":380,"color":"4"},
+		{"id":"collaboration","type":"text","text":"### 部门协作与推广\n**跨岗位协同**\n- 法规专家：业务逻辑\n- IT支持：数据与API\n- 终端用户：反馈优化\n\n**效果评估**\n- 效率：查询耗时 10m -> 2m\n- 准确率：65% -> 98%\n- 覆盖率：80% 高频场景","x":0,"y":280,"width":300,"height":300,"color":"5"},
+		{"id":"summary","type":"text","text":"### 总结\n**核心竞争力**：解决“注册专员每天问10次的重复问题”\n**关键**：业务驱动技术 (提示词+数据+迭代)\n**未来**：智能助理 (RAG + 私有化模型)","x":340,"y":480,"width":660,"height":180,"color":"6"}
 	],
-	"edges": [
-		{"id": "e1", "fromNode": "core_value", "toNode": "key_experience", "label": "支撑"},
-		{"id": "e2", "fromNode": "key_experience", "toNode": "limitations_upgrades", "label": "迭代"},
-		{"id": "e3", "fromNode": "core_value", "toNode": "collaboration", "label": "落地"},
-		{"id": "e4", "fromNode": "key_experience", "toNode": "summary", "label": "沉淀"},
-		{"id": "e5", "fromNode": "limitations_upgrades", "toNode": "summary", "label": "展望"},
-		{"id": "e6", "fromNode": "collaboration", "toNode": "summary", "label": "验证"}
+	"edges":[
+		{"id":"e1","fromNode":"core_value","toNode":"key_experience","label":"支撑","fromSide":"right","toSide":"left"},
+		{"id":"e2","fromNode":"key_experience","toNode":"limitations_upgrades","label":"迭代","fromSide":"right","toSide":"left"},
+		{"id":"e3","fromNode":"core_value","toNode":"collaboration","label":"落地","fromSide":"bottom","toSide":"top"},
+		{"id":"e4","fromNode":"key_experience","toNode":"summary","label":"沉淀","fromSide":"bottom","toSide":"top"},
+		{"id":"e5","fromNode":"limitations_upgrades","toNode":"summary","label":"展望","fromSide":"bottom","toSide":"top"},
+		{"id":"e6","fromNode":"collaboration","toNode":"summary","label":"验证","fromSide":"right","toSide":"left"}
 	]
 }

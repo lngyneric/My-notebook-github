@@ -11,14 +11,17 @@
             "id": "bc0f493c695d75c8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Obsidian Bases.md",
-                "mode": "source",
-                "source": false
+                "file": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
+                "viewState": {
+                  "x": 500,
+                  "y": 420,
+                  "zoom": -0.08514811868879876
+                }
               },
-              "icon": "lucide-file",
-              "title": "Obsidian Bases"
+              "icon": "lucide-layout-dashboard",
+              "title": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验"
             }
           }
         ]
@@ -94,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obsidian Bases.md",
+                "file": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +107,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Obsidian Bases 的反向链接列表"
+              "title": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验 的反向链接列表"
             }
           },
           {
@@ -113,12 +116,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obsidian Bases.md",
+                "file": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Obsidian Bases 的出链列表"
+              "title": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验 的出链列表"
             }
           },
           {
@@ -142,13 +145,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Bases.md",
+                "file": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Obsidian Bases 的大纲"
+              "title": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验 的大纲"
             }
           },
           {
@@ -220,18 +223,20 @@
   },
   "active": "bc0f493c695d75c8",
   "lastOpenFiles": [
-    "AI_Resources.base",
-    "Dec AI信息共享.md",
-    "SKILL.md",
-    "assets/结构化_AI_掌控.pdf",
-    "index.md",
     "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
     "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
     "Obsidian Bases.md",
-    "Github Key.md",
+    "Dec AI信息共享.md",
+    "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
+    "AI_Resources.base",
+    "index.canvas",
+    "JSON Canvas.md",
     "多模态RAG与知识图谱构建技术全解析.canvas",
     "多模态RAG与知识图谱构建技术全解析.md",
-    "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
+    "SKILL.md",
+    "assets/结构化_AI_掌控.pdf",
+    "index.md",
+    "Github Key.md",
     "bibliography.bib",
     "assets/Spark_to_Symphony_AI_Agents.pdf",
     "assets/Agent_Graph_RAG_Social_Influence.pdf",
@@ -240,7 +245,6 @@
     "assets/AI Agent证书IBM.pdf",
     "assets/AutoGen_AI_Expert_Teams.pdf",
     "assets",
-    "JSON Canvas.md",
     "未命名.canvas",
     "三.md",
     "Temp/CODE_OF_CONDUCT.md",
