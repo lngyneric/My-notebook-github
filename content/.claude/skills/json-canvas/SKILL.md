@@ -597,47 +597,73 @@ Node and edge IDs must be unique strings. Obsidian generates 16-character hexade
 "id": "1234567890abcdef"
 ```
 
-This format is a 16-character lowercase hex string (64-bit random value).
+## Workflow Automation
 
-## Layout Guidelines
+### Note to Canvas Conversion
 
-### Positioning
+This section defines the configuration for a right-click menu action to convert Markdown notes into JSON Canvas files.
 
-- Coordinates can be negative (canvas extends infinitely)
-- `x` increases to the right
-- `y` increases downward
-- Position refers to top-left corner of node
+#### Context Menu Configuration
 
-### Recommended Sizes
+```json
+{
+  "menuItem": {
+    "id": "note-to-canvas",
+    "label": "笔记转换Canvas",
+    "command": "obsidian-skills:note-to-canvas",
+    "condition": "resource.extension == '.md'",
+    "group": "file-menu",
+    "icon": "layout-dashboard"
+  },
+  "permissions": {
+    "read": ["*.md"],
+    "write": ["*.canvas"],
+    "roles": ["editor", "admin"]
+  }
+}
+```
 
-| Node Type | Suggested Width | Suggested Height |
-|-----------|-----------------|------------------|
-| Small text | 200-300 | 80-150 |
-| Medium text | 300-450 | 150-300 |
-| Large text | 400-600 | 300-500 |
-| File preview | 300-500 | 200-400 |
-| Link preview | 250-400 | 100-200 |
-| Group | Varies | Varies |
+#### Conversion Logic Specification
 
-### Spacing
+The "Note to Canvas" function parses a Markdown file and visualizes its structure:
 
-- Leave 20-50px padding inside groups
-- Space nodes 50-100px apart for readability
-- Align nodes to grid (multiples of 10 or 20) for cleaner layouts
+1.  **Parsing Strategy**:
+    - **Central Node**: The file title (filename) becomes the central group or text node.
+    - **Sections**: Top-level headings (H1/H2) become child nodes surrounding the center.
+    - **Content**: Text blocks under headings become details within nodes or attached notes.
+    - **Links**: Wikilinks `[[...]]` are converted to Edge connections if the target node exists, or new File nodes.
 
-## Validation Rules
+2.  **Layout Algorithm**:
+    - **Radial Layout**: Place the main topic at `(0,0)`.
+    - **Orbit**: Place section nodes in a circular orbit (radius ~400px) around the center.
+    - **Spacing**: Ensure `width` (300px) and `height` (200px) + margin to avoid overlap.
 
-1. All `id` values must be unique across nodes and edges
-2. `fromNode` and `toNode` must reference existing node IDs
-3. Required fields must be present for each node type
-4. `type` must be one of: `text`, `file`, `link`, `group`
-5. `backgroundStyle` must be one of: `cover`, `ratio`, `repeat`
-6. `fromSide`, `toSide` must be one of: `top`, `right`, `bottom`, `left`
-7. `fromEnd`, `toEnd` must be one of: `none`, `arrow`
-8. Color presets must be `"1"` through `"6"` or valid hex color
+3.  **Error Handling**:
+    - If file is empty: Show "Cannot convert empty note".
+    - If parsing fails: Log error to console and fallback to creating a single node with raw content.
 
-## References
+#### Example Conversion
 
-- [JSON Canvas Spec 1.0](https://jsoncanvas.org/spec/1.0/)
-- [JSON Canvas GitHub](https://github.com/obsidianmd/jsoncanvas)
+**Input (Note.md):**
+```markdown
+# AI Platform
+## Frontend
+React app.
+## Backend
+Node.js server.
+```
 
+**Output (Note.canvas):**
+```json
+{
+  "nodes": [
+    {"id":"1", "type":"text", "text":"# AI Platform", "x":0, "y":0, "width":300, "height":100, "color":"1"},
+    {"id":"2", "type":"text", "text":"## Frontend\nReact app.", "x":-400, "y":0, "width":300, "height":200},
+    {"id":"3", "type":"text", "text":"## Backend\nNode.js server.", "x":400, "y":0, "width":300, "height":200}
+  ],
+  "edges": [
+    {"id":"e1", "fromNode":"1", "toNode":"2"},
+    {"id":"e2", "fromNode":"1", "toNode":"3"}
+  ]
+}
+```

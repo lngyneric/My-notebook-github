@@ -11,17 +11,14 @@
             "id": "bc0f493c695d75c8",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
-                "viewState": {
-                  "x": 500,
-                  "y": 420,
-                  "zoom": -0.08514811868879876
-                }
+                "file": "AI-Math-Assistant Tool Calling.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验"
+              "icon": "lucide-file",
+              "title": "AI-Math-Assistant Tool Calling"
             }
           }
         ]
@@ -223,10 +220,10 @@
   },
   "active": "bc0f493c695d75c8",
   "lastOpenFiles": [
+    "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
     "pydanticai-101.md",
     "SKILL.md",
     "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
-    "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
     "Obsidian Bases.md",
     "JSON Canvas.md",
     "Agentic Graph-RAG Over Social-Network Knowledge Graphs.md",
