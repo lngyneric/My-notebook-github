@@ -1,0 +1,37 @@
+{
+	"nodes":[
+		{"id":"title","x":0,"y":0,"width":400,"height":100,"type":"text","text":"# 七年级（上）名著阅读复习","color":"1"},
+		{"id":"exam_scope","x":-500,"y":0,"width":300,"height":150,"type":"text","text":"## 一、考试范围\n1. **鲁迅《朝花夕拾》**\n2. **吴承恩《西游记》**\n\n**必考点**：\n- 温馨回忆与理性批判\n- 人物性格与故事情节","color":"2"},
+		{"id":"zhaohua","x":500,"y":-400,"width":300,"height":60,"type":"text","text":"## 二、《朝花夕拾》","color":"3"},
+		{"id":"zhaohua_intro","x":900,"y":-400,"width":350,"height":120,"type":"text","text":"**文学常识**\n- 作者：鲁迅\n- 评价：现代伟大文学家、思想家、革命家\n- 内容：回忆童年与求学，怀念与批判"},
+		{"id":"essay1","x":900,"y":-200,"width":300,"height":100,"type":"text","text":"**1. 《狗·猫·鼠》**\n- 嘲讽“正人君子”\n- 追忆隐鼠，同情弱小"},
+		{"id":"essay2","x":900,"y":-80,"width":300,"height":100,"type":"text","text":"**2. 《阿长与<山海经>》**\n- 长妈妈：迷信唠叨但善良\n- 买书之恩，感激怀念"},
+		{"id":"essay3","x":900,"y":40,"width":300,"height":100,"type":"text","text":"**3. 《二十四孝图》**\n- 批判封建孝道\n- 揭露虚伪残酷 (郭巨埋儿)"},
+		{"id":"essay4","x":900,"y":160,"width":300,"height":100,"type":"text","text":"**4. 《五猖会》**\n- 盼会与背书\n- 批判封建教育压制天性"},
+		{"id":"essay5","x":900,"y":280,"width":300,"height":100,"type":"text","text":"**5. 《无常》**\n- 有人情味的鬼\n- 讽刺“正人君子”，渴望公正"},
+		{"id":"essay6","x":1300,"y":-200,"width":300,"height":100,"type":"text","text":"**6. 《从百草园到三味书屋》**\n- 百草园：童年乐趣\n- 三味书屋：私塾生活，寿镜吾"},
+		{"id":"essay7","x":1300,"y":-80,"width":300,"height":100,"type":"text","text":"**7. 《父亲的病》**\n- 揭露庸医勒索钱财草菅人命\n- 愧疚与痛恨"},
+		{"id":"essay8","x":1300,"y":40,"width":300,"height":100,"type":"text","text":"**8. 《琐记》**\n- 衍太太：自私阴险\n- 南京求学，探求真理"},
+		{"id":"essay9","x":1300,"y":160,"width":300,"height":100,"type":"text","text":"**9. 《藤野先生》**\n- 藤野：严谨正直，无偏见\n- 弃医从文，爱国精神"},
+		{"id":"essay10","x":1300,"y":280,"width":300,"height":100,"type":"text","text":"**10. 《范爱农》**\n- 革命前不满，革命后受迫害\n- 同情与怀念"},
+		{"id":"xiyouji","x":500,"y":500,"width":300,"height":60,"type":"text","text":"## 三、《西游记》","color":"4"},
+		{"id":"xiyou_details","x":900,"y":500,"width":400,"height":250,"type":"text","text":"**1. 作者与成书**\n- 吴承恩，明代，唐僧取经故事\n\n**2. 主题思想**\n- 反抗封建 (大闹天宫)\n- 战胜困难 (西天取经)\n- 嘲讽社会\n\n**3. 艺术特色**\n- 人物鲜明 (悟空/八戒/沙僧/唐僧)\n- 想象奇特 (神魔世界)\n- 诙谐幽默"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"title","fromSide":"left","toNode":"exam_scope","toSide":"right"},
+		{"id":"e2","fromNode":"title","fromSide":"right","toNode":"zhaohua","toSide":"left"},
+		{"id":"e3","fromNode":"zhaohua","fromSide":"right","toNode":"zhaohua_intro","toSide":"left"},
+		{"id":"e4","fromNode":"zhaohua","fromSide":"right","toNode":"essay1","toSide":"left"},
+		{"id":"e5","fromNode":"zhaohua","fromSide":"right","toNode":"essay2","toSide":"left"},
+		{"id":"e6","fromNode":"zhaohua","fromSide":"right","toNode":"essay3","toSide":"left"},
+		{"id":"e7","fromNode":"zhaohua","fromSide":"right","toNode":"essay4","toSide":"left"},
+		{"id":"e8","fromNode":"zhaohua","fromSide":"right","toNode":"essay5","toSide":"left"},
+		{"id":"e9","fromNode":"zhaohua","fromSide":"right","toNode":"essay6","toSide":"left"},
+		{"id":"e10","fromNode":"zhaohua","fromSide":"right","toNode":"essay7","toSide":"left"},
+		{"id":"e11","fromNode":"zhaohua","fromSide":"right","toNode":"essay8","toSide":"left"},
+		{"id":"e12","fromNode":"zhaohua","fromSide":"right","toNode":"essay9","toSide":"left"},
+		{"id":"e13","fromNode":"zhaohua","fromSide":"right","toNode":"essay10","toSide":"left"},
+		{"id":"e14","fromNode":"title","fromSide":"bottom","toNode":"xiyouji","toSide":"top"},
+		{"id":"e15","fromNode":"xiyouji","fromSide":"right","toNode":"xiyou_details","toSide":"left"}
+	]
+}
