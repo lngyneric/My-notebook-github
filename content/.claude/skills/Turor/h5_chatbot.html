@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Academic Tutor Chatbot</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f5f5f5; height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Header */
+        header { background-color: #fff; padding: 15px; text-align: center; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 18px; color: #333; }
+        .header-controls { display: flex; align-items: center; gap: 10px; }
+        .user-status { font-size: 12px; color: #666; }
+        .settings-btn { background: none; border: none; padding: 5px; cursor: pointer; color: #666; width: auto; height: auto; border-radius: 4px; }
+        
+        /* Chat Area */
+        #chat-container { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 15px; scroll-behavior: smooth; }
+        
+        .message { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 15px; line-height: 1.5; word-wrap: break-word; position: relative; }
+        .message.bot { align-self: flex-start; background-color: #fff; color: #333; border-bottom-left-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .message.user { align-self: flex-end; background-color: #007aff; color: #fff; border-bottom-right-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        
+        .loading { align-self: flex-start; background-color: #fff; padding: 10px 14px; border-radius: 12px; font-size: 12px; color: #999; border-bottom-left-radius: 2px; display: none; }
+        .dot-typing { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background-color: #999; margin-right: 2px; animation: typing 1s infinite; }
+        .dot-typing:nth-child(2) { animation-delay: 0.2s; }
+        .dot-typing:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing { 0% { opacity: 0.5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } 100% { opacity: 0.5; transform: scale(1); } }
+
+        /* Input Area */
+        footer { background-color: #fff; padding: 10px; border-top: 1px solid #e0e0e0; display: flex; gap: 10px; align-items: flex-end; }
+        textarea { flex: 1; border: 1px solid #ddd; border-radius: 20px; padding: 10px 15px; font-size: 15px; outline: none; resize: none; max-height: 100px; min-height: 40px; font-family: inherit; }
+        button { background-color: #007aff; color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: background-color 0.2s; flex-shrink: 0; }
+        button:disabled { background-color: #ccc; cursor: not-allowed; }
+        button svg { width: 20px; height: 20px; fill: currentColor; }
+
+        /* Login Overlay */
+        #login-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.95); z-index: 100; display: flex; flex-direction: column; justify-content: center; align-items: center; display: none; }
+        .login-btn { background-color: #4caf50; color: white; padding: 12px 24px; border-radius: 25px; font-size: 16px; border: none; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-decoration: none; }
+
+        /* Settings Modal */
+        #settings-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 90; display: none; justify-content: center; align-items: center; }
+        .modal-content { background-color: #fff; padding: 20px; border-radius: 10px; width: 85%; max-width: 320px; }
+        .modal-header { font-size: 16px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-size: 14px; color: #666; }
+        .form-group input { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+        .modal-btn { padding: 8px 16px; border-radius: 5px; font-size: 14px; border: none; cursor: pointer; }
+        .btn-cancel { background-color: #f5f5f5; color: #666; }
+        .btn-save { background-color: #007aff; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <div id="login-overlay">
+        <h2 style="margin-bottom: 20px; color: #333;">Academic Tutor</h2>
+        <p style="margin-bottom: 30px; color: #666; text-align: center; padding: 0 20px;">请登录企业微信以继续使用</p>
+        <button id="wecom-login-btn" class="login-btn">企业微信登录</button>
+    </div>
+
+    <div id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>设置</span>
+                <span onclick="closeSettings()" style="cursor:pointer">&times;</span>
+            </div>
+            <div class="form-group">
+                <label>温度 (Temperature)</label>
+                <input type="number" id="temp-input" min="0" max="1" step="0.1" value="0.7">
+            </div>
+            <div class="form-group">
+                <label>最大长度 (Max Tokens)</label>
+                <input type="number" id="tokens-input" min="100" max="8000" step="100" value="2000">
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn btn-cancel" onclick="closeSettings()">取消</button>
+                <button class="modal-btn btn-save" onclick="saveSettings()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Academic Tutor</h1>
+        <div class="header-controls">
+            <button class="settings-btn" onclick="openSettings()">⚙️</button>
+            <div class="user-status" id="user-info">未登录</div>
+        </div>
+    </header>
+
+    <div id="chat-container">
+        <div class="message bot">你好！我是你的学术导师。有什么我可以帮你的吗？</div>
+    </div>
+    
+    <div class="loading" id="loading-indicator">
+        <span class="dot-typing"></span>
+        <span class="dot-typing"></span>
+        <span class="dot-typing"></span>
+    </div>
+
+    <footer>
+        <textarea id="user-input" placeholder="输入消息..." rows="1"></textarea>
+        <button id="send-btn" disabled>
+            <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+    </footer>
+
+    <script>
+        // Configuration
+        // 注意：本地调试时请使用 localhost:8000，生产环境使用 tool.sysmex.com.cn
+        // 由于跨域(CORS)限制，直接连接远程服务器可能会在本地失败
+        const ENV = 'local'; // Options: 'local', 'prod'
+        
+        const API_CONFIG = {
+            local: 'http://localhost:8000',
+            prod: 'https://tool.sysmex.com.cn/hr/api'
+        };
+        
+        const API_BASE = API_CONFIG[ENV];
+        const APP_BASE = window.location.href.split('?')[0]; // Current URL without params
+
+        // State
+        let sessionToken = localStorage.getItem('tutor_token');
+        let currentUser = null;
+        let chatSettings = {
+            temperature: 0.7,
+            max_output_tokens: 2000,
+            top_p: 0.95,
+            top_k: 40
+        };
+
+        // Elements
+        const chatContainer = document.getElementById('chat-container');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const loginOverlay = document.getElementById('login-overlay');
+        const wecomLoginBtn = document.getElementById('wecom-login-btn');
+        const userInfoEl = document.getElementById('user-info');
+
+        // Initialization
+        async function init() {
+            // Check for Auth Code in URL (Callback)
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+
+            if (code) {
+                // Handle Callback
+                await handleCallback(code);
+            } else if (sessionToken) {
+                // Verify Existing Token
+                await verifyToken();
+            } else {
+                // Show Login
+                showLogin();
+            }
+        }
+
+        // Auth Logic
+        async function handleCallback(code) {
+            showLoading(true);
+            try {
+                // Call API to exchange code for token
+                // Note: The backend endpoint is /auth/wecom/callback?code=...
+                const response = await fetch(`${API_BASE}/auth/wecom/callback?code=${code}`);
+                const data = await response.json();
+
+                if (data.status === 'success' && data.token) {
+                    sessionToken = data.token;
+                    localStorage.setItem('tutor_token', sessionToken);
+                    
+                    // Clean URL
+                    window.history.replaceState({}, document.title, APP_BASE);
+                    
+                    await verifyToken();
+                } else {
+                    alert('登录失败: ' + (data.detail || '未知错误'));
+                    showLogin();
+                }
+            } catch (error) {
+                console.error('Callback error:', error);
+                alert('登录出错，请重试');
+                showLogin();
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function verifyToken() {
+            try {
+                const response = await fetch(`${API_BASE}/users/me?token=${sessionToken}`);
+                if (response.ok) {
+                    currentUser = await response.json();
+                    userInfoEl.textContent = currentUser.name || currentUser.id;
+                    hideLogin();
+                    enableChat();
+                } else {
+                    // Token expired or invalid
+                    localStorage.removeItem('tutor_token');
+                    showLogin();
+                }
+            } catch (error) {
+                console.error('Verify token error:', error);
+                // Allow offline/error state or force login? 
+                // For now force login if we can't verify
+                showLogin();
+            }
+        }
+
+        async function startLogin() {
+            try {
+                // Get Auth URL from API
+                // We pass the current page as the redirect_uri
+                const redirectUri = encodeURIComponent(APP_BASE);
+                const response = await fetch(`${API_BASE}/auth/wecom/login?redirect_uri=${redirectUri}`);
+                const data = await response.json();
+                
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert('无法获取登录链接');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('登录初始化失败');
+            }
+        }
+
+        // UI Helpers
+        function showLogin() {
+            loginOverlay.style.display = 'flex';
+        }
+
+        function hideLogin() {
+            loginOverlay.style.display = 'none';
+        }
+
+        function enableChat() {
+            userInput.disabled = false;
+            // sendBtn state managed by input listener
+        }
+
+        // Settings Logic
+        const settingsModal = document.getElementById('settings-modal');
+        const tempInput = document.getElementById('temp-input');
+        const tokensInput = document.getElementById('tokens-input');
+
+        function openSettings() {
+            tempInput.value = chatSettings.temperature;
+            tokensInput.value = chatSettings.max_output_tokens;
+            settingsModal.style.display = 'flex';
+        }
+
+        function closeSettings() {
+            settingsModal.style.display = 'none';
+        }
+
+        function saveSettings() {
+            const temp = parseFloat(tempInput.value);
+            const tokens = parseInt(tokensInput.value);
+
+            if (isNaN(temp) || temp < 0 || temp > 1) {
+                alert('温度必须在 0 到 1 之间');
+                return;
+            }
+            if (isNaN(tokens) || tokens < 1) {
+                alert('最大长度必须大于 0');
+                return;
+            }
+
+            chatSettings.temperature = temp;
+            chatSettings.max_output_tokens = tokens;
+            closeSettings();
+        }
+
+        function appendMessage(text, type) {
+            const div = document.createElement('div');
+            div.className = `message ${type}`;
+            div.textContent = text; // TextContent for safety against XSS
+            
+            // Insert before loading indicator
+            chatContainer.insertBefore(div, loadingIndicator);
+            scrollToBottom();
+        }
+
+        function showLoading(show) {
+            loadingIndicator.style.display = show ? 'block' : 'none';
+            if(show) scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        // Chat Logic
+        async function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text) return;
+
+            // UI Update
+            appendMessage(text, 'user');
+            userInput.value = '';
+            userInput.style.height = 'auto';
+            sendBtn.disabled = true;
+            showLoading(true);
+
+            try {
+                const response = await fetch(`${API_BASE}/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: text,
+                        session_id: sessionToken,
+                        temperature: parseFloat(chatSettings.temperature),
+                        max_output_tokens: parseInt(chatSettings.max_output_tokens)
+                    })
+                });
+
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const data = await response.json();
+                appendMessage(data.response, 'bot');
+
+            } catch (error) {
+                console.error('Chat error:', error);
+                appendMessage('发送失败，请稍后重试。', 'bot');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // Event Listeners
+        wecomLoginBtn.addEventListener('click', startLogin);
+
+        sendBtn.addEventListener('click', sendMessage);
+
+        userInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+            sendBtn.disabled = !this.value.trim();
+        });
+
+        userInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                if (!sendBtn.disabled) sendMessage();
+            }
+        });
+
+        // Start
+        init();
+
+    </script>
+</body>
+</html>
