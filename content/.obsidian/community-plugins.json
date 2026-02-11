@@ -8,5 +8,6 @@
   "dataview",
   "templater-obsidian",
   "obsidian-reminder-plugin",
-  "obsidian-excalidraw-plugin"
+  "obsidian-excalidraw-plugin",
+  "obsidian-spaced-repetition"
 ]

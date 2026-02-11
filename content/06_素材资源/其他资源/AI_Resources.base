@@ -1,0 +1,21 @@
+filters:
+  or:
+    - file.hasTag("AI")
+    - file.hasTag("Industry")
+properties:
+  file.mtime:
+    displayName: 更新时间
+  file.name:
+    displayName: 笔记名称
+  file.tags:
+    displayName: 标签
+views:
+  - type: table
+    name: AI & 行业相关笔记
+    filters:
+      not:
+        - file.name == "Dec AI信息共享.md"
+    order:
+      - file.name
+      - file.tags
+      - file.mtime

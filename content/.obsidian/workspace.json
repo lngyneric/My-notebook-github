@@ -11,14 +11,13 @@
             "id": "bc0f493c695d75c8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "西游记整本书阅读知识点汇总.md",
-                "mode": "source",
-                "source": false
+                "file": "AllitemList.base",
+                "viewName": "表格"
               },
-              "icon": "lucide-file",
-              "title": "西游记整本书阅读知识点汇总"
+              "icon": "lucide-table",
+              "title": "AllitemList"
             }
           },
           {
@@ -79,51 +78,8 @@
               "icon": "lucide-layout-dashboard",
               "title": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验"
             }
-          },
-          {
-            "id": "6c8a74ce5e08f75a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Agentic Graph-RAG Over Social-Network Knowledge Graphs.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Agentic Graph-RAG Over Social-Network Knowledge Graphs"
-            }
-          },
-          {
-            "id": "9391d4166f53b2ce",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验"
-            }
-          },
-          {
-            "id": "e319024c1381f5d0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "agentic-design-patterns/07-Chapter-01-Prompt-Chaining.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "07-Chapter-01-Prompt-Chaining"
-            }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -296,6 +252,16 @@
               "icon": "lucide-archive",
               "title": "添加笔记属性"
             }
+          },
+          {
+            "id": "9d663cde7592c864",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "笔记复习序列"
+            }
           }
         ],
         "currentTab": 4
@@ -317,46 +283,55 @@
       "command-palette:打开命令面板": false,
       "obsidian-git:Open Git source control": false,
       "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "obsidian-spaced-repetition:复习卡片": false
     }
   },
-  "active": "e319024c1381f5d0",
+  "active": "9d663cde7592c864",
   "lastOpenFiles": [
-    "agentic-design-patterns/000-Home.md",
-    "agentic-design-patterns/37-Index.md",
-    "agentic-design-patterns/29-Appendix-B.md",
-    "agentic-design-patterns/28-Appendix-A.md",
-    "agentic-design-patterns/07-Chapter-01-Prompt-Chaining.md",
-    "agentic-design-patterns/06-What-Makes-Agent.md",
-    "agentic-design-patterns/26-Chapter-20-Prioritization.md",
+    "AllitemList.base",
+    "未命名 1.base",
+    "注意.md",
+    "AI流程：网页改造APP.md",
+    "Agentic Graph-RAG Over Social-Network Knowledge Graphs.md",
+    "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
+    "Build Multi-Agent Chatbot with AG2 AutoGen for Healthcare.md",
+    "SKILL.md",
+    "index.md",
+    "AI_Resources.base",
+    "Dec AI信息共享.md",
+    "Obsidian Bases.md",
+    "JSON Canvas.md",
+    "多模态RAG与知识图谱构建技术全解析.md",
+    "知识图谱嵌入技术全解析：原理、调优与业务价值.md",
+    "多模态RAG与知识图谱构建技术全解析.canvas",
+    "2026-01-12.md",
+    "AI github 汇总.md",
+    "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.md",
+    "AI-Math-Assistant Tool Calling.md",
+    "Obsidian 笔记本教程(高级).md",
+    "Obsidian 笔记本教程(高级).canvas",
+    "Training_Flowchart.md",
+    "Tutor_Mentoring_Guide.md",
+    "人力资源培训提纲.md",
+    "zou_fengjing_status_report.md",
+    "Training_Reinforcement_Plan.md",
+    "RA部门AI智能问答平台搭建经验总结.md",
+    "RA_AI_Platform_OpenSpec_Proposal.md",
+    "Ohms_Law_Water_Analogy.md",
+    "RA_AI_Platform.openspec.md",
+    "Obsidian_Notes.base",
+    "RA_AI_Knowledge.base",
+    "skills/skills/pptx/ooxml/schemas/ecma/fouth-edition/opc-relationships.xsd",
+    "skills/skills/pptx/ooxml/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+    "skills/skills/pptx/ooxml/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+    "skills/skills/pptx/ooxml/schemas/ecma/fouth-edition/opc-digSig.xsd",
+    "skills/skills/docx/ooxml/schemas/ecma/fouth-edition/opc-relationships.xsd",
+    "skills/skills/docx/ooxml/schemas/ecma/fouth-edition/opc-digSig.xsd",
+    "AI流程：网页改造APP.canvas",
+    "Training_Flowchart.canvas",
     "agentic-design-patterns/images/chapter11_fig2.png",
     "agentic-design-patterns/images/chapter11_fig1.png",
-    "agentic-design-patterns/extract_images.py",
-    "agentic-design-patterns/12-Chapter-06-Planning.md",
-    "agentic-design-patterns/22-Chapter-16-Resource-Aware-Optimization.md",
-    "agentic-design-patterns/15-Chapter-09-Learning-and-Adaptation.md",
-    "agentic-design-patterns/24-Chapter-18-Guardrails-Safety-Patterns.md",
-    "agentic-design-patterns/17-Chapter-11-Goal-Setting-And-Monitoring.md",
-    "agentic-design-patterns/23-Chapter-17-Reasoning-Techniques.md",
-    "agentic-design-patterns/04-Thought-Leader.md",
-    "agentic-design-patterns/README.md",
-    "agentic-design-patterns/34-Appendix-G.md",
-    "agentic-design-patterns/31-Appendix-D.md",
-    "agentic-design-patterns/30-Appendix-C.md",
-    "agentic-design-patterns/00-Table-of-Contents.md",
-    "agentic-design-patterns/36-Glossary.md",
-    "agentic-design-patterns/35-Conclusion.md",
-    "agentic-design-patterns/32-Appendix-E.md",
-    "agentic-design-patterns/33-Appendix-F.md",
-    "team-awareness-training/sessions/session-07-well-being.md",
-    "team-awareness-training/sessions/session-08-further-training.md",
-    "team-awareness-training/sessions/session-06-culture.md",
-    "team-awareness-training/LICENSE",
-    "team-awareness-training/sessions",
-    "team-awareness-training",
-    "team-awareness-training-master/LICENSE",
-    "team-awareness-training-master/sessions",
-    "team-awareness-training-master",
     "agentic-design-patterns/images/fig1.png",
     "agentic-design-patterns/images/fig3.png",
     "agentic-design-patterns/images/fig4.png",
@@ -366,16 +341,8 @@
     "agentic-design-patterns/images/chapter21_fig2.png",
     "agentic-design-patterns/Agentic_Patterns_Map.canvas",
     "agentic-design-patterns/images/fig2.png",
-    "Kyle复习/附件",
-    "附件",
-    "RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
-    "Training_Flowchart.excalidraw",
-    "Training_Flowchart.canvas",
-    "AI流程：网页改造APP.canvas",
     "Kyle复习/七年级上册名著阅读复习.canvas",
     "TA/RA部门AI智能问答平台搭建全攻略：从0到1的实践经验.canvas",
-    "多模态RAG与知识图谱构建技术全解析.canvas",
-    "Obsidian 笔记本教程(高级).canvas",
     "未命名.canvas",
     "index.canvas"
   ]

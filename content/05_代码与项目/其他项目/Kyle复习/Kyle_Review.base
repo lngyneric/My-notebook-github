@@ -1,0 +1,17 @@
+filters:
+  and:
+    - file.hasTag("语文")
+properties:
+  file.mtime:
+    displayName: 更新时间
+  file.name:
+    displayName: 文件名
+  file.tags:
+    displayName: 标签
+views:
+  - type: table
+    name: Kyle 语文复习资料
+    order:
+      - file.name
+      - file.tags
+      - file.mtime

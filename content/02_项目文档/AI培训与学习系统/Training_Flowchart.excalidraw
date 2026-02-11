@@ -1,0 +1,2139 @@
+{
+    "type": "excalidraw",
+    "version": 2,
+    "source": "https://excalidraw.com",
+    "elements": [
+        {
+            "id": "7c300517-56b8-4174-b539-94a6678a61ee",
+            "type": "rectangle",
+            "x": 600,
+            "y": 400,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "7c300517-56b8-4174-b539-94a6678a61ee_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "7c300517-56b8-4174-b539-94a6678a61ee_text",
+            "type": "text",
+            "x": 610,
+            "y": 415.0,
+            "width": 280,
+            "height": 20,
+            "text": "新员工报到",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "7c300517-56b8-4174-b539-94a6678a61ee"
+        },
+        {
+            "id": "1c7d38bd-224c-44ab-8e07-fa5729a2f005",
+            "type": "rectangle",
+            "x": 600,
+            "y": 510,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "1c7d38bd-224c-44ab-8e07-fa5729a2f005_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "1c7d38bd-224c-44ab-8e07-fa5729a2f005_text",
+            "type": "text",
+            "x": 610,
+            "y": 525.0,
+            "width": 280,
+            "height": 20,
+            "text": "HR: 公司制度/合同/手册",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "1c7d38bd-224c-44ab-8e07-fa5729a2f005"
+        },
+        {
+            "id": "b908d95b-6d25-46b4-aa03-c74dd01e2e0e",
+            "type": "rectangle",
+            "x": 600,
+            "y": 620,
+            "width": 300,
+            "height": 80,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "b908d95b-6d25-46b4-aa03-c74dd01e2e0e_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "b908d95b-6d25-46b4-aa03-c74dd01e2e0e_text",
+            "type": "text",
+            "x": 610,
+            "y": 650.0,
+            "width": 280,
+            "height": 20,
+            "text": "上司: MBO·责任田·经销商·框架·政策·产品·月会",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "b908d95b-6d25-46b4-aa03-c74dd01e2e0e"
+        },
+        {
+            "id": "e3d206a1-5579-482b-b2ca-a1cd6a44bc1d",
+            "type": "rectangle",
+            "x": 600,
+            "y": 730,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "e3d206a1-5579-482b-b2ca-a1cd6a44bc1d_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "e3d206a1-5579-482b-b2ca-a1cd6a44bc1d_text",
+            "type": "text",
+            "x": 610,
+            "y": 745.0,
+            "width": 280,
+            "height": 20,
+            "text": "助理: CRM/报销/会议/战略报告",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "e3d206a1-5579-482b-b2ca-a1cd6a44bc1d"
+        },
+        {
+            "id": "d6ad9aea-b61c-4e1c-bc74-1f880b25f59b",
+            "type": "rectangle",
+            "x": 600,
+            "y": 840,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "d6ad9aea-b61c-4e1c-bc74-1f880b25f59b_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "d6ad9aea-b61c-4e1c-bc74-1f880b25f59b_text",
+            "type": "text",
+            "x": 610,
+            "y": 855.0,
+            "width": 280,
+            "height": 20,
+            "text": "参观+HR总监面谈",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "d6ad9aea-b61c-4e1c-bc74-1f880b25f59b"
+        },
+        {
+            "id": "0df1e2a3-9b44-4cd9-8b4c-fd1319b87ad5",
+            "type": "rectangle",
+            "x": 600,
+            "y": 1000,
+            "width": 300,
+            "height": 100,
+            "backgroundColor": "#ffffff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "0df1e2a3-9b44-4cd9-8b4c-fd1319b87ad5_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "0df1e2a3-9b44-4cd9-8b4c-fd1319b87ad5_text",
+            "type": "text",
+            "x": 610,
+            "y": 1040.0,
+            "width": 280,
+            "height": 20,
+            "text": "身份是主管以上的一线员工?",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "0df1e2a3-9b44-4cd9-8b4c-fd1319b87ad5"
+        },
+        {
+            "id": "178bc84e-25fe-4ee4-b01e-cd14528cd770",
+            "type": "rectangle",
+            "x": 600,
+            "y": 1150,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "178bc84e-25fe-4ee4-b01e-cd14528cd770_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "178bc84e-25fe-4ee4-b01e-cd14528cd770_text",
+            "type": "text",
+            "x": 610,
+            "y": 1165.0,
+            "width": 280,
+            "height": 20,
+            "text": "渠道管理",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "178bc84e-25fe-4ee4-b01e-cd14528cd770"
+        },
+        {
+            "id": "60c67009-0817-452d-8b81-f4f860297fb9",
+            "type": "rectangle",
+            "x": 600,
+            "y": 1250,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "60c67009-0817-452d-8b81-f4f860297fb9_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "60c67009-0817-452d-8b81-f4f860297fb9_text",
+            "type": "text",
+            "x": 610,
+            "y": 1265.0,
+            "width": 280,
+            "height": 20,
+            "text": "市场政策",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "60c67009-0817-452d-8b81-f4f860297fb9"
+        },
+        {
+            "id": "cc4ec150-01e1-48f1-a7fb-cbbdbc731e8c",
+            "type": "rectangle",
+            "x": 600,
+            "y": 1350,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "cc4ec150-01e1-48f1-a7fb-cbbdbc731e8c_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "cc4ec150-01e1-48f1-a7fb-cbbdbc731e8c_text",
+            "type": "text",
+            "x": 610,
+            "y": 1365.0,
+            "width": 280,
+            "height": 20,
+            "text": "招标数字管理",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "cc4ec150-01e1-48f1-a7fb-cbbdbc731e8c"
+        },
+        {
+            "id": "c45a16c1-1715-4503-93e9-9b56168e2fc7",
+            "type": "rectangle",
+            "x": 600,
+            "y": 1450,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "c45a16c1-1715-4503-93e9-9b56168e2fc7_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "c45a16c1-1715-4503-93e9-9b56168e2fc7_text",
+            "type": "text",
+            "x": 610,
+            "y": 1465.0,
+            "width": 280,
+            "height": 20,
+            "text": "客户管理",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "c45a16c1-1715-4503-93e9-9b56168e2fc7"
+        },
+        {
+            "id": "dded6407-4ff5-4d29-8de6-4df83a4c68b8",
+            "type": "rectangle",
+            "x": 600,
+            "y": 1550,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "dded6407-4ff5-4d29-8de6-4df83a4c68b8_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "dded6407-4ff5-4d29-8de6-4df83a4c68b8_text",
+            "type": "text",
+            "x": 610,
+            "y": 1565.0,
+            "width": 280,
+            "height": 20,
+            "text": "团队管理",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "dded6407-4ff5-4d29-8de6-4df83a4c68b8"
+        },
+        {
+            "id": "6fe8a956-6ed2-4181-ac1d-0ba277c6b389",
+            "type": "rectangle",
+            "x": 600,
+            "y": 1650,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "6fe8a956-6ed2-4181-ac1d-0ba277c6b389_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "6fe8a956-6ed2-4181-ac1d-0ba277c6b389_text",
+            "type": "text",
+            "x": 610,
+            "y": 1665.0,
+            "width": 280,
+            "height": 20,
+            "text": "逻辑与批判性思维",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "6fe8a956-6ed2-4181-ac1d-0ba277c6b389"
+        },
+        {
+            "id": "d91c7280-3167-4ce5-85d3-3db99ff8fd7a",
+            "type": "rectangle",
+            "x": 1000,
+            "y": 400,
+            "width": 300,
+            "height": 80,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "d91c7280-3167-4ce5-85d3-3db99ff8fd7a_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "d91c7280-3167-4ce5-85d3-3db99ff8fd7a_text",
+            "type": "text",
+            "x": 1010,
+            "y": 430.0,
+            "width": 280,
+            "height": 20,
+            "text": "扫盲考自学+考试通过",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "d91c7280-3167-4ce5-85d3-3db99ff8fd7a"
+        },
+        {
+            "id": "aa2fdf8b-84cf-4869-8bff-57f978b79f6b",
+            "type": "rectangle",
+            "x": 1000,
+            "y": 520,
+            "width": 300,
+            "height": 80,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "aa2fdf8b-84cf-4869-8bff-57f978b79f6b_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "aa2fdf8b-84cf-4869-8bff-57f978b79f6b_text",
+            "type": "text",
+            "x": 1010,
+            "y": 550.0,
+            "width": 280,
+            "height": 20,
+            "text": "新人训练营课程3天集训",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "aa2fdf8b-84cf-4869-8bff-57f978b79f6b"
+        },
+        {
+            "id": "0fb2e352-1b70-4c96-8f11-cbf939e4b20f",
+            "type": "rectangle",
+            "x": 1000,
+            "y": 640,
+            "width": 300,
+            "height": 80,
+            "backgroundColor": "#fff5e6",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "0fb2e352-1b70-4c96-8f11-cbf939e4b20f_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "0fb2e352-1b70-4c96-8f11-cbf939e4b20f_text",
+            "type": "text",
+            "x": 1010,
+            "y": 670.0,
+            "width": 280,
+            "height": 20,
+            "text": "结业考试+反馈",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "0fb2e352-1b70-4c96-8f11-cbf939e4b20f"
+        },
+        {
+            "id": "ea4558e8-29ab-4c2a-96b8-0a2e916dc921",
+            "type": "rectangle",
+            "x": 1000,
+            "y": 810,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#ffffff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "ea4558e8-29ab-4c2a-96b8-0a2e916dc921_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "ea4558e8-29ab-4c2a-96b8-0a2e916dc921_text",
+            "type": "text",
+            "x": 1010,
+            "y": 825.0,
+            "width": 280,
+            "height": 20,
+            "text": "衔接第一段结束",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "ea4558e8-29ab-4c2a-96b8-0a2e916dc921"
+        },
+        {
+            "id": "37870c75-1b00-4509-b1bf-d54fa5d002c8",
+            "type": "rectangle",
+            "x": 1400,
+            "y": 800,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "37870c75-1b00-4509-b1bf-d54fa5d002c8_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "37870c75-1b00-4509-b1bf-d54fa5d002c8_text",
+            "type": "text",
+            "x": 1410,
+            "y": 815.0,
+            "width": 280,
+            "height": 20,
+            "text": "上司（生免）/大客户带教",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "37870c75-1b00-4509-b1bf-d54fa5d002c8"
+        },
+        {
+            "id": "28159442-8575-4797-8776-e7dc37eaf50b",
+            "type": "rectangle",
+            "x": 1400,
+            "y": 900,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "28159442-8575-4797-8776-e7dc37eaf50b_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "28159442-8575-4797-8776-e7dc37eaf50b_text",
+            "type": "text",
+            "x": 1410,
+            "y": 915.0,
+            "width": 280,
+            "height": 20,
+            "text": "学习企业文化",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "28159442-8575-4797-8776-e7dc37eaf50b"
+        },
+        {
+            "id": "8930fb38-0acd-4d21-badf-eaa04a1582be",
+            "type": "rectangle",
+            "x": 1400,
+            "y": 1000,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "8930fb38-0acd-4d21-badf-eaa04a1582be_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "8930fb38-0acd-4d21-badf-eaa04a1582be_text",
+            "type": "text",
+            "x": 1410,
+            "y": 1015.0,
+            "width": 280,
+            "height": 20,
+            "text": "通识扫盲考",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "8930fb38-0acd-4d21-badf-eaa04a1582be"
+        },
+        {
+            "id": "76089938-f95c-481d-8f3a-bf94654e5723",
+            "type": "rectangle",
+            "x": 1400,
+            "y": 1100,
+            "width": 300,
+            "height": 80,
+            "backgroundColor": "#ffffff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "76089938-f95c-481d-8f3a-bf94654e5723_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "76089938-f95c-481d-8f3a-bf94654e5723_text",
+            "type": "text",
+            "x": 1410,
+            "y": 1130.0,
+            "width": 280,
+            "height": 20,
+            "text": "≥80分?",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "76089938-f95c-481d-8f3a-bf94654e5723"
+        },
+        {
+            "id": "e722e71c-018b-407f-8400-5a36a3605556",
+            "type": "rectangle",
+            "x": 1300,
+            "y": 1250,
+            "width": 200,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "e722e71c-018b-407f-8400-5a36a3605556_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "e722e71c-018b-407f-8400-5a36a3605556_text",
+            "type": "text",
+            "x": 1310,
+            "y": 1265.0,
+            "width": 180,
+            "height": 20,
+            "text": "进入专业知识培训",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "e722e71c-018b-407f-8400-5a36a3605556"
+        },
+        {
+            "id": "7f0957b8-c6cc-4fca-9be3-4fc7b2bc5ef5",
+            "type": "rectangle",
+            "x": 1550,
+            "y": 1250,
+            "width": 150,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "7f0957b8-c6cc-4fca-9be3-4fc7b2bc5ef5_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "7f0957b8-c6cc-4fca-9be3-4fc7b2bc5ef5_text",
+            "type": "text",
+            "x": 1560,
+            "y": 1265.0,
+            "width": 130,
+            "height": 20,
+            "text": "导师补强",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "7f0957b8-c6cc-4fca-9be3-4fc7b2bc5ef5"
+        },
+        {
+            "id": "ab138954-b8f2-4e12-a01a-873e93d178a6",
+            "type": "rectangle",
+            "x": 1400,
+            "y": 1350,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#ffffff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "ab138954-b8f2-4e12-a01a-873e93d178a6_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "ab138954-b8f2-4e12-a01a-873e93d178a6_text",
+            "type": "text",
+            "x": 1410,
+            "y": 1365.0,
+            "width": 280,
+            "height": 20,
+            "text": "第二段结束",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "ab138954-b8f2-4e12-a01a-873e93d178a6"
+        },
+        {
+            "id": "f59c0115-67ff-42f3-b118-08ac7ac104fe",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 400,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "f59c0115-67ff-42f3-b118-08ac7ac104fe_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "f59c0115-67ff-42f3-b118-08ac7ac104fe_text",
+            "type": "text",
+            "x": 1810,
+            "y": 415.0,
+            "width": 280,
+            "height": 20,
+            "text": "上司（生免）/大客户带教",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "f59c0115-67ff-42f3-b118-08ac7ac104fe"
+        },
+        {
+            "id": "bf1a40a4-c92b-42b1-a1df-3612ddd8fa92",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 500,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "bf1a40a4-c92b-42b1-a1df-3612ddd8fa92_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "bf1a40a4-c92b-42b1-a1df-3612ddd8fa92_text",
+            "type": "text",
+            "x": 1810,
+            "y": 515.0,
+            "width": 280,
+            "height": 20,
+            "text": "产品&标准解读",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "bf1a40a4-c92b-42b1-a1df-3612ddd8fa92"
+        },
+        {
+            "id": "2e918300-5f80-44ed-bfbb-ebdd4a7a376b",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 600,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "2e918300-5f80-44ed-bfbb-ebdd4a7a376b_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "2e918300-5f80-44ed-bfbb-ebdd4a7a376b_text",
+            "type": "text",
+            "x": 1810,
+            "y": 615.0,
+            "width": 280,
+            "height": 20,
+            "text": "提交知识测试",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "2e918300-5f80-44ed-bfbb-ebdd4a7a376b"
+        },
+        {
+            "id": "22ad5728-428b-457f-a217-358186952fcc",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 700,
+            "width": 300,
+            "height": 80,
+            "backgroundColor": "#ffffff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "22ad5728-428b-457f-a217-358186952fcc_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "22ad5728-428b-457f-a217-358186952fcc_text",
+            "type": "text",
+            "x": 1810,
+            "y": 730.0,
+            "width": 280,
+            "height": 20,
+            "text": "≥80分?",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "22ad5728-428b-457f-a217-358186952fcc"
+        },
+        {
+            "id": "92d99b73-a4f8-48a0-9501-3041a9b42f58",
+            "type": "rectangle",
+            "x": 1700,
+            "y": 850,
+            "width": 150,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "92d99b73-a4f8-48a0-9501-3041a9b42f58_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "92d99b73-a4f8-48a0-9501-3041a9b42f58_text",
+            "type": "text",
+            "x": 1710,
+            "y": 865.0,
+            "width": 130,
+            "height": 20,
+            "text": "通知阶段完成",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "92d99b73-a4f8-48a0-9501-3041a9b42f58"
+        },
+        {
+            "id": "271cd50b-2458-44e9-b253-fd107f22e8f5",
+            "type": "rectangle",
+            "x": 1950,
+            "y": 850,
+            "width": 150,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "271cd50b-2458-44e9-b253-fd107f22e8f5_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "271cd50b-2458-44e9-b253-fd107f22e8f5_text",
+            "type": "text",
+            "x": 1960,
+            "y": 865.0,
+            "width": 130,
+            "height": 20,
+            "text": "额外辅导",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "271cd50b-2458-44e9-b253-fd107f22e8f5"
+        },
+        {
+            "id": "4d0ec808-a613-4147-b69b-6c45414506cb",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 950,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "4d0ec808-a613-4147-b69b-6c45414506cb_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "4d0ec808-a613-4147-b69b-6c45414506cb_text",
+            "type": "text",
+            "x": 1810,
+            "y": 965.0,
+            "width": 280,
+            "height": 20,
+            "text": "安排实操任务",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "4d0ec808-a613-4147-b69b-6c45414506cb"
+        },
+        {
+            "id": "3859f780-0f84-420c-a975-7829ce51af70",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 1050,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "3859f780-0f84-420c-a975-7829ce51af70_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "3859f780-0f84-420c-a975-7829ce51af70_text",
+            "type": "text",
+            "x": 1810,
+            "y": 1065.0,
+            "width": 280,
+            "height": 20,
+            "text": "实践操作",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "3859f780-0f84-420c-a975-7829ce51af70"
+        },
+        {
+            "id": "98430223-7bf5-4864-9498-31dba083540d",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 1150,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "98430223-7bf5-4864-9498-31dba083540d_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "98430223-7bf5-4864-9498-31dba083540d_text",
+            "type": "text",
+            "x": 1810,
+            "y": 1165.0,
+            "width": 280,
+            "height": 20,
+            "text": "现场指导",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "98430223-7bf5-4864-9498-31dba083540d"
+        },
+        {
+            "id": "d7569c30-0187-4488-b097-d910070e0e27",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 1250,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "d7569c30-0187-4488-b097-d910070e0e27_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "d7569c30-0187-4488-b097-d910070e0e27_text",
+            "type": "text",
+            "x": 1810,
+            "y": 1265.0,
+            "width": 280,
+            "height": 20,
+            "text": "提交实训报告",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "d7569c30-0187-4488-b097-d910070e0e27"
+        },
+        {
+            "id": "c56fb921-a69a-4298-afb0-609c7d5ad4b8",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 1350,
+            "width": 300,
+            "height": 80,
+            "backgroundColor": "#ffffff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "c56fb921-a69a-4298-afb0-609c7d5ad4b8_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "c56fb921-a69a-4298-afb0-609c7d5ad4b8_text",
+            "type": "text",
+            "x": 1810,
+            "y": 1380.0,
+            "width": 280,
+            "height": 20,
+            "text": "考核通过?",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "c56fb921-a69a-4298-afb0-609c7d5ad4b8"
+        },
+        {
+            "id": "eb6abcad-7ac0-4fc5-b99c-84ad89b27d90",
+            "type": "rectangle",
+            "x": 1700,
+            "y": 1500,
+            "width": 150,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "eb6abcad-7ac0-4fc5-b99c-84ad89b27d90_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "eb6abcad-7ac0-4fc5-b99c-84ad89b27d90_text",
+            "type": "text",
+            "x": 1710,
+            "y": 1515.0,
+            "width": 130,
+            "height": 20,
+            "text": "正式录用",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "eb6abcad-7ac0-4fc5-b99c-84ad89b27d90"
+        },
+        {
+            "id": "310009f0-1443-4c63-9443-9ee0e5c38dd0",
+            "type": "rectangle",
+            "x": 1950,
+            "y": 1500,
+            "width": 150,
+            "height": 50,
+            "backgroundColor": "#e6f2ff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "310009f0-1443-4c63-9443-9ee0e5c38dd0_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "310009f0-1443-4c63-9443-9ee0e5c38dd0_text",
+            "type": "text",
+            "x": 1960,
+            "y": 1515.0,
+            "width": 130,
+            "height": 20,
+            "text": "终止",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "310009f0-1443-4c63-9443-9ee0e5c38dd0"
+        },
+        {
+            "id": "956a6dee-a9e6-439c-828f-7fe5c1853b26",
+            "type": "rectangle",
+            "x": 1800,
+            "y": 1600,
+            "width": 300,
+            "height": 50,
+            "backgroundColor": "#ffffff",
+            "strokeColor": "#000000",
+            "fillStyle": "solid",
+            "strokeWidth": 1,
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "roundness": {
+                "type": 3
+            },
+            "boundElements": [
+                {
+                    "id": "956a6dee-a9e6-439c-828f-7fe5c1853b26_text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "id": "956a6dee-a9e6-439c-828f-7fe5c1853b26_text",
+            "type": "text",
+            "x": 1810,
+            "y": 1615.0,
+            "width": 280,
+            "height": 20,
+            "text": "第三段结束",
+            "fontSize": 16,
+            "fontFamily": 1,
+            "textAlign": "center",
+            "verticalAlign": "middle",
+            "containerId": "956a6dee-a9e6-439c-828f-7fe5c1853b26"
+        },
+        {
+            "id": "396f4d71-697a-4c16-9dd7-fe4179262ac1",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 450,
+            "width": 0.0,
+            "height": 60,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    60
+                ]
+            ]
+        },
+        {
+            "id": "898d0b3f-499e-42f9-a9a4-f7c4723bed08",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 560,
+            "width": 0.0,
+            "height": 60,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    60
+                ]
+            ]
+        },
+        {
+            "id": "9af1432b-a42a-4e82-a869-b22ba495ca75",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 700,
+            "width": 0.0,
+            "height": 30,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    30
+                ]
+            ]
+        },
+        {
+            "id": "ce146585-e0be-42b2-a476-b15b415dd390",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 780,
+            "width": 0.0,
+            "height": 60,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    60
+                ]
+            ]
+        },
+        {
+            "id": "7ad6110a-5fdf-44fc-8ef1-80a34afa8418",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 890,
+            "width": 0.0,
+            "height": 110,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    110
+                ]
+            ]
+        },
+        {
+            "id": "ffba02e9-922d-4c01-9e12-eb7a6472c114",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 1200,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "0b41ad29-4639-4163-8dfc-d00fbede1d92",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 1300,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "9a0a31b2-f6fc-4465-ba31-3dd7c4b98a13",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 1400,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "b986da92-b55a-4deb-96cb-0b400fe022f1",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 1500,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "be153490-259d-4d44-b571-86e9a8ec0754",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 1600,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "0b245205-1c68-467c-84fb-58c1006a4090",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 1100,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "60d2095e-a5d4-4841-b2ac-5fd62635ffbf",
+            "type": "arrow",
+            "x": 1150.0,
+            "y": 480,
+            "width": 0.0,
+            "height": 40,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    40
+                ]
+            ]
+        },
+        {
+            "id": "f225aa80-eb61-4622-8714-4a9b25491c16",
+            "type": "arrow",
+            "x": 1150.0,
+            "y": 600,
+            "width": 0.0,
+            "height": 40,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    40
+                ]
+            ]
+        },
+        {
+            "id": "a25a813d-e9a3-41f7-82c0-42dea59a3281",
+            "type": "arrow",
+            "x": 1150.0,
+            "y": 720,
+            "width": 0.0,
+            "height": 90,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    90
+                ]
+            ]
+        },
+        {
+            "id": "edeb4cdb-45d1-466f-bc42-25543723bc10",
+            "type": "arrow",
+            "x": 1550.0,
+            "y": 850,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "c016e601-ba76-4476-bbc0-438a3951e400",
+            "type": "arrow",
+            "x": 1550.0,
+            "y": 950,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "cdee0c98-b13a-4bc2-9052-94e73209f792",
+            "type": "arrow",
+            "x": 1550.0,
+            "y": 1050,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "d428de4e-e057-4d23-a407-16b711b9ccce",
+            "type": "arrow",
+            "x": 1550.0,
+            "y": 1180,
+            "width": -150.0,
+            "height": 70,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    -150.0,
+                    70
+                ]
+            ]
+        },
+        {
+            "id": "27093af5-14ea-43fa-a101-a4973527a435",
+            "type": "arrow",
+            "x": 1550.0,
+            "y": 1180,
+            "width": 75.0,
+            "height": 70,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    75.0,
+                    70
+                ]
+            ]
+        },
+        {
+            "id": "0e3fc979-9345-453d-9bd5-f4d5a0a92209",
+            "type": "arrow",
+            "x": 1625.0,
+            "y": 1300,
+            "width": -75.0,
+            "height": -300,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    -75.0,
+                    -300
+                ]
+            ]
+        },
+        {
+            "id": "71be0e55-08a2-44d4-83db-c84f0a2894a0",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 1100,
+            "width": 800.0,
+            "height": -300,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    800.0,
+                    -300
+                ]
+            ]
+        },
+        {
+            "id": "c4d14769-0ebf-4796-8ec1-12982ee372b0",
+            "type": "arrow",
+            "x": 750.0,
+            "y": 1700,
+            "width": 800.0,
+            "height": -900,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    800.0,
+                    -900
+                ]
+            ]
+        },
+        {
+            "id": "dd5f074c-69e4-4f22-9cbd-34a0cee9d39f",
+            "type": "arrow",
+            "x": 1400.0,
+            "y": 1300,
+            "width": 150.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    150.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "b9a1cf54-2efc-4a77-b3b9-c02a47e14412",
+            "type": "arrow",
+            "x": 1150.0,
+            "y": 860,
+            "width": 400.0,
+            "height": 490,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    400.0,
+                    490
+                ]
+            ]
+        },
+        {
+            "id": "0d04dc68-c095-4355-be36-b2245c420788",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 450,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "8b1774fa-12b4-43f6-b1db-5f643d948e4a",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 550,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "bcaaf4ff-2154-4c26-82a6-39a3690e3b15",
+            "type": "arrow",
+            "x": 1550.0,
+            "y": 1400,
+            "width": 400.0,
+            "height": -1000,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    400.0,
+                    -1000
+                ]
+            ]
+        },
+        {
+            "id": "57879c37-9d61-4fe7-99f3-140d4d70d674",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 650,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "d9870ead-6a0f-4c86-833c-fde4b5da3322",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 780,
+            "width": -175.0,
+            "height": 70,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    -175.0,
+                    70
+                ]
+            ]
+        },
+        {
+            "id": "19c89664-69ae-4ab7-aaa2-95b06f40dcd7",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 780,
+            "width": 75.0,
+            "height": 70,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    75.0,
+                    70
+                ]
+            ]
+        },
+        {
+            "id": "5afc76da-96ce-4a88-bfa6-15400bb0c320",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 1000,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "401f639b-9efe-48b1-9004-a6b6dca82d14",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 1100,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "d722add6-3c6d-4cc0-89f0-1e470e41fe61",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 1200,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "bfff26b1-ef73-408c-b580-4ff69ecc71ab",
+            "type": "arrow",
+            "x": 1775.0,
+            "y": 900,
+            "width": 175.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    175.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "69b17e59-d6fc-4164-afe7-a2efa1864f59",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 1300,
+            "width": 0.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0.0,
+                    50
+                ]
+            ]
+        },
+        {
+            "id": "238f64ab-bf89-44ba-9f2a-f66857b20901",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 1430,
+            "width": -175.0,
+            "height": 70,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    -175.0,
+                    70
+                ]
+            ]
+        },
+        {
+            "id": "096dfd81-9a0f-4092-9d20-4767887d4631",
+            "type": "arrow",
+            "x": 1950.0,
+            "y": 1430,
+            "width": 75.0,
+            "height": 70,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    75.0,
+                    70
+                ]
+            ]
+        },
+        {
+            "id": "2d6064ec-3307-4ae3-9572-9a3955709743",
+            "type": "arrow",
+            "x": 1775.0,
+            "y": 1550,
+            "width": 175.0,
+            "height": 50,
+            "strokeColor": "#000000",
+            "points": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    175.0,
+                    50
+                ]
+            ]
+        }
+    ],
+    "appState": {
+        "viewBackgroundColor": "#ffffff",
+        "gridSize": 20
+    }
+}

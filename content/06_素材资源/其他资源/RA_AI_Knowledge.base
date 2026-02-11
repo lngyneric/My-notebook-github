@@ -1,0 +1,27 @@
+filters:
+  and:
+    - file.hasTag("RA")
+    - file.hasTag("AI")
+properties:
+  file.mtime:
+    width: 150
+    displayName: 更新时间
+  file.name:
+    width: 300
+    displayName: 文件名
+  file.tags:
+    width: 200
+    displayName: 标签
+  status:
+    width: 100
+    displayName: 状态
+views:
+  - type: table
+    name: RA 部门 AI 知识库
+    order:
+      - file.mtime desc
+    columns:
+      - file.name
+      - status
+      - file.tags
+      - file.mtime

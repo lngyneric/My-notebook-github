@@ -1,0 +1,20 @@
+filters:
+  and:
+    - file.hasTag("Obsidian")
+properties:
+  file.mtime:
+    displayName: 更新时间
+  file.name:
+    displayName: 笔记名称
+  file.tags:
+    displayName: 标签
+views:
+  - type: table
+    name: Obsidian 相关笔记
+    filters:
+      not:
+        - file.name == "Obsidian 笔记本教程(高级).md"
+    order:
+      - file.name
+      - file.tags
+      - file.mtime
