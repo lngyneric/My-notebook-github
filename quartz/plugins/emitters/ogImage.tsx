@@ -55,7 +55,15 @@ async function generateSocialImage(
     fonts,
     loadAdditionalAsset: async (languageCode: string, segment: string) => {
       if (languageCode === "emoji") {
-        return await loadEmoji(getIconCode(segment))
+        try {
+          const emojiBase64 = await loadEmoji(getIconCode(segment))
+          if (emojiBase64) {
+            return emojiBase64
+          }
+        } catch (error) {
+          console.warn(`Warning: Failed to load emoji ${segment}`)
+        }
+        return segment
       }
 
       return languageCode

@@ -1,9 +1,15 @@
+---
+title: 邹锋静入职状态报告
+date: 2026-01-19
+tags: ["入职报告", "销售团队"]
+---
+
 # Onboarding Status Report
 
-**Employee Name**: 邹锋静  
-**Role**: 高级区域销售经理（驻重庆）  
-**Start Date**: 2026-01-05  
-**Current Date**: 2026-01-19  
+**Employee Name**: 邹锋静
+**Role**: 高级区域销售经理（驻重庆）
+**Start Date**: 2026-01-05
+**Current Date**: 2026-01-19
 **Overall Progress**: 4% (3/67 Tasks Completed)
 
 ---
