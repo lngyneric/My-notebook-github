@@ -14,10 +14,16 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
-// 首页布局配置
+// 首页布局配置 - 使用与内容页面相同的布局
 export const indexPageLayout: PageLayout = {
   beforeBody: [
-    Component.Dashboard(),
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+    Component.TagList(),
   ],
   left: [
     Component.PageTitle(),
