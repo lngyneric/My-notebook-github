@@ -2,7 +2,6 @@ import Content from "./pages/Content.tsx"
 import TagContent from "./pages/TagContent.tsx"
 import FolderContent from "./pages/FolderContent.tsx"
 import NotFound from "./pages/404.tsx"
-import HomePage from "./pages/HomePage.tsx"
 import ArticleTitle from "./ArticleTitle.tsx"
 import Darkmode from "./Darkmode.tsx"
 import ReaderMode from "./ReaderMode.tsx"
@@ -24,14 +23,12 @@ import Breadcrumbs from "./Breadcrumbs.tsx"
 import Comments from "./Comments.tsx"
 import Flex from "./Flex.tsx"
 import ConditionalRender from "./ConditionalRender.tsx"
-import Dashboard from "./Dashboard.tsx"
 
 export {
   ArticleTitle,
   Content,
   TagContent,
   FolderContent,
-  HomePage,
   Darkmode,
   ReaderMode,
   Head,
@@ -53,5 +50,4 @@ export {
   Comments,
   Flex,
   ConditionalRender,
-  Dashboard,
 }
