@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Quartz 设计 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Quartz 设计 1"
             }
           }
         ]
@@ -229,10 +229,11 @@
       "obsidian-spaced-repetition:复习卡片": false
     }
   },
-  "active": "f158ef6401068960",
+  "active": "c62a6e8dfdc62ecf",
   "lastOpenFiles": [
-    "AllitemList.base",
     "index.md",
+    "Quartz 设计 1.md",
+    "AllitemList.base",
     "未命名 1.base",
     "注意.md",
     "AI流程：网页改造APP.md",

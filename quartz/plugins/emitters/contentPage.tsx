@@ -6,7 +6,7 @@ import BodyConstructor from "../../components/Body"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { pathToRoot } from "../../util/path"
-import { defaultContentPageLayout, sharedPageComponents } from "../../../quartz.layout"
+import { defaultContentPageLayout, sharedPageComponents, indexPageLayout } from "../../../quartz.layout"
 import { Content } from "../../components"
 import { styleText } from "util"
 import { write } from "./helpers"
@@ -85,14 +85,18 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
 
         // only process home page, non-tag pages, and non-index pages
         if (slug.endsWith("/index") || slug.startsWith("tags/")) continue
-        yield processContent(ctx, tree, file.data, allFiles, opts, resources)
+        // 为首页使用专门的布局
+        const pageOpts = slug === "index"
+          ? { ...sharedPageComponents, ...indexPageLayout, pageBody: Content() }
+          : opts
+        yield processContent(ctx, tree, file.data, allFiles, pageOpts, resources)
       }
 
       if (!containsIndex) {
         console.log(
           styleText(
             "yellow",
-            `\nWarning: you seem to be missing an \`index.md\` home page file at the root of your \`${ctx.argv.directory}\` folder (\`${path.join(ctx.argv.directory, "index.md")} does not exist\`). This may cause errors when deploying.`,
+            `\nWarning: you seem to be missing an \ home page file at the root of your \ folder (\). This may cause errors when deploying.`,
           ),
         )
       }
@@ -114,7 +118,11 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
         if (!changedSlugs.has(slug)) continue
         if (slug.endsWith("/index") || slug.startsWith("tags/")) continue
 
-        yield processContent(ctx, tree, file.data, allFiles, opts, resources)
+        // 为首页使用专门的布局
+        const pageOpts = slug === "index"
+          ? { ...sharedPageComponents, ...indexPageLayout, pageBody: Content() }
+          : opts
+        yield processContent(ctx, tree, file.data, allFiles, pageOpts, resources)
       }
     },
   }
