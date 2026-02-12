@@ -11,13 +11,14 @@
             "id": "c62a6e8dfdc62ecf",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "AllitemList.base",
-                "viewName": "表格"
+                "file": "index.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "AllitemList"
+              "icon": "lucide-file",
+              "title": "index"
             }
           }
         ]
@@ -205,7 +206,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 8
       }
     ],
     "direction": "horizontal",
@@ -228,11 +229,11 @@
       "obsidian-spaced-repetition:复习卡片": false
     }
   },
-  "active": "c62a6e8dfdc62ecf",
+  "active": "9d663cde7592c864",
   "lastOpenFiles": [
+    "AllitemList.base",
     "Quartz 设计 1.md",
     "index.md",
-    "AllitemList.base",
     "未命名 1.base",
     "注意.md",
     "AI流程：网页改造APP.md",
@@ -261,7 +262,6 @@
     "RA部门AI智能问答平台搭建经验总结.md",
     "RA_AI_Platform_OpenSpec_Proposal.md",
     "Ohms_Law_Water_Analogy.md",
-    "RA_AI_Platform.openspec.md",
     "Obsidian_Notes.base",
     "RA_AI_Knowledge.base",
     "skills/skills/pptx/ooxml/schemas/ecma/fouth-edition/opc-relationships.xsd",
