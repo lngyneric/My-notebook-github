@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新员工入职状态看板 - 邹锋静</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: #f3f4f6; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); }
+        .progress-ring { transform: rotate(-90deg); transform-origin: 50% 50%; }
+        .phase-card { border-left: 4px solid transparent; transition: all 0.3s ease; }
+        .phase-red { border-left-color: #ef4444; }
+        .phase-yellow { border-left-color: #eab308; }
+        .phase-green { border-left-color: #22c55e; }
+        .phase-hidden { opacity: 0.5; filter: grayscale(100%); pointer-events: none; display: none; }
+        
+        /* Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #e5e7eb;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="p-6">
+
+    <!-- Header Section -->
+    <header class="mb-8 flex justify-between items-center bg-white p-6 rounded-xl shadow-sm">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-800">新员工入职看板</h1>
+            <p class="text-gray-500 mt-1">更新时间: 2026-01-20</p>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="text-right">
+                <h2 class="text-xl font-semibold text-gray-900" id="employeeName">邹锋静</h2>
+                <p class="text-sm text-blue-600 font-medium" id="employeeRole">高级区域销售经理（驻重庆）</p>
+            </div>
+            <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                邹
+            </div>
+        </div>
+    </header>
+
+    <!-- Configuration Panel -->
+    <div class="mb-8 bg-white p-6 rounded-xl shadow-sm border border-blue-100">
+        <div class="flex justify-between items-center mb-4 cursor-pointer" onclick="toggleConfig()">
+            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                <i class="fas fa-sliders-h mr-2 text-blue-500"></i> 看板配置与权重调整
+            </h3>
+            <i class="fas fa-chevron-down text-gray-400" id="configChevron"></i>
+        </div>
+        
+        <div id="configPanel" class="hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Role Detection -->
+                <div class="border-r border-gray-100 pr-4">
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">职级判定</h4>
+                    <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
+                        <div>
+                            <span class="text-gray-700 font-medium">是否为主管及以上?</span>
+                            <p class="text-xs text-gray-500 mt-1" id="roleDetectionText">自动检测: 是 (包含"经理")</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="isManagerToggle" class="sr-only peer" checked onchange="updateDashboard()">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Weight Adjustment -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">阶段权重调整 (影响总进度)</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">阶段一：入职手续 (10项)</span>
+                                <span class="font-bold text-blue-600" id="w1-val">30%</span>
+                            </div>
+                            <input type="range" id="w1" min="0" max="100" value="30" oninput="updateWeights('w1')">
+                        </div>
+                        <div id="w2-container">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">阶段二：主管培训 (5项)</span>
+                                <span class="font-bold text-blue-600" id="w2-val">20%</span>
+                            </div>
+                            <input type="range" id="w2" min="0" max="100" value="20" oninput="updateWeights('w2')">
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">阶段三：产品培训 (52项)</span>
+                                <span class="font-bold text-blue-600" id="w3-val">50%</span>
+                            </div>
+                            <input type="range" id="w3" min="0" max="100" value="50" oninput="updateWeights('w3')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        
+        <!-- Overall Progress Card -->
+        <div class="card p-6 flex flex-col items-center justify-center md:col-span-1">
+            <h3 class="text-lg font-medium text-gray-700 mb-4">整体入职进度 (加权)</h3>
+            <div class="relative h-40 w-40">
+                <canvas id="progressChart"></canvas>
+                <div class="absolute inset-0 flex items-center justify-center flex-col">
+                    <span class="text-4xl font-bold text-gray-800" id="totalProgressText">0%</span>
+                    <span class="text-xs text-gray-500" id="taskCountText">3/67 任务</span>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-500">入职日期: 2026-01-05</p>
+        </div>
+
+        <!-- Phase 1: Action Items -->
+        <div class="card p-6 md:col-span-2 phase-card phase-red bg-red-50" id="phase1-card">
+            <div class="flex items-start justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-red-700 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i> 严重警告：第一阶段未完成
+                    </h3>
+                    <p class="text-red-600 mt-1 text-sm">必须完成第一阶段基础入职手续，系统才能推进后续流程。</p>
+                </div>
+                <span class="bg-red-200 text-red-800 text-xs px-2 py-1 rounded-full font-bold">需立即行动</span>
+            </div>
+            
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-red-100">
+                    <h4 class="font-semibold text-gray-700 mb-2 border-b pb-1">HR 手续</h4>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li><i class="far fa-circle text-red-400 mr-1"></i> 入职手续</li>
+                        <li><i class="far fa-circle text-red-400 mr-1"></i> 合同签订</li>
+                        <li><i class="far fa-circle text-red-400 mr-1"></i> 员工手册</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-red-100">
+                    <h4 class="font-semibold text-gray-700 mb-2 border-b pb-1">主管面谈</h4>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li><i class="far fa-circle text-red-400 mr-1"></i> MBO面谈</li>
+                        <li><i class="far fa-circle text-red-400 mr-1"></i> 责任田划分</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-red-100">
+                    <h4 class="font-semibold text-gray-700 mb-2 border-b pb-1">系统权限</h4>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li><i class="far fa-circle text-red-400 mr-1"></i> CRM系统</li>
+                        <li><i class="far fa-circle text-red-400 mr-1"></i> 财务报销</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phases Status -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Phase 2: Manager Training -->
+        <div class="card p-6 phase-card phase-yellow" id="phase2-card">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-gray-800">第二阶段：主管小灶培训</h3>
+                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">待定</span>
+            </div>
+            <p class="text-sm text-gray-600 mb-4">针对高级经理职级的定制管理课程，需与培训总监确认时间。</p>
+            <ul class="space-y-2">
+                <li class="flex items-center text-sm text-gray-500">
+                    <i class="far fa-clock text-yellow-500 mr-2 w-5"></i> 团队管理运作
+                </li>
+                <li class="flex items-center text-sm text-gray-500">
+                    <i class="far fa-clock text-yellow-500 mr-2 w-5"></i> 渠道管理 & 市场政策
+                </li>
+                <li class="flex items-center text-sm text-gray-500">
+                    <i class="far fa-clock text-yellow-500 mr-2 w-5"></i> 招标数字管理
+                </li>
+            </ul>
+        </div>
+
+        <!-- Phase 3: Product Training -->
+        <div class="card p-6 phase-card phase-green" id="phase3-card">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-gray-800">第三阶段：产品专业知识</h3>
+                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">提前进行中</span>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">已完成 (3)</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm border border-green-200"><i class="fas fa-check mr-1"></i> 血球基础</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm border border-green-200"><i class="fas fa-check mr-1"></i> 尿液基础</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm border border-green-200"><i class="fas fa-check mr-1"></i> 血球政策</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">待进行</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-50 text-gray-400 rounded-full text-sm border border-gray-200">凝血产品基础</span>
+                        <span class="px-3 py-1 bg-gray-50 text-gray-400 rounded-full text-sm border border-gray-200">尿液/凝血政策</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-8 text-center text-gray-400 text-sm">
+        Generated by New Employee Onboarding Skill Automation
+    </div>
+
+    <script>
+        // Data Model
+        const data = {
+            phase1: { total: 10, completed: 0 },
+            phase2: { total: 5, completed: 0 },
+            phase3: { total: 52, completed: 3 }
+        };
+
+        // Chart Instance
+        let chart = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            detectRole();
+            initChart();
+            updateDashboard();
+        });
+
+        function toggleConfig() {
+            const panel = document.getElementById('configPanel');
+            const chevron = document.getElementById('configChevron');
+            if (panel.classList.contains('hidden')) {
+                panel.classList.remove('hidden');
+                chevron.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            } else {
+                panel.classList.add('hidden');
+                chevron.classList.replace('fa-chevron-up', 'fa-chevron-down');
+            }
+        }
+
+        function detectRole() {
+            const role = document.getElementById('employeeRole').innerText;
+            const isManager = role.includes('经理') || role.includes('主管') || role.includes('总监');
+            const toggle = document.getElementById('isManagerToggle');
+            const text = document.getElementById('roleDetectionText');
+            
+            toggle.checked = isManager;
+            text.innerText = isManager ? 
+                `自动检测: 是 (包含"${role.match(/经理|主管|总监/)[0]}")` : 
+                "自动检测: 否";
+        }
+
+        function updateWeights(changedId) {
+            // Simple normalization logic or just visual update
+            // Here we just update the text, calculation happens in updateDashboard
+            const val = document.getElementById(changedId).value;
+            document.getElementById(`${changedId}-val`).innerText = `${val}%`;
+            updateDashboard();
+        }
+
+        function updateDashboard() {
+            const isManager = document.getElementById('isManagerToggle').checked;
+            
+            // UI Visibility
+            const phase2Card = document.getElementById('phase2-card');
+            const w2Container = document.getElementById('w2-container');
+            
+            if (isManager) {
+                phase2Card.classList.remove('phase-hidden');
+                w2Container.classList.remove('opacity-50', 'pointer-events-none');
+            } else {
+                phase2Card.classList.add('phase-hidden');
+                w2Container.classList.add('opacity-50', 'pointer-events-none');
+            }
+
+            // Calculate Progress
+            const w1 = parseInt(document.getElementById('w1').value);
+            const w2 = isManager ? parseInt(document.getElementById('w2').value) : 0;
+            const w3 = parseInt(document.getElementById('w3').value);
+            const totalWeight = w1 + w2 + w3;
+
+            // Phase Progress
+            const p1 = data.phase1.completed / data.phase1.total;
+            const p2 = data.phase2.completed / data.phase2.total;
+            const p3 = data.phase3.completed / data.phase3.total;
+
+            // Weighted Average
+            let weightedProgress = 0;
+            if (totalWeight > 0) {
+                weightedProgress = (p1 * w1 + p2 * w2 + p3 * w3) / totalWeight;
+            }
+            
+            // Format percentage
+            const finalPercent = Math.round(weightedProgress * 100);
+            
+            // Total Tasks Count
+            const totalTasks = data.phase1.total + (isManager ? data.phase2.total : 0) + data.phase3.total;
+            const completedTasks = data.phase1.completed + (isManager ? data.phase2.completed : 0) + data.phase3.completed;
+
+            // Update DOM
+            document.getElementById('totalProgressText').innerText = `${finalPercent}%`;
+            document.getElementById('taskCountText').innerText = `${completedTasks}/${totalTasks} 任务 (加权)`;
+
+            // Update Chart
+            if (chart) {
+                chart.data.datasets[0].data = [finalPercent, 100 - finalPercent];
+                chart.update();
+            }
+        }
+
+        function initChart() {
+            const ctx = document.getElementById('progressChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Completed', 'Remaining'],
+                    datasets: [{
+                        data: [0, 100],
+                        backgroundColor: ['#3b82f6', '#e5e7eb'],
+                        borderWidth: 0,
+                        cutout: '85%',
+                        borderRadius: 20
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { enabled: false } },
+                    animation: { animateScale: true, animateRotate: true }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

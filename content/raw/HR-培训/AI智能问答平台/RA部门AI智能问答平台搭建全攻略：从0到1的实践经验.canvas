@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"group_platform","type":"group","label":"RA部门AI智能问答平台搭建全攻略","x":-40,"y":-40,"width":1080,"height":920,"color":"1"},
+		{"id":"core_value","type":"text","text":"### 平台定位与核心价值\n**“注册智答星”**\n- **核心数据库**：历年法规资料沉淀\n- **业务适配**：系统推进资料汇总\n- **效率提升**：实用型 AI 工具","x":0,"y":0,"width":300,"height":240,"color":"2"},
+		{"id":"key_experience","type":"text","text":"### 核心搭建经验\n\n**1. 提示词设计**\n- 核心：精准适配 + 快速迭代\n- 策略：边用边调 (个人->企业)\n- 案例：规范编码输出 (6840-XX)\n\n**2. 数据处理**\n- 核心：业务导向 (懂业务才能做AI)\n- 方法：结合工作流设计 Tag\n\n**3. 批量维护**\n- 工具：智能表格生成相似问答\n- 保障：人工审阅排除歧义","x":340,"y":0,"width":320,"height":440,"color":"3"},
+		{"id":"limitations_upgrades","type":"text","text":"### 当前局限与升级方向\n\n**现存局限**\n- 缺乏长期记忆训练\n- 提示词字数限制 (3000字)\n- 数据库过大易致“AI幻觉”\n\n**升级方向**\n- 重点：细化业务领域\n- 策略：避免数据库过度庞大\n- 持续：强化数据沉淀与优化","x":700,"y":0,"width":300,"height":380,"color":"4"},
+		{"id":"collaboration","type":"text","text":"### 团队协同\n\n**协同模式**\n- 业务人员：持续测试与优化\n- 团队支持：共同完善平台\n\n**价值验证**\n- 提升协作效能\n- 降低查阅成本\n- 助力业务高质量推进","x":0,"y":280,"width":300,"height":300,"color":"5"},
+		{"id":"summary","type":"text","text":"### 总结\n\n**核心**：注册法规业务需求为核心\n**路径**：精准提示词 + 实操流程数据 + 智能工具\n**目标**：AI 工具与注册业务深度融合","x":340,"y":480,"width":660,"height":180,"color":"6"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"core_value","fromSide":"right","toNode":"key_experience","toSide":"left","label":"支撑"},
+		{"id":"e2","fromNode":"key_experience","fromSide":"right","toNode":"limitations_upgrades","toSide":"left","label":"迭代"},
+		{"id":"e3","fromNode":"core_value","fromSide":"bottom","toNode":"collaboration","toSide":"top","label":"落地"},
+		{"id":"e4","fromNode":"key_experience","fromSide":"bottom","toNode":"summary","toSide":"top","label":"沉淀"},
+		{"id":"e5","fromNode":"limitations_upgrades","fromSide":"bottom","toNode":"summary","toSide":"top","label":"展望"},
+		{"id":"e6","fromNode":"collaboration","fromSide":"right","toNode":"summary","toSide":"left","label":"协同"}
+	]
+}

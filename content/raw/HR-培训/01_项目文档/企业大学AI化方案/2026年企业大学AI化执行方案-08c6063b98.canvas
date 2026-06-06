@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"summary_group","type":"group","x":50,"y":1000,"width":1750,"height":393,"color":"4","label":"2026年AI化执行要点总结"},
+		{"id":"module1_group","type":"group","x":50,"y":250,"width":550,"height":680,"color":"1","label":"模块一: 新员工训练优化"},
+		{"id":"module2_group","type":"group","x":650,"y":250,"width":550,"height":680,"color":"2","label":"模块二: 新经理小灶课程"},
+		{"id":"module3_group","type":"group","x":1250,"y":250,"width":550,"height":680,"color":"3","label":"模块三: 内训师管理培训"},
+		{"id":"insight_group","type":"group","x":609,"y":1533,"width":550,"height":200,"color":"5","label":"战略洞察"},
+		{"id":"module1_title","type":"text","text":"## 🎓 新员工训练优化\n\n**核心内容**:\n精简培训内容，节省成本。采用互动教学，E-learning增加预习复习，增加在线沟通反馈提升员工满意度\n\n**时间节点**:\n• 9月下旬: 完成专业知识自学教案与E-learning部署\n• 10-11月: 集中开展三天新员工训练营","x":75,"y":275,"width":500,"height":100,"color":"1"},
+		{"id":"module1_ai1","type":"text","text":"### 📝 入职培训内容更新与迭代\n\n**AI应用**: AI辅助\n**AI/人工占比**: 40%/60%\n\n**工具**:\n- 内容生成工具\n- 版本对比工具\n\n**执行策略**:\n✅ AI生成培训大纲初稿\n✅ 人工沟通业务变化调整内容\n\n**价值点**: 快速迭代，降低内容更新成本","x":75,"y":390,"width":500,"height":120},
+		{"id":"module1_ai2","type":"text","text":"### 🤖 AI导师制度管理\n\n**AI应用**: AI辅助\n**AI/人工占比**: 70%/30%\n\n**工具**:\n- 学员学习行为分析\n- AI导师跟进提醒\n\n**执行策略**:\n✅ 根据新员工学习行为自动匹配AI导学\n✅ AI全程跟进学习进度，人工定期督导\n\n**价值点**: 个性化学习路径，提升学习效果","x":75,"y":520,"width":500,"height":120},
+		{"id":"module1_ai3","type":"text","text":"### 📊 培训效果评估数据收集\n\n**AI应用**: AI辅助\n**AI/人工占比**: 50%/50%\n\n**工具**:\n- 数据采集工具\n- 问卷调查AI\n\n**执行策略**:\n✅ 自动发送评估问卷\n✅ AI汇总初步数据\n✅ 人工深度分析关键问题\n\n**价值点**: 自动化数据收集，提升反馈效率","x":75,"y":650,"width":500,"height":120},
+		{"id":"module1_ai4","type":"text","text":"### 📈 培训效果评估报告生成\n\n**AI应用**: AI辅助\n**AI/人工占比**: 75%/25%\n\n**工具**:\n- 数据分析工具\n- 报告生成AI\n\n**执行策略**:\n✅ AI整合数据生成报告框架\n✅ 人工解读并制定改进方案\n\n**价值点**: 数据驱动决策，快速形成闭环","x":75,"y":780,"width":500,"height":120},
+		{"id":"module3_ai2","type":"text","text":"### 📊 培训数据可视化报表\n\n**AI应用**: AI辅助\n**AI/人工占比**: 90%/10%\n\n**工具**:\n- 数据可视化工具\n- BI分析系统\n\n**执行策略**:\n✅ 自动生成多维度数据图表\n✅ 人工解读异常数据\n✅ 人工提供业务洞察\n\n**价值点**: 数据驱动决策，提升管理效率","x":1275,"y":520,"width":500,"height":120},
+		{"id":"module3_ai3","type":"text","text":"### 📋 定制化培训报告生成\n\n**AI应用**: AI辅助\n**AI/人工占比**: 75%/25%\n\n**工具**:\n- 报告模板引擎\n- 文本生成AI\n\n**执行策略**:\n✅ AI自动填充报告数据框架\n✅ 人工补充分析结论\n✅ 人工提炼管理建议\n\n**价值点**: 标准化报告生成，降低编写成本","x":1275,"y":650,"width":500,"height":120},
+		{"id":"module3_ai4","type":"text","text":"### 📁 培训资料自动归档\n\n**AI应用**: AI辅助\n**AI/人工占比**: 95%/5%\n\n**工具**:\n- 文档分类工具\n- 版本控制系统\n\n**执行策略**:\n✅ 自动按规则归档培训资料\n✅ 人工抽查质量\n✅ AI维护版本历史\n\n**价值点**: 知识沉淀，便于后续复用","x":1275,"y":780,"width":500,"height":120},
+		{"id":"module2_title","type":"text","text":"## 👔 新经理小灶课程\n\n**核心内容**:\n个性化培训，小班教学 -结合打卡新评估计分\n\n**时间节点**:\n• 9-10月: 进行需求收集与师生配对\n• 10月起: 结合测评，循环开展业务小灶课程","x":675,"y":275,"width":500,"height":100,"color":"2"},
+		{"id":"module2_ai1","type":"text","text":"### 👤 学员信息录入与维护\n\n**AI应用**: AI辅助\n**AI/人工占比**: 90%/10%\n\n**工具**:\n- OCR识别\n- 表格自动填充\n\n**执行策略**:\n✅ AI自动识别简历信息并录入系统\n✅ 人工校验关键数据\n\n**价值点**: 高效建档，减少重复录入工作","x":675,"y":390,"width":500,"height":120},
+		{"id":"module2_ai2","type":"text","text":"### 💬 互动交流答疑处理\n\n**AI应用**: AI辅助\n**AI/人工占比**: 85%/15%\n\n**工具**:\n- 智能问答机器人\n- 知识库检索\n\n**执行策略**:\n✅ AI回答常见问题\n✅ 复杂问题转人工专家\n\n**价值点**: 24/7响应，提升学习体验","x":675,"y":520,"width":500,"height":120},
+		{"id":"module2_ai3","type":"text","text":"### 📝 考试题目生成与评分\n\n**AI应用**: AI辅助\n**AI/人工占比**: 70%/30%\n\n**工具**:\n- 题目生成工具\n- 智能阅卷系统\n\n**执行策略**:\n✅ AI根据课程内容生成题目\n✅ 客观题自动评分\n✅ 主观题人工阅卷\n\n**价值点**: 降低出题成本，提升评估效率","x":675,"y":650,"width":500,"height":120},
+		{"id":"module2_ai4","type":"text","text":"### 🎯 考试结果分析与反馈\n\n**AI应用**: AI辅助\n**AI/人工占比**: 80%/20%\n\n**工具**:\n- 数据分析工具\n- 个性化推荐\n\n**执行策略**:\n✅ AI分析考试薄弱点\n✅ 生成个性化学习建议\n✅ 人工制定针对性辅导计划\n\n**价值点**: 精准诊断，提升培训效果","x":675,"y":780,"width":500,"height":120},
+		{"id":"module3_title","type":"text","text":"## 👨‍🏫 内训师管理培训\n\n**核心内容**:\n部门领导担纲讲师分享管理经验 -对话高层领导传承企业文化 -建立激励机制降本增效\n\n**时间节点**:\n• 10月: 启动试运行，安排讲师课程与每周计划\n• 三个月后: 形成内训师制度","x":1275,"y":275,"width":500,"height":100,"color":"3"},
+		{"id":"module3_ai1","type":"text","text":"### 🔀 培训流程图展示更新\n\n**AI应用**: AI辅助\n**AI/人工占比**: 50%/50%\n\n**工具**:\n- 流程图自动生成工具\n- 可视化库\n\n**执行策略**:\n✅ AI根据流程变更自动更新框架\n✅ 人工细化业务流程细节\n\n**价值点**: 流程可视化，便于理解和优化","x":1275,"y":390,"width":500,"height":120},
+		{"id":"summary_title","type":"text","text":"## 🎯 2026年AI化执行要点总结","x":75,"y":1025,"width":1700,"height":60,"color":"4"},
+		{"id":"summary1","type":"text","text":"### 1️⃣ 新员工训练优化\n\n**AI化重点**:\n- ✅ E-learning内容更新：AI生成初稿，人工调整业务变化\n- ✅ 学员信息管理：OCR自动录入，人工校验关键数据\n- ✅ AI导师制度：学习行为分析，自动匹配导学\n- ✅ 培训效果评估：自动发送问卷，AI整合数据生成报告\n\n**预期效果**: 降低内容更新成本50%，提升学习满意度30%","x":75,"y":1100,"width":530,"height":276},
+		{"id":"summary2","type":"text","text":"### 2️⃣ 新经理小灶课程\n\n**AI化重点**:\n- ✅ 个性化需求分析：结合AI导师行为分析能力\n- ✅ 智能评估计分：利用考试题目生成与评分系统\n- ✅ 互动答疑：应用智能问答机器人与知识库检索\n- ✅ 学习反馈：使用考试结果分析与个性化推荐系统\n\n**预期效果**: 提升个性化培训效果，降低管理成本40%","x":635,"y":1100,"width":530,"height":283},
+		{"id":"summary3","type":"text","text":"### 3️⃣ 内训师管理培训\n\n**AI化重点**:\n- ✅ 培训流程管理：应用流程图自动生成工具\n- ✅ 培训数据可视化：使用BI分析系统生成多维度报表\n- ✅ 定制化报告生成：AI自动填充数据框架，人工补充分析\n- ✅ 培训资料归档：智能分类与版本控制系统\n\n**预期效果**: 提升管理效率60%，形成标准化内训师体系","x":1195,"y":1100,"width":530,"height":284},
+		{"id":"main_title","type":"text","text":"# 🎯 2026年企业大学\n## AI化执行方案\n\n基于PPT上半年计划 × 现有AI工作统计\n\n---\n\n**核心目标**: 三大业务模块AI化落地\n**时间轴**: 2026年上半年执行周期","x":602,"y":-213,"width":500,"height":292,"color":"5"},
+		{"id":"insight_title","type":"text","text":"## 💡 核心洞察","x":634,"y":1558,"width":500,"height":40,"color":"5"},
+		{"id":"insight_content","type":"text","text":"**人机协同模式**:\n• AI承担: 内容生成、数据分析、自动化流程、标准答疑\n• 人工承担: 业务决策、质量把控、创新设计、复杂判断\n\n**关键成功要素**:\n✅ 明确人机边界，各司其职\n✅ 持续优化AI工具与流程\n✅ 培养团队AI应用能力\n✅ 建立效果评估机制","x":634,"y":1608,"width":500,"height":110}
+	],
+	"edges":[
+		{"id":"edge_main_m1","fromNode":"main_title","fromSide":"bottom","toNode":"module1_group","toSide":"top","color":"1"},
+		{"id":"edge_main_m2","fromNode":"main_title","fromSide":"bottom","toNode":"module2_group","toSide":"top","color":"2"},
+		{"id":"edge_main_m3","fromNode":"main_title","fromSide":"bottom","toNode":"module3_group","toSide":"top","color":"3"},
+		{"id":"edge_m1_sum","fromNode":"module1_group","fromSide":"bottom","toNode":"summary1","toSide":"top","color":"1"},
+		{"id":"edge_m2_sum","fromNode":"module2_group","fromSide":"bottom","toNode":"summary2","toSide":"top","color":"2"},
+		{"id":"edge_m3_sum","fromNode":"module3_group","fromSide":"bottom","toNode":"summary3","toSide":"top","color":"3"},
+		{"id":"edge_sum_insight","fromNode":"summary2","fromSide":"bottom","toNode":"insight_content","toSide":"top","color":"5"}
+	]
+}

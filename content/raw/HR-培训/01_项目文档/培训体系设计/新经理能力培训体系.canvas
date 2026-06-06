@@ -1,0 +1,36 @@
+{
+	"nodes":[
+		{"id":"group-team-building","type":"group","x":-950,"y":200,"width":700,"height":600,"color":"4","label":"团队建设能力"},
+		{"id":"group-management-foundation","type":"group","x":-950,"y":-750,"width":700,"height":550,"color":"6","label":"管理基础技能"},
+		{"id":"group-communication","type":"group","x":250,"y":-750,"width":700,"height":500,"color":"5","label":"沟通协作技能"},
+		{"id":"group-performance-management","type":"group","x":250,"y":200,"width":700,"height":500,"color":"1","label":"绩效管理体系"},
+		{"id":"core-node","type":"text","text":"# 新经理能力培训体系\n\n**核心目标**\n从业务骨干到\n优秀管理者的角色转型\n\n培养全周期\n团队管理能力","x":-150,"y":-100,"width":285,"height":261,"color":"5"},
+		{"id":"node-role-transition","type":"text","text":"## 角色转身\n\n**课程**: LDNM101\n攻克转型难题\n\n从执行者到管理者的\n心智模式转变","x":-800,"y":-650,"width":280,"height":120,"color":"1"},
+		{"id":"node-management-responsibility","type":"text","text":"## 关键职责与能力\n\n**课程**: LDNM102\n建立管理基础框架\n\n明确管理者核心职责\n与必备能力要求","x":-500,"y":-650,"width":280,"height":120,"color":"1"},
+		{"id":"node-time-management","type":"text","text":"## 时间管理法\n\n**课程**: SMSJ101\n提升个人效能\n\n掌握高效时间管理\n与优先级排序技巧","x":-650,"y":-470,"width":280,"height":120,"color":"2"},
+		{"id":"node-meeting-management","type":"text","text":"## 高效组织会议\n\n**课程**: TMEM101\n会议管理技能\n\n提升会议效率\n与决策质量","x":-650,"y":-300,"width":280,"height":120,"color":"3"},
+		{"id":"node-interview-skills","type":"text","text":"## 4步GET面试技巧\n\n**课程**: HRZP101\n人才选拔技能\n\n结构化面试\n精准识别人才","x":-800,"y":300,"width":280,"height":120,"color":"4"},
+		{"id":"node-team-roles","type":"text","text":"## 识别团队角色\n\n**课程**: LDHT101\n因才施用\n\n理解团队角色\n优化人员配置","x":-800,"y":480,"width":280,"height":120,"color":"4"},
+		{"id":"node-motivation","type":"text","text":"## 因人而异的激励\n\n**课程**: OBMS101\n员工激励方法\n\n个性化激励策略\n提升团队士气","x":-800,"y":650,"width":280,"height":120,"color":"4"},
+		{"id":"node-cross-department","type":"text","text":"## 跨部门沟通\n\n**核心能力**\n打破组织壁垒\n\n建立协作机制\n推动跨部门项目","x":400,"y":-550,"width":280,"height":120,"color":"5"},
+		{"id":"node-communication-framework","type":"text","text":"## 沟通框架\n\n向上汇报\n向下赋能\n横向协作\n\n全方位沟通能力","x":400,"y":-400,"width":280,"height":100,"color":"5"},
+		{"id":"node-goal-setting","type":"text","text":"## 绩效管理与目标设定\n\n**课程**: LDPM101\n绩效管理基础\n\n制定SMART目标\n建立绩效标准","x":400,"y":300,"width":280,"height":120,"color":"1"},
+		{"id":"node-performance-tracking","type":"text","text":"## 绩效跟踪与评估\n\n**课程**: LDPM102\n绩效过程管理\n\n持续监控绩效\n及时反馈调整","x":700,"y":300,"width":280,"height":120,"color":"1"},
+		{"id":"node-performance-review","type":"text","text":"## 让棘手的绩效面谈\n不再难谈\n\n**课程**: LDPM103\n绩效沟通\n\n掌握面谈技巧\n建设性反馈","x":550,"y":470,"width":280,"height":120,"color":"1"}
+	],
+	"edges":[
+		{"id":"edge-core-mgmt-foundation","fromNode":"core-node","fromSide":"left","toNode":"group-management-foundation","toSide":"right","label":"基础支撑"},
+		{"id":"edge-core-team-building","fromNode":"core-node","fromSide":"left","toNode":"group-team-building","toSide":"right","label":"核心能力"},
+		{"id":"edge-core-performance","fromNode":"core-node","fromSide":"right","toNode":"group-performance-management","toSide":"left","label":"系统工具"},
+		{"id":"edge-core-communication","fromNode":"core-node","fromSide":"right","toNode":"group-communication","toSide":"left","label":"关键纽带"},
+		{"id":"edge-role-transition-to-responsibility","fromNode":"node-role-transition","fromSide":"right","toNode":"node-management-responsibility","toSide":"left"},
+		{"id":"edge-responsibility-to-time-mgmt","fromNode":"node-management-responsibility","fromSide":"bottom","toNode":"node-time-management","toSide":"top"},
+		{"id":"edge-time-mgmt-to-meeting","fromNode":"node-time-management","fromSide":"bottom","toNode":"node-meeting-management","toSide":"top"},
+		{"id":"edge-interview-to-team-roles","fromNode":"node-interview-skills","fromSide":"bottom","toNode":"node-team-roles","toSide":"top"},
+		{"id":"edge-team-roles-to-motivation","fromNode":"node-team-roles","fromSide":"bottom","toNode":"node-motivation","toSide":"top"},
+		{"id":"edge-goal-setting-to-tracking","fromNode":"node-goal-setting","fromSide":"right","toNode":"node-performance-tracking","toSide":"left"},
+		{"id":"edge-tracking-to-review","fromNode":"node-performance-tracking","fromSide":"bottom","toNode":"node-performance-review","toSide":"top"},
+		{"id":"edge-team-to-performance","fromNode":"node-motivation","fromSide":"left","toNode":"node-goal-setting","toSide":"left","label":"团队建设\n→\n绩效管理"},
+		{"id":"edge-mgmt-foundation-to-communication","fromNode":"node-meeting-management","fromSide":"left","toNode":"node-cross-department","toSide":"left","label":"会议管理\n→\n跨部门协作"}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"nodes":[
+		{"id":"insights_group","type":"group","x":1000,"y":920,"width":450,"height":460,"color":"5","label":"战略洞察与建议"},
+		{"id":"stage4_group","type":"group","x":50,"y":440,"width":500,"height":360,"color":"4","label":"第四阶段: 效果评估"},
+		{"id":"stage1_group","type":"group","x":50,"y":20,"width":500,"height":330,"color":"1","label":"第一阶段: 需求诊断"},
+		{"id":"stage3_group","type":"group","x":1000,"y":440,"width":450,"height":360,"color":"3","label":"第三阶段: 学习交付"},
+		{"id":"stage5_group","type":"group","x":50,"y":920,"width":500,"height":310,"color":"6","label":"第五阶段: 持续优化"},
+		{"id":"stage2_group","type":"group","x":1000,"y":20,"width":450,"height":310,"color":"2","label":"第二阶段: 方案设计"},
+		{"id":"stage1_title","type":"text","text":"## 🔍 需求诊断阶段\n\n**工作项**: 3项  |  **平均AI占比**: 60%","x":75,"y":50,"width":450,"height":85,"color":"1"},
+		{"id":"stage1_1","type":"text","text":"**入职培训内容更新**\n\nAI占比: 40%/60%\n\n工具: 内容生成、版本对比\n\n✅ AI生成大纲初稿\n✅ 人工调整业务内容","x":75,"y":150,"width":210,"height":90},
+		{"id":"stage1_2","type":"text","text":"**学员信息录入维护**\n\nAI占比: 90%/10%\n\n工具: OCR识别、自动填充\n\n✅ 自动识别简历\n✅ 人工校验关键数据","x":315,"y":150,"width":210,"height":90},
+		{"id":"stage1_3","type":"text","text":"**培训流程图更新**\n\nAI占比: 50%/50%  |  工具: 流程图生成、可视化库\n\n⚡ 亮点: 根据流程变更自动更新框架,人工细化","x":75,"y":250,"width":450,"height":90},
+		{"id":"stage2_title","type":"text","text":"## 📋 方案设计阶段\n\n**工作项**: 2项  |  **平均AI占比**: 60%","x":1025,"y":50,"width":400,"height":85,"color":"2"},
+		{"id":"stage2_1","type":"text","text":"**课程内容管理更新**\n\nAI占比: 50%/50%\n\n工具: 内容审核、智能分类\n\n✅ AI审核合规性\n✅ 人工更新业务内容","x":1025,"y":150,"width":400,"height":90},
+		{"id":"stage2_2","type":"text","text":"**考试题目生成评分**\n\nAI占比: 70%/30%  |  工具: 题目生成、智能阅卷\n\n⚡ 自动生成题目+客观题评分","x":1025,"y":250,"width":400,"height":70},
+		{"id":"stage3_title","type":"text","text":"## 🚀 学习交付阶段\n\n**工作项**: 3项  |  **平均AI占比**: 83.3% 🌟","x":1025,"y":480,"width":400,"height":85,"color":"3"},
+		{"id":"stage3_1","type":"text","text":"**AI导师制度管理**\n\nAI占比: 70%/30%\n\n✅ 学习行为分析\n✅ 自动匹配AI导学","x":1025,"y":580,"width":400,"height":80},
+		{"id":"stage3_2","type":"text","text":"**互动交流答疑处理**\n\nAI占比: 85%/15%\n\n✅ 智能问答机器人\n✅ 知识库检索","x":1025,"y":670,"width":400,"height":70},
+		{"id":"stage4_title","type":"text","text":"## 📊 效果评估阶段\n\n**工作项**: 4项  |  **平均AI占比**: 73.8%","x":75,"y":480,"width":450,"height":85,"color":"4"},
+		{"id":"stage4_1","type":"text","text":"**评估数据收集**\n\nAI占比: 50%/50%\n\n✅ 自动发送问卷\n✅ 汇总初步数据","x":75,"y":580,"width":230,"height":90},
+		{"id":"stage4_2","type":"text","text":"**评估报告生成**\n\nAI占比: 75%/25%\n\n✅ 整合数据生成报告\n✅ 人工制定改进方案","x":315,"y":580,"width":210,"height":90},
+		{"id":"stage4_3","type":"text","text":"**考试结果分析**\n\nAI占比: 80%/20%\n\n✅ 分析薄弱点\n✅ 生成学习建议","x":75,"y":680,"width":230,"height":70},
+		{"id":"stage4_4","type":"text","text":"**数据可视化报表**\n\nAI占比: 90%/10%\n\n⚡ 自动生成多维图表","x":315,"y":680,"width":210,"height":70},
+		{"id":"stage3_3","type":"text","text":"**培训提醒推送**\n\nAI占比: 95%/5%  🎯 最高AI渗透率","x":1025,"y":750,"width":400,"height":40},
+		{"id":"stage5_title","type":"text","text":"## 🔄 持续优化阶段\n\n**工作项**: 3项  |  **平均AI占比**: 85.0% 🚀","x":75,"y":950,"width":450,"height":85,"color":"6"},
+		{"id":"stage5_1","type":"text","text":"**定制化报告生成**\n\nAI占比: 75%/25%\n\n✅ 自动填充数据框架\n✅ 人工补充分析结论","x":75,"y":1050,"width":450,"height":80},
+		{"id":"stage5_2","type":"text","text":"**反馈收集整理**\n\nAI占比: 85%/15%\n\n✅ AI分析工具\n✅ 外部接口整合","x":75,"y":1140,"width":210,"height":80},
+		{"id":"stage5_3","type":"text","text":"**资料自动归档**\n\nAI占比: 95%/5%\n\n✅ 智能分类\n✅ 版本控制","x":315,"y":1140,"width":210,"height":80},
+		{"id":"insight2","type":"text","text":"**2. 高价值场景识别**\n\n- 自动化场景(提醒、归档)AI占比95%\n- 决策支持(评估、分析)AI占比70-90%\n- 建议推广标准化流程的AI应用","x":1025,"y":1125,"width":400,"height":105},
+		{"id":"insights_title","type":"text","text":"## 💡 核心洞察","x":1025,"y":943,"width":400,"height":50,"color":"5"},
+		{"id":"a1b2c3d4e5f67890","type":"text","text":"# 🎯 AI赋能企业大学\n## 培训闭环战略全景图\n\n**核心目标**: 通过AI技术构建\n高效、智能、闭环的\n人才培养体系\n\n---\n\n**整体AI渗透率**: 73.3%","x":600,"y":135,"width":350,"height":317,"color":"5"},
+		{"id":"insight1","type":"text","text":"**1. AI渗透不均衡**\n\n- 学习交付阶段AI占比最高(83.3%)\n- 需求诊断、方案设计仍有提升空间\n- 建议加强前端需求分析AI化","x":1025,"y":1010,"width":400,"height":100},
+		{"id":"insight3","type":"text","text":"**3. 人机协同范式**\n\n- AI负责: 生成、分析、自动化\n- 人工负责: 业务决策、质量把控\n- 形成「AI基础+人工增值」模式","x":1025,"y":1260,"width":400,"height":100}
+	],
+	"edges":[
+		{"id":"edge1","fromNode":"stage1_group","fromSide":"right","toNode":"a1b2c3d4e5f67890","toSide":"left","color":"1"},
+		{"id":"edge2","fromNode":"a1b2c3d4e5f67890","fromSide":"right","toNode":"stage2_group","toSide":"left","color":"2"},
+		{"id":"edge3","fromNode":"stage2_group","fromSide":"bottom","toNode":"stage3_group","toSide":"top","color":"3","label":"执行"},
+		{"id":"edge4","fromNode":"stage3_group","fromSide":"left","toNode":"stage4_group","toSide":"right","color":"4","label":"评估"},
+		{"id":"edge5","fromNode":"stage4_group","fromSide":"bottom","toNode":"stage5_group","toSide":"top","color":"6","label":"优化"},
+		{"id":"edge6","fromNode":"stage5_group","fromSide":"right","toNode":"insights_group","toSide":"left","color":"5"}
+	]
+}

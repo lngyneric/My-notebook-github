@@ -1,0 +1,41 @@
+{
+  "2026-02-10": {
+    "files": {
+      "README.md": {
+        "open_count": 1,
+        "first_open": "2026-02-10T09:41:18.303245",
+        "last_open": "2026-02-10T09:41:18.303245",
+        "file_size": 2460,
+        "extension": ".md"
+      }
+    },
+    "timestamp": "2026-02-10T09:41:18.303245",
+    "tasks": {
+      "total": 2,
+      "completed": 2,
+      "completion_rate": 1.0,
+      "list": [
+        {
+          "id": 1,
+          "task": "完成daily report skill实施",
+          "status": "completed",
+          "time": "2026-02-10 10:12:44"
+        },
+        {
+          "id": 2,
+          "task": "测试工作流程",
+          "status": "completed",
+          "time": "2026-02-10 10:12:44"
+        }
+      ]
+    },
+    "workday": {
+      "start_time": "10:12:43",
+      "end_time": "10:12:44",
+      "duration_hours": 0.0
+    },
+    "efficiency": {
+      "score": 100
+    }
+  }
+}

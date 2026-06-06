@@ -1,0 +1,11 @@
+---
+type: concept
+title: "OntoMetric知识图谱构建框架"
+date: 2026-04-24
+tags: [wiki, wiki/concept]
+---
+
+# OntoMetric知识图谱构建框架
+
+## Evolution Log
+- 2026-04-24: 来自 [[wiki/summaries/03_技能与工具/多模态RAG/Multimodal_RAG_KG_Tutor_Guide]] 的认知：用于解决大模型直接抽取长文档时的“幻觉”与“溯源缺失”问题的知识图谱构建框架，采用“分割-抽取-验证”三段式流水线设计。

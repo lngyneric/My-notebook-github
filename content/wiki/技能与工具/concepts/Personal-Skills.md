@@ -1,0 +1,11 @@
+---
+type: concept
+title: "Personal Skills"
+date: 2026-04-24
+tags: [wiki, wiki/concept]
+---
+
+# Personal Skills
+
+## Evolution Log
+- 2026-04-24: 来自 [[wiki/summaries/04_技能与工具/Superpowers/superpowers-main/docs/README.codex]] 的认知：User-created custom skills stored in the ~/.codex/skills/ directory that follow the SKILL.md format, and override built-in Superpowers skills with the same name.

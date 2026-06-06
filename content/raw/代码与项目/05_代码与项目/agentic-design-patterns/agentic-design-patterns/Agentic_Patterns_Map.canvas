@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"node1","x":0,"y":0,"width":250,"height":60,"type":"file","file":"07-Chapter-01-Prompt-Chaining.md"},
+		{"id":"node2","x":300,"y":0,"width":250,"height":60,"type":"file","file":"08-Chapter-02-Routing.md"},
+		{"id":"node3","x":600,"y":0,"width":250,"height":60,"type":"file","file":"09-Chapter-03-Parallelization.md"},
+		{"id":"node4","x":900,"y":0,"width":250,"height":60,"type":"file","file":"10-Chapter-04-Reflection.md"},
+		{"id":"node5","x":0,"y":200,"width":250,"height":60,"type":"file","file":"11-Chapter-05-Tool-Use.md"},
+		{"id":"node6","x":300,"y":200,"width":250,"height":60,"type":"file","file":"12-Chapter-06-Planning.md"},
+		{"id":"node7","x":600,"y":200,"width":250,"height":60,"type":"file","file":"13-Chapter-07-Multi-Agent-Collaboration.md"},
+		{"id":"group1","x":-20,"y":-40,"width":1200,"height":140,"type":"group","label":"Basic Patterns"},
+		{"id":"group2","x":-20,"y":160,"width":900,"height":140,"type":"group","label":"Advanced Patterns"}
+	],
+	"edges":[
+		{"id":"edge1","fromNode":"node1","fromSide":"right","toNode":"node2","toSide":"left"},
+		{"id":"edge2","fromNode":"node2","fromSide":"right","toNode":"node3","toSide":"left"},
+		{"id":"edge3","fromNode":"node3","fromSide":"right","toNode":"node4","toSide":"left"},
+		{"id":"edge4","fromNode":"node4","fromSide":"bottom","toNode":"node5","toSide":"top"},
+		{"id":"edge5","fromNode":"node5","fromSide":"right","toNode":"node6","toSide":"left"},
+		{"id":"edge6","fromNode":"node6","fromSide":"right","toNode":"node7","toSide":"left"}
+	]
+}

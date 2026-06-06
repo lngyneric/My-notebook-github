@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闪卡</title>
+    <style>
+        /* --- 1. 基础变量 --- */
+        :root {
+            --card-bg: #ffffff;
+            --text-main: #202124;
+            --text-secondary: #5f6368;
+            --accent-color: #3e4b5b;
+            --theme-bg-gradient: linear-gradient(180deg, rgba(62, 75, 91, 0.08) 0%, #f8f9fa 100%);
+            --shadow-card: 0 8px 32px rgba(0,0,0,0.08);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            background: var(--theme-bg-gradient);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: var(--text-main);
+            transition: background 0.6s ease;
+        }
+
+        /* --- 2. 主容器：包含左右按钮和卡片区域 --- */
+        .main-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 520px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        /* --- 3. 左右导航按钮 (卡片外侧) --- */
+        .nav-btn {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+        .nav-btn:hover:not(:disabled) {
+            background: #f8f9fa;
+            color: var(--text-main);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* --- 4. 3D 场景容器 --- */
+        .scene {
+            width: 100%;
+            max-width: 360px;
+            aspect-ratio: 3/4.2;
+            perspective: 1200px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- 5. 堆叠装饰 --- */
+        .stack-decor::before,
+        .stack-decor::after {
+            content: "";
+            position: absolute;
+            background: #fff;
+            border-radius: 28px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.03);
+            left: 0;
+            transition: all 0.4s ease;
+        }
+        .stack-decor::before {
+            top: 14px;
+            transform: scale(0.97);
+            z-index: -1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            opacity: 0.8;
+        }
+        .stack-decor::after {
+            top: 28px;
+            transform: scale(0.94);
+            z-index: -2;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+            opacity: 0.5;
+        }
+
+        /* --- 6. 卡片主体 --- */
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 28px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 28px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            background: var(--card-bg);
+            padding: 36px 28px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateZ(0);
+        }
+
+        .card-front {
+            z-index: 2;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        /* --- 7. 内容排版 --- */
+        .watermark-icon {
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            font-size: 140px;
+            opacity: 0.08;
+            pointer-events: none;
+            filter: grayscale(100%);
+            transition: color 0.5s ease;
+        }
+
+        .source-tag {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        /* 语言类卡片的中文提示 (hint) */
+        .hint-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 16px;
+            padding: 8px 14px;
+            background: rgba(0,0,0,0.03);
+            border-radius: 8px;
+            display: inline-block;
+            align-self: flex-start;
+        }
+        .hint-text:empty {
+            display: none;
+        }
+
+        .question {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.4;
+            flex-grow: 1;
+            white-space: pre-wrap;  /* 保留换行符 */
+        }
+
+        .answer-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            scrollbar-width: none;
+            margin-bottom: 16px;
+        }
+        .answer-container::-webkit-scrollbar { display: none; }
+
+        .answer-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            white-space: pre-wrap;  /* 保留换行符，同时允许自动换行 */
+        }
+        .answer-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+            background: rgba(0,0,0,0.04);
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+
+        /* --- 8. 正面底部：查看答案按钮 + 进度 --- */
+        .footer-front {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .reveal-pill {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            color: var(--text-main);
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+        }
+        .reveal-pill:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        /* 进度指示器 (卡片右下角) */
+        .page-indicator {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* --- 9. 背面底部：朗读按钮 + 进度 --- */
+        .footer-back {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* 朗读按钮 */
+        .speak-btn {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+        .speak-btn:hover {
+            background: var(--accent-color);
+            color: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .speak-btn:active {
+            transform: scale(0.95);
+        }
+        .speak-btn.hidden {
+            display: none;
+        }
+
+        /* --- 10. 移动端适配 --- */
+        @media (max-width: 480px) {
+            .main-container {
+                gap: 10px;
+                padding: 0 10px;
+            }
+            .nav-btn {
+                width: 36px;
+                height: 36px;
+            }
+            .nav-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+            .card-face {
+                padding: 24px 20px;
+            }
+            .source-tag {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            .hint-text {
+                font-size: 14px;
+                padding: 6px 10px;
+                margin-bottom: 12px;
+            }
+            .question {
+                font-size: 24px;
+            }
+            .answer-text {
+                font-size: 20px;
+            }
+            .reveal-pill {
+                font-size: 12px;
+                padding: 8px 18px;
+            }
+            .page-indicator {
+                font-size: 12px;
+            }
+            .speak-btn {
+                width: 32px;
+                height: 32px;
+            }
+            .speak-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+            .watermark-icon {
+                font-size: 100px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- 左侧翻页按钮 -->
+        <button class="nav-btn" onclick="prevCard()" id="prev-btn" title="上一张">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+
+        <!-- 卡片区域 -->
+        <div class="scene">
+            <div class="stack-decor"></div>
+
+            <div class="card" id="card-element">
+                
+                <!-- 正面 -->
+                <div class="card-face card-front">
+                    <div class="watermark-icon" id="watermark-front"></div>
+                    <div class="source-tag" id="source-tag-front">Source</div>
+                    
+                    <!-- 语言类卡片的中文提示 -->
+                    <div class="hint-text" id="hint-text"></div>
+                    
+                    <div class="question" id="question-text">
+                        Loading...
+                    </div>
+
+                    <div class="footer-front">
+                        <button class="reveal-pill" onclick="flipCard()">
+                            查看答案
+                        </button>
+                        <span class="page-indicator" id="page-indicator-front">1 / 5</span>
+                    </div>
+                </div>
+
+                <!-- 背面 -->
+                <div class="card-face card-back" onclick="handleBackClick(event)">
+                    <div class="watermark-icon" id="watermark-back"></div>
+                    <div class="source-tag" id="source-tag-back">Answer</div>
+                    
+                    <div class="answer-container">
+                        <div class="answer-text" id="answer-text">
+                            ...
+                        </div>
+                    </div>
+
+                    <div class="footer-back" onclick="event.stopPropagation()">
+                        <!-- 朗读按钮 (仅语言类显示) -->
+                        <button class="speak-btn" id="speak-btn" onclick="speakWord()" title="朗读单词">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                        </button>
+                        <span class="page-indicator" id="page-indicator-back">1 / 5</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 右侧翻页按钮 -->
+        <button class="nav-btn" onclick="nextCard()" id="next-btn" title="下一张">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+    </div>
+
+    <script>
+        // --- 数据占位符 ---
+        const flashcards = [
+    {
+        "id": 1,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'涌现'(Emergence)？",
+        "answer": "**涌现**是指简单个体的互动行为中，'自发'产生出整体层面的复杂特性。\n\n**类比**：就像单个蚂蚁没有智慧，但蚁群能建造复杂的蚁穴；单个水分子没有温度，但无数水分子汇聚成海洋就有潮汐。秩序不是自上而下设计的，而是自下而上'涌现'的。",
+        "color": "#3182ce",
+        "icon": "🌊"
+    },
+    {
+        "id": 2,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'去中心化'(Decentralization)？",
+        "answer": "**去中心化**是指系统不再依赖单一控制节点，而是通过分布式决策实现自我协调。\n\n**类比**：互联网本身是去中心化的，没有中央服务器控制整个网络；大脑没有中央CPU，各神经元并行工作。去中心化系统更鲁棒，但也更难控制。",
+        "color": "#3182ce",
+        "icon": "🕸️"
+    },
+    {
+        "id": 3,
+        "category": "History",
+        "source": "《失控》背景",
+        "question": "《失控》的副标题是什么？这暗示了作者的核心论点是什么？",
+        "answer": "副标题是'机器、系统与新生物学的合成'（Machine, System, and the New Biology of Synthesis）。\n\n这暗示了凯文·凯利的核心论点：未来技术系统将呈现'生物学特性'，机器不再是机械的，而是会像生物一样进化、学习和适应。技术与生物学的边界正在消融。",
+        "color": "#744210",
+        "icon": "📚"
+    },
+    {
+        "id": 4,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'控制隐喻'(Control Metaphor)的局限性？",
+        "answer": "传统工程学的'控制隐喻'假设系统需要中央控制者来管理一切。凯文·凯利认为这不适合复杂系统。\n\n**类比**：就像试图用遥控器控制一个花园——真正有效的做法是'培育'而非'控制'。让系统自我组织，而不是强行干预。放手让秩序自然涌现。",
+        "color": "#3182ce",
+        "icon": "🎮"
+    },
+    {
+        "id": 5,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'共同进化'(Co-evolution)？",
+        "answer": "**共同进化**是指两个或多个系统相互影响、相互塑造的过程。\n\n**类比**：猎豹和羚羊互相进化——猎豹跑得更快导致羚羊也跑得更快，反之亦然。技术也与社会共同进化：AI塑造社会，社会又反过来塑造AI的发展方向。没有谁'控制'谁，而是共同演进。",
+        "color": "#3182ce",
+        "icon": "🔄"
+    },
+    {
+        "id": 6,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'网络效应'(Network Effect)？",
+        "answer": "**网络效应**是指网络的价值随着用户数量的增加而指数级增长。\n\n**类比**：一台电话机毫无价值，但每个人有电话时，网络价值激增。这解释了为什么互联网平台赢家通吃——网络越大，对新用户的吸引力越强。这是去中心化系统的核心驱动力。",
+        "color": "#3182ce",
+        "icon": "📶"
+    },
+    {
+        "id": 7,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'适应性'(Adaptability)？",
+        "answer": "**适应性**是指系统根据环境变化自我调整的能力。\n\n**类比**：免疫系统会学习识别新病毒；企业会根据市场调整策略。凯文·凯利强调，在未来，不是'最强壮'或'最聪明'的系统生存，而是'最能适应变化'的系统。机器必须学会像生物一样适应。",
+        "color": "#3182ce",
+        "icon": "🦎"
+    },
+    {
+        "id": 8,
+        "category": "History",
+        "source": "《失控》背景",
+        "question": "《失控》首版出版于哪一年？为什么这本书具有前瞻性？",
+        "answer": "首版出版于1994年。\n\n其前瞻性在于：在互联网商业化之前，凯文·凯利就预见了社交媒体、开源运动、云计算、AI等众多趋势。他预言了'技术生态'——技术将像生物一样进化，预言了去中心化网络、共同进化等概念在20年后的世界成为现实。",
+        "color": "#744210",
+        "icon": "📅"
+    },
+    {
+        "id": 9,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'人工生命'(Artificial Life)？",
+        "answer": "**人工生命**是指用计算机模拟或创造具有生命特征（繁殖、进化、学习）的系统。\n\n**类比**：康威的'生命游戏'——简单的几条规则能涌现出复杂的行为；遗传算法模拟自然选择。凯文·凯利认为，真正的AI不来自'设计'，而是来自'创造能进化的系统'。",
+        "color": "#3182ce",
+        "icon": "🧬"
+    },
+    {
+        "id": 10,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'分布式智能'(Distributed Intelligence)？",
+        "answer": "**分布式智能**是指智能不集中在大脑或CPU，而是分散在系统的各个部分。\n\n**类比**：鸟群的飞行没有'头鸟'指挥，每只鸟只遵循简单规则，但群体表现出惊人的智能。云计算也是分布式智能的体现——算力分布在无数节点上，而非一台超级计算机。",
+        "color": "#3182ce",
+        "icon": "🐦"
+    },
+    {
+        "id": 11,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'自组织'(Self-organization)？",
+        "answer": "**自组织**是指系统在没有中央控制的情况下，自动形成有序结构的能力。\n\n**类比**：市场中的价格不是任何人设定的，而是由无数买卖行为'自组织'形成的；互联网的协议也是自下而上形成的。自组织是去中心化系统的核心机制——秩序从混乱中涌现。",
+        "color": "#3182ce",
+        "icon": "🎯"
+    },
+    {
+        "id": 12,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'共生'(Symbiosis)？",
+        "answer": "**共生**是指不同系统相互依存、互利共赢的关系。\n\n**类比**：小丑鱼和海葵；肠道菌群与人体。凯文·凯利认为，未来技术生态不是'你死我活'的竞争，而是共生：AI与人类共生、公司与用户共生、不同技术平台共生。共生是共同进化的最高形式。",
+        "color": "#3182ce",
+        "icon": "🤝"
+    },
+    {
+        "id": 13,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'复杂系统'(Complex System)？",
+        "answer": "**复杂系统**是指由大量简单个体组成的系统，个体间互动产生整体上的复杂行为。\n\n**特征**：非线性、涌现性、适应性、自组织。例子：生态系统、经济系统、神经网络。复杂系统的关键不是'理解个体'，而是'理解互动'——关系比实体更重要。",
+        "color": "#3182ce",
+        "icon": "🔬"
+    },
+    {
+        "id": 14,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'蜂群思维'(Hive Mind)？",
+        "answer": "**蜂群思维**是指群体智能超越个体之和的现象。\n\n**类比**：蜜蜂没有'大脑'，但蜂巢能做复杂的决策；维基百科没有人总编，但质量胜过百科全书。凯文·凯利认为，未来社会将呈现蜂群思维——知识分散在无数人手中，通过连接形成集体智慧。",
+        "color": "#3182ce",
+        "icon": "🐝"
+    },
+    {
+        "id": 15,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'技术进化'(Technological Evolution)？",
+        "answer": "**技术进化**是指技术像生物一样通过变异、选择、传播而演进。\n\n**类比**：开源软件通过'变异'（代码修改）、'选择'（社区认可）、'传播'（被采用）而进化。凯文·凯利预言，未来的技术不会是被'设计'出来的，而是会被'进化'出来的——像生物一样自然发展。",
+        "color": "#3182ce",
+        "icon": "⚙️"
+    },
+    {
+        "id": 16,
+        "category": "History",
+        "source": "《失控》案例",
+        "question": "书中提到的'康威生命游戏'（Conway's Game of Life）说明了什么？",
+        "answer": "生命游戏由简单的4条规则组成，却能涌现出复杂的图案和行为（如移动、繁殖）。\n\n**启示**：复杂不是来自复杂的设计，而是来自简单规则的组合。这支持了凯文·凯利的核心观点：'简单性孕育复杂性'。AI的设计哲学应该是'设计规则，而非设计行为'。",
+        "color": "#744210",
+        "icon": "🎮"
+    },
+    {
+        "id": 17,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'非线性'(Nonlinearity)？",
+        "answer": "**非线性**是指输入与输出不成比例关系，小变化可能导致大后果。\n\n**类比**：蝴蝶效应；股市崩盘。复杂系统是非线性的，所以难以预测。凯文·凯利警告，试图用线性思维（因果预测）理解非线性系统是徒劳的。我们需要新的理解框架。",
+        "color": "#3182ce",
+        "icon": "🦋"
+    },
+    {
+        "id": 18,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'递归'(Recursion)？",
+        "answer": "**递归**是指结构在各个尺度上自我重复的模式。\n\n**类比**：分形；网络中的小世界现象。凯文·凯利认为，递归是自然界和技术的核心组织原则。细胞、神经元、代码、网络——都遵循递归逻辑。理解递归，就能理解'无限复制'的力量。",
+        "color": "#3182ce",
+        "icon": "🔄"
+    },
+    {
+        "id": 19,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'适应性景观'(Adaptive Landscape)？",
+        "answer": "**适应性景观**是进化生物学的隐喻：物种在'山丘'之间移动，目标是攀登'适应度峰值'。\n\n**类比**：企业寻找市场机会（爬坡）；AI通过梯度下降优化。关键洞察：适应度景观本身也在变化——你今天爬的山明天可能不再是高峰。持续适应是唯一的策略。",
+        "color": "#3182ce",
+        "icon": "⛰️"
+    },
+    {
+        "id": 20,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'模块化'(Modularity)？",
+        "answer": "**模块化**是指系统由可组合、可替换的模块构成。\n\n**类比**：乐高积木；软件的API接口。模块化让复杂系统变得可管理：每个模块可以独立进化，同时保持整体协同。凯文·凯利认为，模块化是技术进化的关键机制——通过组合创新，而非从零开始。",
+        "color": "#3182ce",
+        "icon": "🧩"
+    },
+    {
+        "id": 21,
+        "category": "History",
+        "source": "《失控》案例",
+        "question": "书中如何分析'经济系统'作为复杂系统的？",
+        "answer": "凯文·凯利将经济视为'进化的复杂系统'：无数个体的'买卖决策'自发涌现出价格、供需关系。\n\n**启示**：试图'计划经济'（中央控制）是徒劳的，因为经济是非线性、自适应的。政府角色应该是'培育'而非'控制'——创造好的规则，让市场自组织。这解释了为什么市场经济更具韧性。",
+        "color": "#744210",
+        "icon": "💰"
+    },
+    {
+        "id": 22,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'反馈循环'(Feedback Loop)？",
+        "answer": "**反馈循环**是指系统的输出反过来影响输入，形成自我调节或自我强化的机制。\n\n**正向反馈**：病毒传播（越多人感染，传播越快）。\n**负向反馈**：恒温器（温度过高则关闭加热）。复杂系统的核心行为源于反馈循环的交织。理解反馈，就能理解系统的动态。",
+        "color": "#3182ce",
+        "icon": "🔄"
+    },
+    {
+        "id": 23,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'临界点'(Tipping Point)？",
+        "answer": "**临界点**是指系统经历质变的阈值，超过后发生不可逆的转变。\n\n**类比**：水沸腾（临界点100°C）；病毒爆发（R0超过1）。凯文·凯利认为，复杂系统的演化是非渐进的，而是存在临界点——达到阈值后突然'相变'。预测临界点是理解系统的关键。",
+        "color": "#3182ce",
+        "icon": "⚖️"
+    },
+    {
+        "id": 24,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'层级'(Hierarchy)？",
+        "answer": "**层级**是指系统通过嵌套组织来管理复杂性。\n\n**类比**：细胞→组织→器官→生物→生态系统；代码→函数→模块→程序→系统。层级让每个层级都能专注自己的逻辑，同时保持整体协调。凯文·凯利强调，层级不是'自上而下'的控制，而是'自下而上'的涌现秩序。",
+        "color": "#3182ce",
+        "icon": "📊"
+    },
+    {
+        "id": 25,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'冗余'(Redundancy)？",
+        "answer": "**冗余**是指系统中存在多余的备份或资源。\n\n**类比**：生物有两个肾；互联网有多条路由路径。传统工程追求'效率'（消除冗余），但凯文·凯利认为，复杂系统需要'冗余'来增强鲁棒性——当部分失效时，冗余部分可以接管。效率与鲁棒性需要权衡。",
+        "color": "#3182ce",
+        "icon": "🛡️"
+    },
+    {
+        "id": 26,
+        "category": "History",
+        "source": "《失控》预言",
+        "question": "凯文·凯利如何预言'开源运动'的？",
+        "answer": "凯文·凯利预见到，在去中心化的网络中，'众包'将超越'集中式开发'。\n\n**预言验证**：Linux的成功、GitHub的繁荣、Wikipedia的崛起都验证了他的洞察——当人们可以自由协作、共享代码和知识时，能创造出比任何单一公司都更强大的成果。开源是分布式协作的典范。",
+        "color": "#744210",
+        "icon": "🌐"
+    },
+    {
+        "id": 27,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'多样性'(Diversity)？",
+        "answer": "**多样性**是指系统中存在多种不同的类型、策略或个体。\n\n**类比**：生物多样性让生态系统更稳定；投资组合降低风险。凯文·凯利认为，多样性是复杂系统的生存策略——当环境变化时，总有一部分能适应。同质化系统脆弱，异质化系统鲁棒。",
+        "color": "#3182ce",
+        "icon": "🌈"
+    },
+    {
+        "id": 28,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'本地规则'(Local Rules)？",
+        "answer": "**本地规则**是指个体只依据局部信息做出决策，而非全局信息。\n\n**类比**：蚂蚁只根据周围信息行动；市场参与者只知道自己和对手的价格。复杂系统的秩序不是'看见全局的结果'，而是'遵循本地规则的涌现'。这是去中心化系统的关键——不需要'上帝视角'。",
+        "color": "#3182ce",
+        "icon": "📍"
+    },
+    {
+        "id": 29,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'连接主义'(Connectionism)？",
+        "answer": "**连接主义**认为智能来自简单单元的连接网络，而非复杂的逻辑规则。\n\n**类比**：神经网络是连接主义的实现——单个神经元只是简单开关，但亿万个神经元的连接产生智能。凯文·凯利认为，这是AI的正确方向：'连接比计算更重要'。",
+        "color": "#3182ce",
+        "icon": "🔗"
+    },
+    {
+        "id": 30,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'自相似'(Self-similarity)？",
+        "answer": "**自相似**是指系统在不同尺度上呈现相同或相似的模式。\n\n**类比**：分形（海岸线、雪花）；企业结构、细胞结构、网络结构都在不同层级上遵循相似模式。凯文·凯利认为，自相似是自然和技术的组织原则——通过重复简单的模式，构建复杂的系统。",
+        "color": "#3182ce",
+        "icon": "🔄"
+    },
+    {
+        "id": 31,
+        "category": "History",
+        "source": "《失控》预言",
+        "question": "凯文·凯利如何预言'云计算'的？",
+        "answer": "凯文·凯利预见到，计算将从本地设备转移到'网络'，成为像电力一样的公共服务。\n\n**预言验证**：AWS、Azure、Google Cloud的成功验证了他的洞察——'算力是基础设施'，按需使用、弹性扩展。云计算是分布式计算的自然演进，也是去中心化的体现。",
+        "color": "#744210",
+        "icon": "☁️"
+    },
+    {
+        "id": 32,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'鲁棒性'(Robustness)？",
+        "answer": "**鲁棒性**是指系统在面对干扰或失效时保持功能的能力。\n\n**类比**：互联网即使部分节点瘫痪也能通信；生态系统即使物种灭绝也能维持平衡。凯文·凯利认为，鲁棒性来自去中心化、冗余、多样性。集中式系统'高效但脆弱'，分布式系统'低效但鲁棒'。",
+        "color": "#3182ce",
+        "icon": "💪"
+    },
+    {
+        "id": 33,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'协同进化'(Coevolution)？",
+        "answer": "**协同进化**是共同进化的另一种说法，强调两个系统相互塑造的过程。\n\n**类比**：花朵与昆虫（花蜜交换授粉）；捕食者与猎物。凯文·凯利认为，技术与人类在协同进化：技术改变我们的生活方式，我们反过来塑造技术发展方向。没有'谁控制谁'，是共同演进。",
+        "color": "#3182ce",
+        "icon": "🤝"
+    },
+    {
+        "id": 34,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'简单规则'(Simple Rules)？",
+        "answer": "**简单规则**是指复杂系统的行为源于个体遵循的简单、本地规则。\n\n**类比**：鸟群的三条规则：1.不撞队友 2.对齐方向 3.靠近中心。没有'指挥官'，但群体行为复杂有序。凯文·凯利认为，这是设计复杂系统的关键——'设计规则，而非设计结果'。",
+        "color": "#3182ce",
+        "icon": "📜"
+    },
+    {
+        "id": 35,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'复制'(Replication)？",
+        "answer": "**复制**是指信息或模式从一处转移到另一处的机制。\n\n**类比**：DNA复制；病毒传播；开源代码复制。凯文·凯利认为，复制是复杂系统进化的基础——只有能被复制的模式才能被选择、被传播、被进化。信息的流动性决定系统的适应性。",
+        "color": "#3182ce",
+        "icon": "📋"
+    },
+    {
+        "id": 36,
+        "category": "History",
+        "source": "《失控》预言",
+        "question": "凯文·凯利如何预言'社交媒体'的？",
+        "answer": "凯文·凯利预见到，当所有人都能连接时，'内容生产'将从'少数精英'转移到'大众'。\n\n**预言验证**：Facebook、Twitter、YouTube的崛起验证了他的洞察——'每个人都是媒体'。社交媒体是去中心化内容生态的体现，也是蜂群思维的典型案例：没有中央编辑，但整体涌现出智慧。",
+        "color": "#744210",
+        "icon": "📱"
+    },
+    {
+        "id": 37,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'选择'(Selection)？",
+        "answer": "**选择**是指环境对变异进行筛选的机制，是进化的核心。\n\n**类比**：自然选择（适者生存）；市场选择（消费者选择产品）。凯文·凯利认为，技术也是通过选择进化的——好的技术被采用，差的被淘汰。选择不是'理性的设计'，而是'盲目的筛选'，但最终产生优化。",
+        "color": "#3182ce",
+        "icon": "✅"
+    },
+    {
+        "id": 38,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'变异'(Variation)？",
+        "answer": "**变异**是指系统在复制过程中产生的随机变化。\n\n**类比**：基因突变；创新尝试。凯文·凯利认为，变异是进化的前提——没有变异，就没有选择的基础。技术也需要'变异'：创新的尝试、不同的路径，最终市场会选择最合适的方向。",
+        "color": "#3182ce",
+        "icon": "🎲"
+    },
+    {
+        "id": 39,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'记忆'(Memory)？",
+        "answer": "**记忆**是指系统存储和检索信息的能力。\n\n**类比**：大脑的神经网络记忆；生物的DNA记忆；互联网的缓存。凯文·凯利认为，记忆是复杂系统适应性的基础——只有记住过去的经验，才能更好地适应未来。技术系统的记忆（数据库、缓存）是智能的基础。",
+        "color": "#3182ce",
+        "icon": "🧠"
+    },
+    {
+        "id": 40,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'预测'(Prediction)？",
+        "answer": "**预测**是指系统基于过去信息推断未来状态的能力。\n\n**类比**：动物预测天气；AI预测股价。凯文·凯利认为，复杂系统的预测是有限度的——非线性系统本质上是不可预测的。但系统可以通过'学习'不断提高预测准确度。AI的本质就是预测机器。",
+        "color": "#3182ce",
+        "icon": "🔮"
+    },
+    {
+        "id": 41,
+        "category": "History",
+        "source": "《失控》预言",
+        "question": "凯文·凯利如何预言'平台经济'的？",
+        "answer": "凯文·凯利预见到，价值将转移到'连接'而非'拥有'。\n\n**预言验证**：Uber不拥有汽车，Airbnb不拥有房屋，但通过'连接'创造巨大价值。平台经济的核心是'网络效应'——平台越大，对用户的吸引力越强。这是去中心化网络的典型应用。",
+        "color": "#744210",
+        "icon": "🏢"
+    },
+    {
+        "id": 42,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'学习'(Learning)？",
+        "answer": "**学习**是指系统通过经验改进自身行为的能力。\n\n**类比**：孩子学语言；机器学习算法。凯文·凯利认为，学习是适应性系统的基础——只有能学习，才能持续适应。机器学习是AI的核心，也是技术'生物学化'的体现。",
+        "color": "#3182ce",
+        "icon": "📚"
+    },
+    {
+        "id": 43,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'通信'(Communication)？",
+        "answer": "**通信**是指系统内部或系统间传递信息的过程。\n\n**类比**：神经元信号；互联网数据传输；蚂蚁化学信号。凯文·凯利认为，通信是复杂系统协调的基础——没有通信，就不可能有协调行为。通信的带宽和方式决定系统的复杂性。",
+        "color": "#3182ce",
+        "icon": "📡"
+    },
+    {
+        "id": 44,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'边界'(Boundary)？",
+        "answer": "**边界**是指系统定义自身与外界区分的接口。\n\n**类比**：细胞膜；公司组织边界；国家国界。凯文·凯利认为，边界是系统存在的必要条件——没有边界，系统无法维持内部秩序。但边界也是开放的——系统需要与外界交换物质、能量、信息才能进化。",
+        "color": "#3182ce",
+        "icon": "🚧"
+    },
+    {
+        "id": 45,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'开放'(Openness)？",
+        "answer": "**开放**是指系统允许信息、能量或个体自由流动的状态。\n\n**类比**：开源代码；开放API；自由市场。凯文·凯利认为，开放是复杂系统进化的关键——封闭系统会熵增死亡，开放系统通过'引入负熵'维持秩序。开放意味着鲁棒性、适应性。",
+        "color": "#3182ce",
+        "icon": "🚪"
+    },
+    {
+        "id": 46,
+        "category": "History",
+        "source": "《失控》预言",
+        "question": "凯文·凯利如何预言'物联网'(IoT)的？",
+        "answer": "凯文·凯利预见到，计算将无处不在——从'人联网'扩展到'物联网'。\n\n**预言验证**：智能家居、工业互联网、传感器网络的崛起验证了他的洞察——'万物互联'是去中心化网络的延伸。当数十亿设备连接时，新的'涌现'行为将会出现。",
+        "color": "#744210",
+        "icon": "🔌"
+    },
+    {
+        "id": 47,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'熵'(Entropy)？",
+        "answer": "**熵**是混乱度的度量，热力学第二定律：封闭系统的熵永远增加。\n\n**类比**：房间会自然变乱；机器会磨损。凯文·凯利认为，复杂系统通过'开放'来对抗熵——从环境引入能量和信息，维持内部秩序。生命、技术都是'负熵'系统，是抵抗宇宙热寂的努力。",
+        "color": "#3182ce",
+        "icon": "🌡️"
+    },
+    {
+        "id": 48,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'信息'(Information)？",
+        "answer": "**信息**是消除不确定性的度量，是系统秩序的核心。\n\n**类比**：DNA编码生命信息；数字信号传递数据。凯文·凯利认为，信息是复杂系统的'本质'——物质和能量只是载体，真正重要的是信息模式。技术进化本质上是信息处理能力的进化。",
+        "color": "#3182ce",
+        "icon": "💾"
+    },
+    {
+        "id": 49,
+        "category": "Concept",
+        "source": "《失控》核心概念",
+        "question": "什么是'时间'(Time)？",
+        "answer": "**时间**是系统演化维度的度量。\n\n**类比**：进化需要时间；学习需要时间。凯文·凯利认为，复杂系统的理解需要'时间维度'——不仅要看静态结构，还要看动态演化。技术进化、生物进化、文化进化都是时间维度上的涌现过程。",
+        "color": "#3182ce",
+        "icon": "⏳"
+    },
+    {
+        "id": 50,
+        "category": "History",
+        "source": "《失控》核心思想",
+        "question": "《失控》书名的'失控'究竟意味着什么？",
+        "answer": "**'失控'不是'混乱'，而是'不再试图控制'**。\n\n凯文·凯利的核心哲学是：未来属于那些'放手'的人——不再试图中央控制，而是创造能自组织、自适应的系统。\n\n**隐喻**：就像父母学会'放手'让孩子独立，管理者学会'放手'让团队自组织。失控不是放弃，而是更高层次的智慧。",
+        "color": "#744210",
+        "icon": "🔓"
+    }
+];
+
+        // --- 逻辑控制 ---
+        let currentIndex = 0;
+        const cardEl = document.getElementById('card-element');
+        const root = document.documentElement;
+
+        // Front Elements
+        const qText = document.getElementById('question-text');
+        const sTagFront = document.getElementById('source-tag-front');
+        const wFront = document.getElementById('watermark-front');
+        const pIndicatorFront = document.getElementById('page-indicator-front');
+        const hintText = document.getElementById('hint-text');
+
+        // Back Elements
+        const aText = document.getElementById('answer-text');
+        const sTagBack = document.getElementById('source-tag-back');
+        const wBack = document.getElementById('watermark-back');
+        const pIndicatorBack = document.getElementById('page-indicator-back');
+        const speakBtn = document.getElementById('speak-btn');
+
+        // Nav Buttons
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function hexToRgba(hex, alpha) {
+            let r = 0, g = 0, b = 0;
+            if (hex.length == 7) {
+                r = "0x" + hex[1] + hex[2];
+                g = "0x" + hex[3] + hex[4];
+                b = "0x" + hex[5] + hex[6];
+            } else if (hex.length == 4) {
+                r = "0x" + hex[1] + hex[1];
+                g = "0x" + hex[2] + hex[2];
+                b = "0x" + hex[3] + hex[3];
+            }
+            return "rgba(" + +r + "," + +g + "," + +b + "," + alpha + ")";
+        }
+
+        function renderCard(index) {
+            const data = flashcards[index];
+            
+            // 填充内容 (处理字面量 \n 为真实换行)
+            qText.textContent = data.question.replace(/\\n/g, '\n');
+            sTagFront.textContent = data.source;
+            sTagBack.textContent = data.source;
+            wFront.textContent = data.icon;
+            wBack.textContent = data.icon;
+            
+            // 语言类卡片的中文提示 (hint)
+            if (data.hint) {
+                hintText.textContent = data.hint;
+                hintText.style.display = 'inline-block';
+            } else {
+                hintText.textContent = '';
+                hintText.style.display = 'none';
+            }
+            
+            // 语言类卡片的朗读按钮
+            if (data.word && 'speechSynthesis' in window) {
+                speakBtn.classList.remove('hidden');
+            } else {
+                speakBtn.classList.add('hidden');
+            }
+            
+            // 处理换行: 先将字面量 \\n 转为真实换行，再将换行转为 <br>
+            let htmlAns = data.answer
+                .replace(/\\n/g, '\n')  // 字面量 \n → 真实换行 (兜底)
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n/g, '<br/>');
+            aText.innerHTML = htmlAns;
+
+            // 样式与颜色
+            root.style.setProperty('--accent-color', data.color);
+            wFront.style.color = data.color;
+            wBack.style.color = data.color;
+            sTagFront.style.color = data.color;
+            sTagBack.style.color = data.color;
+
+            // 背景渐变
+            const subtleBg = hexToRgba(data.color, 0.15);
+            root.style.setProperty('--theme-bg-gradient', `linear-gradient(180deg, ${subtleBg} 0%, #f8f9fa 100%)`);
+
+            // 进度指示器 (正反面都更新)
+            const progressText = `${index + 1} / ${flashcards.length}`;
+            pIndicatorFront.textContent = progressText;
+            pIndicatorBack.textContent = progressText;
+
+            // 按钮状态
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === flashcards.length - 1;
+        }
+
+        function flipCard() {
+            cardEl.classList.toggle('is-flipped');
+        }
+        
+        // 点击背面翻回正面，但避免点击按钮区域时触发
+        function handleBackClick(event) {
+            if (!event.target.closest('.footer-back')) {
+                flipCard();
+            }
+        }
+
+        function nextCard() {
+            if (currentIndex < flashcards.length - 1) {
+                switchCard(currentIndex + 1);
+            }
+        }
+
+        function prevCard() {
+            if (currentIndex > 0) {
+                switchCard(currentIndex - 1);
+            }
+        }
+
+        function switchCard(newIndex) {
+            // 1. 先翻回正面 (确保翻页时永远显示正面)
+            cardEl.classList.remove('is-flipped');
+
+            // 2. 等待翻转动画后再切换内容
+            setTimeout(() => {
+                currentIndex = newIndex;
+                renderCard(currentIndex);
+            }, 300);
+        }
+        
+        // 获取最佳英语语音（优先女声）
+        function getBestVoice() {
+            const voices = speechSynthesis.getVoices();
+            const enVoices = voices.filter(v => v.lang.startsWith('en'));
+            if (enVoices.length === 0) return null;
+
+            // 启发式查找女声（通过常见女声名称关键词）
+            const femaleKeywords = ['Female', 'Samantha', 'Moira', 'Veena', 'Zira', 'Ting-Ting', 'Mei-Jia', 'Aria', 'Google US English'];
+            for (const keyword of femaleKeywords) {
+                const femaleVoice = enVoices.find(v => v.name.includes(keyword));
+                if (femaleVoice) return femaleVoice;
+            }
+
+            // 未找到明确的女声，返回第一个英语语音（系统默认）
+            return enVoices[0];
+        }
+
+        // 朗读单词 (Web Speech API)
+        function speakWord() {
+            const data = flashcards[currentIndex];
+            if (data.word && 'speechSynthesis' in window) {
+                // 停止正在播放的语音
+                speechSynthesis.cancel();
+
+                const utterance = new SpeechSynthesisUtterance(data.word);
+                utterance.lang = 'en-US'; // 美式发音，可改为 'en-GB' 英式
+                utterance.rate = 0.9; // 稍慢一点，便于学习
+                utterance.pitch = 1;
+
+                // 尝试设置女声
+                const bestVoice = getBestVoice();
+                if (bestVoice) {
+                    utterance.voice = bestVoice;
+                }
+
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        // 初始化
+        renderCard(0);
+
+    </script>
+</body>
+</html>

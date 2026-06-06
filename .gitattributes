@@ -1,0 +1,21 @@
+# Quartz 引擎代码标记为生成文件 - GitHub 默认折叠
+/quartz/** linguist-generated=true
+/node_modules/** linguist-generated=true
+/.quartz/** linguist-generated=true
+/public/** linguist-generated=true
+/quartz.config.yaml linguist-generated=true
+/quartz.lock.json linguist-generated=true
+/quartz.ts linguist-generated=true
+/tsconfig.json linguist-generated=true
+/tsconfig.tsbuildinfo linguist-generated=true
+/package-lock.json linguist-generated=true
+/package.json linguist-generated=true
+/.node-version linguist-generated=true
+/.npmrc linguist-generated=true
+/.prettierrc linguist-generated=true
+/.prettierignore linguist-generated=true
+/Dockerfile linguist-generated=true
+/.github linguist-generated=true
+
+# content/ 正常显示
+/content/** linguist-generated=false

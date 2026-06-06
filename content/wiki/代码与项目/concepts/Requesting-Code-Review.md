@@ -1,0 +1,11 @@
+---
+type: concept
+title: "Requesting Code Review"
+date: 2026-04-14
+tags: [wiki, wiki/concept]
+---
+
+# Requesting Code Review
+
+## Evolution Log
+- 2026-04-14: 来自 [[wiki/sources/04_技能与工具/Superpowers/superpowers-main/skills/requesting-code-review/SKILL]] 的认知：是Superpowers开发框架中的一项开发技能，用于通过调度code-reviewer子代理提前发现代码问题，规范了申请代码审查的时机、流程和处理规则。

@@ -1,0 +1,11 @@
+---
+type: concept
+title: "Stress Self-Medication"
+date: 2026-04-24
+tags: [wiki, wiki/concept]
+---
+
+# Stress Self-Medication
+
+## Evolution Log
+- 2026-04-24: 来自 [[wiki/summaries/05_代码与项目/team-awareness-training/team-awareness-training/sessions/session-01-stress]] 的认知：A maladaptive coping strategy for unmanaged workday stress, involving use of substances or behaviors including alcohol, smoking, marijuana, pornography, and sugar to temporarily improve mood instead of addressing the root stress response.

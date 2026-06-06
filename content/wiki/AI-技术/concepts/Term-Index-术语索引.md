@@ -1,0 +1,11 @@
+---
+type: concept
+title: "Term Index (术语索引)"
+date: 2026-04-24
+tags: [wiki, wiki/concept]
+---
+
+# Term Index (术语索引)
+
+## Evolution Log
+- 2026-04-24: 来自 [[wiki/summaries/05_代码与项目/agentic-design-patterns/agentic-design-patterns/37-Index]] 的认知：A dedicated chapter in the agentic design patterns documentation intended to act as a lookup index for relevant terminology, which is currently undergoing translation and formatting work.

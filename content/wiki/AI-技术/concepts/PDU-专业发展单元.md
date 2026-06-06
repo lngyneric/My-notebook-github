@@ -1,0 +1,12 @@
+---
+type: concept
+title: "PDU（专业发展单元）"
+date: 2026-04-24
+tags: [wiki, wiki/concept]
+---
+
+# PDU（专业发展单元）
+
+## Evolution Log
+- 2026-04-24: 来自 [[wiki/summaries/Books/PMP考试全程指南/PMP考试全程指南]] 的认知：PMP认证体系下用于维持认证有效性的专业发展学分，本教材包含其常见疑问的释疑内容。
+- 2026-04-24: 来自 [[wiki/summaries/Books/PMP考试全程指南/PMP考试全程指南]] 的认知：PMP认证体系中用于维持认证有效性的专业发展积分，本书专门设置章节对其相关规则与常见疑问进行释疑解答。

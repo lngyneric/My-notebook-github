@@ -1,0 +1,11 @@
+---
+type: concept
+title: "Dual-Phase KG Verification"
+date: 2026-04-24
+tags: [wiki, wiki/concept]
+---
+
+# Dual-Phase KG Verification
+
+## Evolution Log
+- 2026-04-24: 来自 [[wiki/summaries/03_技能与工具/多模态RAG/Multimodal_RAG_KG_Diagrams]] 的认知：A two-step validation mechanism for extracted knowledge graph triples, including LLM-powered semantic validity checks and rule-based schema compliance checks to filter invalid entries.

@@ -1,0 +1,11 @@
+---
+type: concept
+title: "AI建议事项"
+date: 2026-04-14
+tags: [wiki, wiki/concept]
+---
+
+# AI建议事项
+
+## Evolution Log
+- 2026-04-14: 来自 [[wiki/sources/02_每日工作记录/Daily_Work_20260120_CN_EN]] 的认知：由AI整理提出的当日需要完成的工作事项集合，本次共列出四项待推进的工作内容
